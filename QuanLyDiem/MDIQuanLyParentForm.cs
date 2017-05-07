@@ -147,5 +147,11 @@ namespace QuanLyDiem
             FormThongKe formThongKe = new FormThongKe();
             formThongKe.Show(this);
         }
+
+        private void inBảngĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InBangDiem formInBangDiem = new InBangDiem();
+            formInBangDiem.Show(this);
+        }
     }
 }
