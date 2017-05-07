@@ -47,9 +47,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>C:\Users\Windows 10 Gamer\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +82,18 @@
     </Compile>
     <Compile Include="Presentation\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormNhapDiem.Designer.cs">
+      <DependentUpon>FormNhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormThongKe.Designer.cs">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\QuanLyGiaoVien.cs">
       <SubType>Form</SubType>
@@ -113,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormNhapDiem.resx">
+      <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\QuanLyGiaoVien.resx">
       <DependentUpon>QuanLyGiaoVien.cs</DependentUpon>

@@ -27,13 +27,13 @@ namespace QuanLyDiem.Presentation
             {
                 if (radButton.Tag.ToString() == "basic")
                 {
-                    this.groupBasic.Show();
                     this.groupAdvance.Hide();
+                    this.groupBasic.Show();
                 }
                 else if (radButton.Tag.ToString() == "advance")
                 {
-                    this.groupBasic.Hide();
                     this.groupAdvance.Show();
+                    this.groupBasic.Hide();
                 }
             }
         }

@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyDiem.Presentation
 {
-    public partial class FormDangNhap : Form
+    public partial class FormNhapDiem : Form
     {
-        public FormDangNhap()
+        public FormNhapDiem()
         {
             InitializeComponent();
-            this.txt_tendangnhap.Select();
         }
     }
 }

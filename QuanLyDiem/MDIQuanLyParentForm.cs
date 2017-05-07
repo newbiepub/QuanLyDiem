@@ -136,12 +136,16 @@ namespace QuanLyDiem
             Application.Exit();
         }
 
-        private void MDIQuanLyParentForm_Load(object sender, EventArgs e)
+        private void nhậpĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection();
-            con.ConnectionString = @"Data Source=(LocalDB)\v11.0; AttachDbFilename=|DataDirectory|\QuanLyDiem.mdf; Integrated Security=True; Connect Timeout=30;";
-            con.Open();
-            MessageBox.Show("Connection opened");
+            FormNhapDiem formNhapDiem = new FormNhapDiem();
+            formNhapDiem.Show(this);
+        }
+
+        private void thốngKêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormThongKe formThongKe = new FormThongKe();
+            formThongKe.Show(this);
         }
     }
 }

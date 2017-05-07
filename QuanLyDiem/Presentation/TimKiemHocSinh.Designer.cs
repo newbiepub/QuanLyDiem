@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupAdvance = new System.Windows.Forms.GroupBox();
             this.groupBasic = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -43,36 +46,62 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupAdvance = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.groupAdvance.SuspendLayout();
             this.groupBasic.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupAdvance.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
+            // groupAdvance
+            // 
+            this.groupAdvance.Controls.Add(this.dateTimePicker1);
+            this.groupAdvance.Controls.Add(this.comboBox2);
+            this.groupAdvance.Controls.Add(this.comboBox1);
+            this.groupAdvance.Controls.Add(this.label5);
+            this.groupAdvance.Controls.Add(this.label4);
+            this.groupAdvance.Controls.Add(this.label3);
+            this.groupAdvance.Controls.Add(this.textBox2);
+            this.groupAdvance.Controls.Add(this.label2);
+            this.groupAdvance.Controls.Add(this.textBox1);
+            this.groupAdvance.Controls.Add(this.label1);
+            this.groupAdvance.Location = new System.Drawing.Point(23, 24);
+            this.groupAdvance.Name = "groupAdvance";
+            this.groupAdvance.Size = new System.Drawing.Size(428, 231);
+            this.groupAdvance.TabIndex = 0;
+            this.groupAdvance.TabStop = false;
+            this.groupAdvance.Tag = "advance";
+            this.groupAdvance.Text = "Nhập Thông Tin";
+            // 
             // groupBasic
             // 
-            this.groupBasic.Controls.Add(this.dateTimePicker1);
-            this.groupBasic.Controls.Add(this.comboBox2);
-            this.groupBasic.Controls.Add(this.comboBox1);
-            this.groupBasic.Controls.Add(this.label5);
-            this.groupBasic.Controls.Add(this.label4);
-            this.groupBasic.Controls.Add(this.label3);
-            this.groupBasic.Controls.Add(this.textBox2);
-            this.groupBasic.Controls.Add(this.label2);
-            this.groupBasic.Controls.Add(this.textBox1);
-            this.groupBasic.Controls.Add(this.label1);
+            this.groupBasic.Controls.Add(this.textBox4);
+            this.groupBasic.Controls.Add(this.label10);
             this.groupBasic.Location = new System.Drawing.Point(23, 24);
             this.groupBasic.Name = "groupBasic";
             this.groupBasic.Size = new System.Drawing.Size(428, 231);
-            this.groupBasic.TabIndex = 0;
+            this.groupBasic.TabIndex = 5;
             this.groupBasic.TabStop = false;
+            this.groupBasic.Tag = "basic";
             this.groupBasic.Text = "Nhập Thông Tin";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(117, 43);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(203, 20);
+            this.textBox4.TabIndex = 1;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(42, 46);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Mã Học Sinh";
             // 
             // dateTimePicker1
             // 
@@ -203,33 +232,6 @@
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // groupAdvance
-            // 
-            this.groupAdvance.Controls.Add(this.textBox4);
-            this.groupAdvance.Controls.Add(this.label10);
-            this.groupAdvance.Location = new System.Drawing.Point(23, 24);
-            this.groupAdvance.Name = "groupAdvance";
-            this.groupAdvance.Size = new System.Drawing.Size(428, 231);
-            this.groupAdvance.TabIndex = 0;
-            this.groupAdvance.TabStop = false;
-            this.groupAdvance.Text = "Nhập Thông Tin";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(117, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 20);
-            this.textBox4.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 46);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Mã Học Sinh";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -253,19 +255,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 503);
+            this.Controls.Add(this.groupBasic);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupAdvance);
-            this.Controls.Add(this.groupBasic);
             this.Name = "TimKiemHocSinh";
             this.Text = "TimKiemHocSinh";
+            this.groupAdvance.ResumeLayout(false);
+            this.groupAdvance.PerformLayout();
             this.groupBasic.ResumeLayout(false);
             this.groupBasic.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupAdvance.ResumeLayout(false);
-            this.groupAdvance.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -274,7 +276,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBasic;
+        private System.Windows.Forms.GroupBox groupAdvance;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -289,7 +291,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupAdvance;
+        private System.Windows.Forms.GroupBox groupBasic;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
