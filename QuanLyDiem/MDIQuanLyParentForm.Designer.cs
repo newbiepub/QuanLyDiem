@@ -45,11 +45,11 @@
             this.tìmKiếmHọcSinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmGiáoViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inBảngĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.inBảngĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -85,33 +85,34 @@
             // đăngNhậpToolStripMenuItem
             // 
             this.đăngNhậpToolStripMenuItem.Name = "đăngNhậpToolStripMenuItem";
-            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.đăngNhậpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đăngNhậpToolStripMenuItem.Text = "Đăng Nhập";
             this.đăngNhậpToolStripMenuItem.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
             // 
             // đăngKýToolStripMenuItem
             // 
             this.đăngKýToolStripMenuItem.Name = "đăngKýToolStripMenuItem";
-            this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.đăngKýToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đăngKýToolStripMenuItem.Text = "Đăng Ký";
             this.đăngKýToolStripMenuItem.Click += new System.EventHandler(this.đăngKýToolStripMenuItem_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
@@ -121,20 +122,20 @@
             this.quảnLýGiáoViênToolStripMenuItem,
             this.quảnLýHọcSinhToolStripMenuItem});
             this.quảnLýToolStripMenuItem.Name = "quảnLýToolStripMenuItem";
-            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.quảnLýToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.quảnLýToolStripMenuItem.Text = "Quản Lý";
             // 
             // quảnLýGiáoViênToolStripMenuItem
             // 
             this.quảnLýGiáoViênToolStripMenuItem.Name = "quảnLýGiáoViênToolStripMenuItem";
-            this.quảnLýGiáoViênToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.quảnLýGiáoViênToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.quảnLýGiáoViênToolStripMenuItem.Text = "Quản Lý Giáo Viên";
             this.quảnLýGiáoViênToolStripMenuItem.Click += new System.EventHandler(this.quảnLýGiáoViênToolStripMenuItem_Click);
             // 
             // quảnLýHọcSinhToolStripMenuItem
             // 
             this.quảnLýHọcSinhToolStripMenuItem.Name = "quảnLýHọcSinhToolStripMenuItem";
-            this.quảnLýHọcSinhToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.quảnLýHọcSinhToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.quảnLýHọcSinhToolStripMenuItem.Text = "Quản Lý Học Sinh";
             this.quảnLýHọcSinhToolStripMenuItem.Click += new System.EventHandler(this.quảnLýHọcSinhToolStripMenuItem_Click);
             // 
@@ -183,10 +184,17 @@
             this.thốngKêToolStripMenuItem.Text = "Thống Kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
+            // inBảngĐiểmToolStripMenuItem
+            // 
+            this.inBảngĐiểmToolStripMenuItem.Name = "inBảngĐiểmToolStripMenuItem";
+            this.inBảngĐiểmToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.inBảngĐiểmToolStripMenuItem.Text = "In Bảng Điểm";
+            this.inBảngĐiểmToolStripMenuItem.Click += new System.EventHandler(this.inBảngĐiểmToolStripMenuItem_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ Giúp";
             // 
             // statusStrip
@@ -204,13 +212,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // inBảngĐiểmToolStripMenuItem
-            // 
-            this.inBảngĐiểmToolStripMenuItem.Name = "inBảngĐiểmToolStripMenuItem";
-            this.inBảngĐiểmToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.inBảngĐiểmToolStripMenuItem.Text = "In Bảng Điểm";
-            this.inBảngĐiểmToolStripMenuItem.Click += new System.EventHandler(this.inBảngĐiểmToolStripMenuItem_Click);
             // 
             // MDIQuanLyParentForm
             // 

@@ -153,5 +153,11 @@ namespace QuanLyDiem
             InBangDiem formInBangDiem = new InBangDiem();
             formInBangDiem.Show(this);
         }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDoiMatKhau FormDoiMatKhau = new FormDoiMatKhau();
+            FormDoiMatKhau.Show(this);
+        }
     }
 }
