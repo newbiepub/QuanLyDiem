@@ -33,9 +33,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtpasscu = new System.Windows.Forms.TextBox();
+            this.txtpassmoi = new System.Windows.Forms.TextBox();
+            this.txtxacminh = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -83,26 +83,26 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // textBox2
+            // txtpasscu
             // 
-            this.textBox2.Location = new System.Drawing.Point(216, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtpasscu.Location = new System.Drawing.Point(216, 65);
+            this.txtpasscu.Name = "txtpasscu";
+            this.txtpasscu.Size = new System.Drawing.Size(100, 20);
+            this.txtpasscu.TabIndex = 5;
             // 
-            // textBox3
+            // txtpassmoi
             // 
-            this.textBox3.Location = new System.Drawing.Point(216, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtpassmoi.Location = new System.Drawing.Point(216, 103);
+            this.txtpassmoi.Name = "txtpassmoi";
+            this.txtpassmoi.Size = new System.Drawing.Size(100, 20);
+            this.txtpassmoi.TabIndex = 6;
             // 
-            // textBox4
+            // txtxacminh
             // 
-            this.textBox4.Location = new System.Drawing.Point(216, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
+            this.txtxacminh.Location = new System.Drawing.Point(216, 136);
+            this.txtxacminh.Name = "txtxacminh";
+            this.txtxacminh.Size = new System.Drawing.Size(100, 20);
+            this.txtxacminh.TabIndex = 7;
             // 
             // button1
             // 
@@ -112,6 +112,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Lưu";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -121,6 +122,7 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FormDoiMatKhau
             // 
@@ -129,9 +131,9 @@
             this.ClientSize = new System.Drawing.Size(410, 262);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtxacminh);
+            this.Controls.Add(this.txtpassmoi);
+            this.Controls.Add(this.txtpasscu);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -151,9 +153,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtpasscu;
+        private System.Windows.Forms.TextBox txtpassmoi;
+        private System.Windows.Forms.TextBox txtxacminh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }
