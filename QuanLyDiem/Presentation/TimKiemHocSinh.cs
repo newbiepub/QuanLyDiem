@@ -59,6 +59,15 @@ namespace QuanLyDiem.Presentation
                 MessageBox.Show("Không có học sinh !!");
             }
         }
+
+        private void EnterPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                button1_Click(null,null);
+            }
+        }
+
       
 
      

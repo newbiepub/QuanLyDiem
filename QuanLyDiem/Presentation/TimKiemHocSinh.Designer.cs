@@ -88,6 +88,7 @@
             this.studentCodeAdvance.Name = "studentCodeAdvance";
             this.studentCodeAdvance.Size = new System.Drawing.Size(202, 20);
             this.studentCodeAdvance.TabIndex = 4;
+            this.studentCodeAdvance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // date
             // 
@@ -95,6 +96,7 @@
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(203, 20);
             this.date.TabIndex = 3;
+            this.date.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // studentClass
             // 
@@ -102,6 +104,7 @@
             this.studentClass.Name = "studentClass";
             this.studentClass.Size = new System.Drawing.Size(203, 20);
             this.studentClass.TabIndex = 1;
+            this.studentClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // studentGrade
             // 
@@ -117,6 +120,7 @@
             this.studentGrade.Size = new System.Drawing.Size(203, 21);
             this.studentGrade.Sorted = true;
             this.studentGrade.TabIndex = 3;
+            this.studentGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // label5
             // 
@@ -151,6 +155,7 @@
             this.studentName.Name = "studentName";
             this.studentName.Size = new System.Drawing.Size(203, 20);
             this.studentName.TabIndex = 1;
+            this.studentName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // label2
             // 
@@ -174,9 +179,9 @@
             // 
             this.groupBasic.Controls.Add(this.txtStudentCodeBasic);
             this.groupBasic.Controls.Add(this.label10);
-            this.groupBasic.Location = new System.Drawing.Point(23, 24);
+            this.groupBasic.Location = new System.Drawing.Point(23, 225);
             this.groupBasic.Name = "groupBasic";
-            this.groupBasic.Size = new System.Drawing.Size(428, 231);
+            this.groupBasic.Size = new System.Drawing.Size(428, 30);
             this.groupBasic.TabIndex = 1;
             this.groupBasic.TabStop = false;
             this.groupBasic.Tag = "basic";
@@ -193,6 +198,7 @@
             this.txtStudentCodeBasic.Name = "txtStudentCodeBasic";
             this.txtStudentCodeBasic.Size = new System.Drawing.Size(202, 20);
             this.txtStudentCodeBasic.TabIndex = 2;
+            this.txtStudentCodeBasic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // label10
             // 
