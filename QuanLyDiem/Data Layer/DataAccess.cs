@@ -12,27 +12,29 @@ namespace QuanLyDiem.Data_Layer
     class DataAccess
     {
         private SqlDataAdapter dataAdapter;
-         SqlConnection con = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\v11.0; AttachDbFilename=|DataDirectory|\db.mdf; Integrated Security=True; Connect Timeout=30;");
-           
-           
+        private SqlConnection connection;
 
         public DataAccess()
         {
             dataAdapter = new SqlDataAdapter();
-         
-           
+            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString);
         }
 
         private SqlConnection openConnection()
         {
-       
-            if (con.State == ConnectionState.Broken || con.State == ConnectionState.Closed)
+            if (this.connection.State == ConnectionState.Broken || this.connection.State == ConnectionState.Closed)
             {
-                con.Open();
+                this.connection.Open();
             }
-            return con;
+            return this.connection;
         }
-        public DataTable select(String query)
+
+        private void closeConnection()
+        {
+            this.connection.Close();
+        }
+
+        public DataTable select(String query, SqlParameter[] pr)
         {
             SqlCommand command = new SqlCommand();
             DataTable dt = new DataTable();
@@ -40,7 +42,7 @@ namespace QuanLyDiem.Data_Layer
             {
                 command.Connection = this.openConnection();
                 command.CommandText = query;
-               
+                command.Parameters.AddRange(pr);
                 dataAdapter.SelectCommand = command;
                 command.ExecuteNonQuery();
                 dataAdapter.Fill(dt);
