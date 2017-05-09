@@ -104,7 +104,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic\MonHocBL.cs" />
     <Compile Include="Data Layer\DataAccess.cs" />
+    <Compile Include="Entity\MonHoc.cs" />
     <Compile Include="MDIQuanLyParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,10 +241,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business Logic\" />
-    <Folder Include="Entity\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
