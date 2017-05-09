@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -45,14 +46,27 @@ namespace QuanLyDiem.Presentation
             if(radioButton1.Checked)
             {
 
-                string query = "SELECT * FROM HOC_SINH WHERE MaHocSinh ='" + txtStudentCodeBasic.Text + "';";
-                dataGridView1.DataSource = da.select(query);
+                string query = "select * from HOC_SINH where MaHocSinh=@mahocsinh;";
+                SqlParameter [] pr =
+                {
+                    new SqlParameter("@mahocsinh", txtStudentCodeBasic.Text), 
+                };
+                dataGridView1.DataSource = da.select(query, pr);
             }
             else
             {
                 string theDate = date.Value.ToString("dd/MM/yyyy");
-                string query = "SELECT * FROM HOC_SINH,LOP WHERE HOC_SINH.MaLop = LOP.Malop and (NgaySinh ='" + theDate + "' or TenHocSinh ='" + studentName.Text + "' or LOP.TenLop ='" + studentClass.Text + "' or MaHocSinh ='" + studentCodeAdvance.Text + "' or LOP.khoi = '"+studentGrade.Text+"') ;";
-                dataGridView1.DataSource = da.select(query);
+                string query =
+                    "select * from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop and (NgaySinh=@ngaysinh or TenHocSinh=@tenhocsinh or LOP.TenLop=@tenlop or MaHocSinh=@mahocsinh or LOP.khoi=@khoi);";
+                SqlParameter[] pr =
+                {
+                    new SqlParameter("@ngaysinh", theDate),
+                    new SqlParameter("@tenhocsinh", studentName.Text),
+                    new SqlParameter("@tenlop", studentClass.Text),
+                    new SqlParameter("@mahocsinh", studentCodeAdvance.Text),
+                    new SqlParameter("@khoi", studentGrade.Text),
+                };
+                dataGridView1.DataSource = da.select(query, pr);
             }
             if(dataGridView1.RowCount == 1)
             {
