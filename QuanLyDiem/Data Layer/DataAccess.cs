@@ -52,7 +52,7 @@ namespace QuanLyDiem.Data_Layer
                 Console.Write("Error at Select Query - {0}", query);
                 throw;
             }
-            con.Close();
+            connection.Close();
             return dt;
         }
 
@@ -73,7 +73,7 @@ namespace QuanLyDiem.Data_Layer
                 return false;
                 throw;
             }
-            con.Close();
+            connection.Close();
             return true;
         }
 
@@ -94,7 +94,7 @@ namespace QuanLyDiem.Data_Layer
                 return false;
                 throw;
             }
-            con.Close();
+            connection.Close();
             return true;
         }
 
@@ -115,7 +115,7 @@ namespace QuanLyDiem.Data_Layer
                 return false;
                 throw;
             }
-            con.Close();
+            connection.Close();
             return true;
         }
     }
