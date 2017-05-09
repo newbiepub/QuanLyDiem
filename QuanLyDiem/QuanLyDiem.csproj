@@ -123,11 +123,23 @@
     <Compile Include="Presentation\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\FormDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormDoiMatKhau.Designer.cs">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\FormNhapDiem.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentation\FormNhapDiem.Designer.cs">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormQuanLyDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormQuanLyDiem.Designer.cs">
+      <DependentUpon>FormQuanLyDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FormThongKe.cs">
       <SubType>Form</SubType>
@@ -176,8 +188,17 @@
     <EmbeddedResource Include="Presentation\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormDoiMatKhau.resx">
+      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormNhapDiem.resx">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormQuanLyDiem.resx">
+      <DependentUpon>FormQuanLyDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormThongKe.resx">
+      <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\InBangDiem.resx">
       <DependentUpon>InBangDiem.cs</DependentUpon>
@@ -204,6 +225,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
