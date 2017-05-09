@@ -29,42 +29,39 @@
         private void InitializeComponent()
         {
             this.groupBoxAdvance = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.teacherName = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBoxBasic = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.teacherCodeAvanced = new System.Windows.Forms.NumericUpDown();
-            this.subjectSpecialized = new System.Windows.Forms.ComboBox();
-            this.teacherClass = new System.Windows.Forms.ComboBox();
-            this.teacherCodeBasic = new System.Windows.Forms.NumericUpDown();
-            this.ResetValue = new System.Windows.Forms.Button();
             this.groupBoxAdvance.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBoxBasic.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAvanced)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeBasic)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxAdvance
             // 
-            this.groupBoxAdvance.Controls.Add(this.teacherClass);
-            this.groupBoxAdvance.Controls.Add(this.subjectSpecialized);
-            this.groupBoxAdvance.Controls.Add(this.teacherCodeAvanced);
+            this.groupBoxAdvance.Controls.Add(this.textBox4);
             this.groupBoxAdvance.Controls.Add(this.label4);
+            this.groupBoxAdvance.Controls.Add(this.textBox3);
             this.groupBoxAdvance.Controls.Add(this.label3);
-            this.groupBoxAdvance.Controls.Add(this.teacherName);
+            this.groupBoxAdvance.Controls.Add(this.textBox2);
             this.groupBoxAdvance.Controls.Add(this.label2);
+            this.groupBoxAdvance.Controls.Add(this.textBox1);
             this.groupBoxAdvance.Controls.Add(this.label1);
             this.groupBoxAdvance.Location = new System.Drawing.Point(38, 38);
             this.groupBoxAdvance.Name = "groupBoxAdvance";
@@ -72,6 +69,13 @@
             this.groupBoxAdvance.TabIndex = 0;
             this.groupBoxAdvance.TabStop = false;
             this.groupBoxAdvance.Text = "Nhập Thông Tin";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(127, 132);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(179, 20);
+            this.textBox4.TabIndex = 1;
             // 
             // label4
             // 
@@ -82,6 +86,13 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Lớp";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(127, 106);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(179, 20);
+            this.textBox3.TabIndex = 1;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -91,12 +102,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Chuyên Môn";
             // 
-            // teacherName
+            // textBox2
             // 
-            this.teacherName.Location = new System.Drawing.Point(127, 80);
-            this.teacherName.Name = "teacherName";
-            this.teacherName.Size = new System.Drawing.Size(179, 20);
-            this.teacherName.TabIndex = 1;
+            this.textBox2.Location = new System.Drawing.Point(127, 80);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(179, 20);
+            this.textBox2.TabIndex = 1;
             // 
             // label2
             // 
@@ -106,6 +117,13 @@
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Giáo Viên";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(127, 54);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(179, 20);
+            this.textBox1.TabIndex = 1;
             // 
             // label1
             // 
@@ -118,14 +136,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(675, 56);
+            this.button1.Location = new System.Drawing.Point(681, 95);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(20);
             this.button1.Size = new System.Drawing.Size(132, 85);
             this.button1.TabIndex = 1;
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox2
             // 
@@ -166,14 +183,21 @@
             // 
             // groupBoxBasic
             // 
+            this.groupBoxBasic.Controls.Add(this.textBox8);
             this.groupBoxBasic.Controls.Add(this.label8);
-            this.groupBoxBasic.Controls.Add(this.teacherCodeBasic);
-            this.groupBoxBasic.Location = new System.Drawing.Point(38, 213);
+            this.groupBoxBasic.Location = new System.Drawing.Point(38, 38);
             this.groupBoxBasic.Name = "groupBoxBasic";
-            this.groupBoxBasic.Size = new System.Drawing.Size(390, 20);
+            this.groupBoxBasic.Size = new System.Drawing.Size(390, 195);
             this.groupBoxBasic.TabIndex = 0;
             this.groupBoxBasic.TabStop = false;
             this.groupBoxBasic.Text = "Nhập Thông Tin";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(127, 54);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(179, 20);
+            this.textBox8.TabIndex = 1;
             // 
             // label8
             // 
@@ -202,63 +226,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(763, 171);
             this.dataGridView1.TabIndex = 0;
             // 
-            // teacherCodeAvanced
-            // 
-            this.teacherCodeAvanced.Location = new System.Drawing.Point(127, 52);
-            this.teacherCodeAvanced.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.teacherCodeAvanced.Name = "teacherCodeAvanced";
-            this.teacherCodeAvanced.Size = new System.Drawing.Size(179, 20);
-            this.teacherCodeAvanced.TabIndex = 2;
-            // 
-            // subjectSpecialized
-            // 
-            this.subjectSpecialized.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.subjectSpecialized.FormattingEnabled = true;
-            this.subjectSpecialized.Location = new System.Drawing.Point(127, 105);
-            this.subjectSpecialized.Name = "subjectSpecialized";
-            this.subjectSpecialized.Size = new System.Drawing.Size(179, 21);
-            this.subjectSpecialized.TabIndex = 3;
-            // 
-            // teacherClass
-            // 
-            this.teacherClass.FormattingEnabled = true;
-            this.teacherClass.Location = new System.Drawing.Point(127, 132);
-            this.teacherClass.Name = "teacherClass";
-            this.teacherClass.Size = new System.Drawing.Size(179, 21);
-            this.teacherClass.TabIndex = 3;
-            // 
-            // teacherCodeBasic
-            // 
-            this.teacherCodeBasic.Location = new System.Drawing.Point(127, 55);
-            this.teacherCodeBasic.Maximum = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.teacherCodeBasic.Name = "teacherCodeBasic";
-            this.teacherCodeBasic.Size = new System.Drawing.Size(179, 20);
-            this.teacherCodeBasic.TabIndex = 2;
-            // 
-            // ResetValue
-            // 
-            this.ResetValue.Location = new System.Drawing.Point(675, 170);
-            this.ResetValue.Name = "ResetValue";
-            this.ResetValue.Size = new System.Drawing.Size(125, 60);
-            this.ResetValue.TabIndex = 5;
-            this.ResetValue.Text = "Nhập Lại";
-            this.ResetValue.UseVisualStyleBackColor = true;
-            this.ResetValue.Click += new System.EventHandler(this.ResetValue_Click);
-            // 
             // TimKiemGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 487);
-            this.Controls.Add(this.ResetValue);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
@@ -266,7 +238,6 @@
             this.Controls.Add(this.groupBoxAdvance);
             this.Name = "TimKiemGiaoVien";
             this.Text = "TimKiemGiaoVien";
-            this.Load += new System.EventHandler(this.TimKiemGiaoVien_Load);
             this.groupBoxAdvance.ResumeLayout(false);
             this.groupBoxAdvance.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -275,8 +246,6 @@
             this.groupBoxBasic.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAvanced)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeBasic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,23 +253,22 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxAdvance;
+        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox teacherName;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.GroupBox groupBoxBasic;
+        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox teacherClass;
-        private System.Windows.Forms.ComboBox subjectSpecialized;
-        private System.Windows.Forms.NumericUpDown teacherCodeAvanced;
-        private System.Windows.Forms.NumericUpDown teacherCodeBasic;
-        private System.Windows.Forms.Button ResetValue;
     }
 }

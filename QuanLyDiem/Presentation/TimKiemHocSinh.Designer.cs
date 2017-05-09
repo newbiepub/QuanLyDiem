@@ -28,14 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupAdvance = new System.Windows.Forms.GroupBox();
-            this.studentClass = new System.Windows.Forms.ComboBox();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lop = new QuanLyDiem.lop();
-            this.dateSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.studentCodeAdvance = new System.Windows.Forms.NumericUpDown();
             this.date = new System.Windows.Forms.DateTimePicker();
+            this.studentClass = new System.Windows.Forms.TextBox();
             this.studentGrade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,12 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ResetValue = new System.Windows.Forms.Button();
-            this.lOPTableAdapter = new QuanLyDiem.lopTableAdapters.LOPTableAdapter();
             this.groupAdvance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lop)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentCodeAdvance)).BeginInit();
             this.groupBasic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentCodeBasic)).BeginInit();
@@ -68,10 +59,9 @@
             // 
             // groupAdvance
             // 
-            this.groupAdvance.Controls.Add(this.studentClass);
-            this.groupAdvance.Controls.Add(this.dateSwitch);
             this.groupAdvance.Controls.Add(this.studentCodeAdvance);
             this.groupAdvance.Controls.Add(this.date);
+            this.groupAdvance.Controls.Add(this.studentClass);
             this.groupAdvance.Controls.Add(this.studentGrade);
             this.groupAdvance.Controls.Add(this.label5);
             this.groupAdvance.Controls.Add(this.label4);
@@ -86,35 +76,6 @@
             this.groupAdvance.TabStop = false;
             this.groupAdvance.Tag = "advance";
             this.groupAdvance.Text = "Nhập Thông Tin";
-            // 
-            // studentClass
-            // 
-            this.studentClass.FormattingEnabled = true;
-            this.studentClass.Location = new System.Drawing.Point(117, 121);
-            this.studentClass.Name = "studentClass";
-            this.studentClass.Size = new System.Drawing.Size(203, 21);
-            this.studentClass.TabIndex = 7;
-            this.studentClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
-            // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.lop;
-            // 
-            // lop
-            // 
-            this.lop.DataSetName = "lop";
-            this.lop.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dateSwitch
-            // 
-            this.dateSwitch.Location = new System.Drawing.Point(251, 147);
-            this.dateSwitch.Name = "dateSwitch";
-            this.dateSwitch.Properties.OffText = "Off";
-            this.dateSwitch.Properties.OnText = "On";
-            this.dateSwitch.Size = new System.Drawing.Size(69, 24);
-            this.dateSwitch.TabIndex = 6;
-            this.dateSwitch.Toggled += new System.EventHandler(this.dateSwitch_Toggled);
             // 
             // studentCodeAdvance
             // 
@@ -131,26 +92,29 @@
             // 
             // date
             // 
-            this.date.Enabled = false;
-            this.date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.date.Location = new System.Drawing.Point(117, 148);
             this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(128, 20);
-            this.date.TabIndex = 5;
-            this.date.Value = new System.DateTime(2017, 5, 9, 0, 0, 0, 0);
+            this.date.Size = new System.Drawing.Size(203, 20);
+            this.date.TabIndex = 3;
             this.date.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
+            // studentClass
+            // 
+            this.studentClass.Location = new System.Drawing.Point(117, 121);
+            this.studentClass.Name = "studentClass";
+            this.studentClass.Size = new System.Drawing.Size(203, 20);
+            this.studentClass.TabIndex = 1;
+            this.studentClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // studentGrade
             // 
-            this.studentGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.studentGrade.FormattingEnabled = true;
             this.studentGrade.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
             "4",
-            "5",
-            "Không"});
+            "5"});
             this.studentGrade.Location = new System.Drawing.Point(117, 95);
             this.studentGrade.Name = "studentGrade";
             this.studentGrade.Size = new System.Drawing.Size(203, 21);
@@ -215,9 +179,9 @@
             // 
             this.groupBasic.Controls.Add(this.txtStudentCodeBasic);
             this.groupBasic.Controls.Add(this.label10);
-            this.groupBasic.Location = new System.Drawing.Point(23, 24);
+            this.groupBasic.Location = new System.Drawing.Point(23, 225);
             this.groupBasic.Name = "groupBasic";
-            this.groupBasic.Size = new System.Drawing.Size(428, 231);
+            this.groupBasic.Size = new System.Drawing.Size(428, 30);
             this.groupBasic.TabIndex = 1;
             this.groupBasic.TabStop = false;
             this.groupBasic.Tag = "basic";
@@ -284,10 +248,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(741, 43);
+            this.button1.Location = new System.Drawing.Point(760, 88);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(20);
-            this.button1.Size = new System.Drawing.Size(125, 92);
+            this.button1.Size = new System.Drawing.Size(125, 86);
             this.button1.TabIndex = 2;
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
@@ -311,26 +275,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(850, 175);
             this.dataGridView1.TabIndex = 0;
             // 
-            // ResetValue
-            // 
-            this.ResetValue.Location = new System.Drawing.Point(741, 172);
-            this.ResetValue.Name = "ResetValue";
-            this.ResetValue.Size = new System.Drawing.Size(125, 60);
-            this.ResetValue.TabIndex = 4;
-            this.ResetValue.Text = "Nhập Lại";
-            this.ResetValue.UseVisualStyleBackColor = true;
-            this.ResetValue.Click += new System.EventHandler(this.ResetValue_Click);
-            // 
-            // lOPTableAdapter
-            // 
-            this.lOPTableAdapter.ClearBeforeFill = true;
-            // 
             // TimKiemHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 503);
-            this.Controls.Add(this.ResetValue);
             this.Controls.Add(this.groupBasic);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -338,12 +287,8 @@
             this.Controls.Add(this.groupAdvance);
             this.Name = "TimKiemHocSinh";
             this.Text = "TimKiemHocSinh";
-            this.Load += new System.EventHandler(this.TimKiemHocSinh_Load);
             this.groupAdvance.ResumeLayout(false);
             this.groupAdvance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lop)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateSwitch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentCodeAdvance)).EndInit();
             this.groupBasic.ResumeLayout(false);
             this.groupBasic.PerformLayout();
@@ -377,11 +322,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.NumericUpDown txtStudentCodeBasic;
         private System.Windows.Forms.NumericUpDown studentCodeAdvance;
-        private DevExpress.XtraEditors.ToggleSwitch dateSwitch;
-        private System.Windows.Forms.Button ResetValue;
-        private System.Windows.Forms.ComboBox studentClass;
-        private lop lop;
-        private System.Windows.Forms.BindingSource lOPBindingSource;
-        private lopTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.TextBox studentClass;
     }
 }
