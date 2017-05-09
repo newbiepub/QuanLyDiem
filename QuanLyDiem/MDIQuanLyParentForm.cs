@@ -153,5 +153,14 @@ namespace QuanLyDiem
             InBangDiem formInBangDiem = new InBangDiem();
             formInBangDiem.Show(this);
         }
+
+        private void MDIQuanLyParentForm_Load(object sender, EventArgs e)
+        {
+            //FormDangNhap dn = new FormDangNhap();
+            //if(dn.ShowDialog()!= DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}
+        }
     }
 }

@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.groupAdvance = new System.Windows.Forms.GroupBox();
-            this.groupBasic = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.studentCodeAdvance = new System.Windows.Forms.NumericUpDown();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.studentClass = new System.Windows.Forms.TextBox();
+            this.studentGrade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.studentName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBasic = new System.Windows.Forms.GroupBox();
+            this.txtStudentCodeBasic = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -49,7 +49,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupAdvance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentCodeAdvance)).BeginInit();
             this.groupBasic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentCodeBasic)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,15 +59,15 @@
             // 
             // groupAdvance
             // 
-            this.groupAdvance.Controls.Add(this.dateTimePicker1);
-            this.groupAdvance.Controls.Add(this.comboBox2);
-            this.groupAdvance.Controls.Add(this.comboBox1);
+            this.groupAdvance.Controls.Add(this.studentCodeAdvance);
+            this.groupAdvance.Controls.Add(this.date);
+            this.groupAdvance.Controls.Add(this.studentClass);
+            this.groupAdvance.Controls.Add(this.studentGrade);
             this.groupAdvance.Controls.Add(this.label5);
             this.groupAdvance.Controls.Add(this.label4);
             this.groupAdvance.Controls.Add(this.label3);
-            this.groupAdvance.Controls.Add(this.textBox2);
+            this.groupAdvance.Controls.Add(this.studentName);
             this.groupAdvance.Controls.Add(this.label2);
-            this.groupAdvance.Controls.Add(this.textBox1);
             this.groupAdvance.Controls.Add(this.label1);
             this.groupAdvance.Location = new System.Drawing.Point(23, 24);
             this.groupAdvance.Name = "groupAdvance";
@@ -75,56 +77,46 @@
             this.groupAdvance.Tag = "advance";
             this.groupAdvance.Text = "Nhập Thông Tin";
             // 
-            // groupBasic
+            // studentCodeAdvance
             // 
-            this.groupBasic.Controls.Add(this.textBox4);
-            this.groupBasic.Controls.Add(this.label10);
-            this.groupBasic.Location = new System.Drawing.Point(23, 24);
-            this.groupBasic.Name = "groupBasic";
-            this.groupBasic.Size = new System.Drawing.Size(428, 231);
-            this.groupBasic.TabIndex = 5;
-            this.groupBasic.TabStop = false;
-            this.groupBasic.Tag = "basic";
-            this.groupBasic.Text = "Nhập Thông Tin";
+            this.studentCodeAdvance.Location = new System.Drawing.Point(118, 44);
+            this.studentCodeAdvance.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.studentCodeAdvance.Name = "studentCodeAdvance";
+            this.studentCodeAdvance.Size = new System.Drawing.Size(202, 20);
+            this.studentCodeAdvance.TabIndex = 4;
             // 
-            // textBox4
+            // date
             // 
-            this.textBox4.Location = new System.Drawing.Point(117, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(203, 20);
-            this.textBox4.TabIndex = 1;
+            this.date.Location = new System.Drawing.Point(117, 148);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(203, 20);
+            this.date.TabIndex = 3;
             // 
-            // label10
+            // studentClass
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 46);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Mã Học Sinh";
+            this.studentClass.Location = new System.Drawing.Point(117, 121);
+            this.studentClass.Name = "studentClass";
+            this.studentClass.Size = new System.Drawing.Size(203, 20);
+            this.studentClass.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // studentGrade
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(117, 148);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(203, 20);
-            this.dateTimePicker1.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(117, 121);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(203, 21);
-            this.comboBox2.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(117, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(203, 21);
-            this.comboBox1.TabIndex = 2;
+            this.studentGrade.FormattingEnabled = true;
+            this.studentGrade.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.studentGrade.Location = new System.Drawing.Point(117, 95);
+            this.studentGrade.Name = "studentGrade";
+            this.studentGrade.Size = new System.Drawing.Size(203, 21);
+            this.studentGrade.Sorted = true;
+            this.studentGrade.TabIndex = 3;
             // 
             // label5
             // 
@@ -153,12 +145,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Khối";
             // 
-            // textBox2
+            // studentName
             // 
-            this.textBox2.Location = new System.Drawing.Point(117, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(203, 20);
-            this.textBox2.TabIndex = 1;
+            this.studentName.Location = new System.Drawing.Point(117, 69);
+            this.studentName.Name = "studentName";
+            this.studentName.Size = new System.Drawing.Size(203, 20);
+            this.studentName.TabIndex = 1;
             // 
             // label2
             // 
@@ -169,13 +161,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Học Sinh";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(117, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 20);
-            this.textBox1.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -184,6 +169,39 @@
             this.label1.Size = new System.Drawing.Size(69, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Học Sinh";
+            // 
+            // groupBasic
+            // 
+            this.groupBasic.Controls.Add(this.txtStudentCodeBasic);
+            this.groupBasic.Controls.Add(this.label10);
+            this.groupBasic.Location = new System.Drawing.Point(23, 24);
+            this.groupBasic.Name = "groupBasic";
+            this.groupBasic.Size = new System.Drawing.Size(428, 231);
+            this.groupBasic.TabIndex = 1;
+            this.groupBasic.TabStop = false;
+            this.groupBasic.Tag = "basic";
+            this.groupBasic.Text = "Nhập Thông Tin";
+            // 
+            // txtStudentCodeBasic
+            // 
+            this.txtStudentCodeBasic.Location = new System.Drawing.Point(118, 44);
+            this.txtStudentCodeBasic.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txtStudentCodeBasic.Name = "txtStudentCodeBasic";
+            this.txtStudentCodeBasic.Size = new System.Drawing.Size(202, 20);
+            this.txtStudentCodeBasic.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(42, 46);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Mã Học Sinh";
             // 
             // groupBox2
             // 
@@ -231,6 +249,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -264,8 +283,10 @@
             this.Text = "TimKiemHocSinh";
             this.groupAdvance.ResumeLayout(false);
             this.groupAdvance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentCodeAdvance)).EndInit();
             this.groupBasic.ResumeLayout(false);
             this.groupBasic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtStudentCodeBasic)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -280,21 +301,21 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox studentName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.ComboBox studentGrade;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBasic;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.NumericUpDown txtStudentCodeBasic;
+        private System.Windows.Forms.NumericUpDown studentCodeAdvance;
+        private System.Windows.Forms.TextBox studentClass;
     }
 }

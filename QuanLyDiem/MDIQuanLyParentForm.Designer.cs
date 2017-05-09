@@ -45,11 +45,11 @@
             this.tìmKiếmHọcSinhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmGiáoViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inBảngĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.inBảngĐiểmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -183,6 +183,13 @@
             this.thốngKêToolStripMenuItem.Text = "Thống Kê";
             this.thốngKêToolStripMenuItem.Click += new System.EventHandler(this.thốngKêToolStripMenuItem_Click);
             // 
+            // inBảngĐiểmToolStripMenuItem
+            // 
+            this.inBảngĐiểmToolStripMenuItem.Name = "inBảngĐiểmToolStripMenuItem";
+            this.inBảngĐiểmToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.inBảngĐiểmToolStripMenuItem.Text = "In Bảng Điểm";
+            this.inBảngĐiểmToolStripMenuItem.Click += new System.EventHandler(this.inBảngĐiểmToolStripMenuItem_Click);
+            // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
@@ -205,13 +212,6 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // inBảngĐiểmToolStripMenuItem
-            // 
-            this.inBảngĐiểmToolStripMenuItem.Name = "inBảngĐiểmToolStripMenuItem";
-            this.inBảngĐiểmToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.inBảngĐiểmToolStripMenuItem.Text = "In Bảng Điểm";
-            this.inBảngĐiểmToolStripMenuItem.Click += new System.EventHandler(this.inBảngĐiểmToolStripMenuItem_Click);
-            // 
             // MDIQuanLyParentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,6 +223,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIQuanLyParentForm";
             this.Text = "MDIQuanLyParentForm";
+            this.Load += new System.EventHandler(this.MDIQuanLyParentForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

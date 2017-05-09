@@ -18,11 +18,12 @@ namespace QuanLyDiem.Presentation
             this.radioButton1.Checked = true;
             this.groupBasic.Show();
             this.groupAdvance.Hide();
+            studentGrade.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            var radButton = ((RadioButton) sender);
+            var radButton = ((RadioButton)sender);
             if (radButton.Checked)
             {
                 if (radButton.Tag.ToString() == "basic")
@@ -37,5 +38,29 @@ namespace QuanLyDiem.Presentation
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+            if(radioButton1.Checked)
+            {
+
+                string query = "SELECT * FROM HOC_SINH WHERE MaHocSinh ='" + txtStudentCodeBasic.Text + "';";
+                dataGridView1.DataSource = da.select(query);
+            }
+            else
+            {
+                string theDate = date.Value.ToString("dd/MM/yyyy");
+                string query = "SELECT * FROM HOC_SINH,LOP WHERE HOC_SINH.MaLop = LOP.Malop and (NgaySinh ='" + theDate + "' or TenHocSinh ='" + studentName.Text + "' or LOP.TenLop ='" + studentClass.Text + "' or MaHocSinh ='" + studentCodeAdvance.Text + "' or LOP.khoi = '"+studentGrade.Text+"') ;";
+                dataGridView1.DataSource = da.select(query);
+            }
+            if(dataGridView1.RowCount == 1)
+            {
+                MessageBox.Show("Không có học sinh !!");
+            }
+        }
+      
+
+     
     }
 }
