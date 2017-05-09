@@ -104,7 +104,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic\MonHocBL.cs" />
     <Compile Include="Data Layer\DataAccess.cs" />
+    <Compile Include="Entity\MonHoc.cs" />
     <Compile Include="MDIQuanLyParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +136,12 @@
     </Compile>
     <Compile Include="Presentation\FormNhapDiem.Designer.cs">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormQuanLyDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormQuanLyDiem.Designer.cs">
+      <DependentUpon>FormQuanLyDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FormThongKe.cs">
       <SubType>Form</SubType>
@@ -188,6 +196,9 @@
     <EmbeddedResource Include="Presentation\FormNhapDiem.resx">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormQuanLyDiem.resx">
+      <DependentUpon>FormQuanLyDiem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,10 +241,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business Logic\" />
-    <Folder Include="Entity\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>

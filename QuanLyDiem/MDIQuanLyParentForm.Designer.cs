@@ -101,7 +101,7 @@
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
-            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+           
             // 
             // đăngXuấtToolStripMenuItem
             // 
@@ -224,6 +224,7 @@
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIQuanLyParentForm";
             this.Text = "MDIQuanLyParentForm";
+            this.Load += new System.EventHandler(this.MDIQuanLyParentForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

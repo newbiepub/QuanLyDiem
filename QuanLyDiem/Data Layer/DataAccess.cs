@@ -12,29 +12,27 @@ namespace QuanLyDiem.Data_Layer
     class DataAccess
     {
         private SqlDataAdapter dataAdapter;
-        private SqlConnection connection;
+         SqlConnection con = new System.Data.SqlClient.SqlConnection(@"Data Source=(LocalDB)\v11.0; AttachDbFilename=|DataDirectory|\db.mdf; Integrated Security=True; Connect Timeout=30;");
+           
+           
 
         public DataAccess()
         {
             dataAdapter = new SqlDataAdapter();
-            connection = new SqlConnection(ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString);
+         
+           
         }
 
         private SqlConnection openConnection()
         {
-            if (this.connection.State == ConnectionState.Broken || this.connection.State == ConnectionState.Closed)
+       
+            if (con.State == ConnectionState.Broken || con.State == ConnectionState.Closed)
             {
-                this.connection.Open();
+                con.Open();
             }
-            return this.connection;
+            return con;
         }
-
-        private void closeConnection()
-        {
-            this.connection.Close();
-        }
-
-        public DataTable select(String query, SqlParameter[] pr)
+        public DataTable select(String query)
         {
             SqlCommand command = new SqlCommand();
             DataTable dt = new DataTable();
@@ -42,7 +40,7 @@ namespace QuanLyDiem.Data_Layer
             {
                 command.Connection = this.openConnection();
                 command.CommandText = query;
-                command.Parameters.AddRange(pr);
+               
                 dataAdapter.SelectCommand = command;
                 command.ExecuteNonQuery();
                 dataAdapter.Fill(dt);
@@ -52,6 +50,7 @@ namespace QuanLyDiem.Data_Layer
                 Console.Write("Error at Select Query - {0}", query);
                 throw;
             }
+            con.Close();
             return dt;
         }
 
@@ -72,6 +71,7 @@ namespace QuanLyDiem.Data_Layer
                 return false;
                 throw;
             }
+            con.Close();
             return true;
         }
 
@@ -92,6 +92,7 @@ namespace QuanLyDiem.Data_Layer
                 return false;
                 throw;
             }
+            con.Close();
             return true;
         }
 
@@ -112,6 +113,7 @@ namespace QuanLyDiem.Data_Layer
                 return false;
                 throw;
             }
+            con.Close();
             return true;
         }
     }

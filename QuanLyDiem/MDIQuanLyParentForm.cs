@@ -154,10 +154,13 @@ namespace QuanLyDiem
             formInBangDiem.Show(this);
         }
 
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MDIQuanLyParentForm_Load(object sender, EventArgs e)
         {
-            FormDoiMatKhau FormDoiMatKhau = new FormDoiMatKhau();
-            FormDoiMatKhau.Show(this);
+            //FormDangNhap dn = new FormDangNhap();
+            //if(dn.ShowDialog()!= DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}
         }
     }
 }
