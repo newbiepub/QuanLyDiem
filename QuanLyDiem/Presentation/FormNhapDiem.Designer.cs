@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.Columns.GridColumn column_hocki;
+            this.edt_cuoiki = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -36,7 +38,7 @@
             this.column_mieng = new DevExpress.XtraGrid.Columns.GridColumn();
             this.edit_mieng = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.column_giuaki = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.column_hocki = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.edt_giuaki = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,18 +58,36 @@
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            column_hocki = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_cuoiki)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_mieng)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_giuaki)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // column_hocki
+            // 
+            column_hocki.Caption = "Học Kì";
+            column_hocki.ColumnEdit = this.edt_cuoiki;
+            column_hocki.FieldName = "cuoiki";
+            column_hocki.Name = "column_hocki";
+            column_hocki.Visible = true;
+            column_hocki.VisibleIndex = 2;
+            // 
+            // edt_cuoiki
+            // 
+            this.edt_cuoiki.AutoHeight = false;
+            this.edt_cuoiki.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.edt_cuoiki.Name = "edt_cuoiki";
             // 
             // panel1
             // 
@@ -106,7 +126,9 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.edit_mieng});
+            this.edit_mieng,
+            this.edt_giuaki,
+            this.edt_cuoiki});
             this.gridControl1.Size = new System.Drawing.Size(697, 193);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -118,7 +140,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.column_mieng,
             this.column_giuaki,
-            this.column_hocki});
+            column_hocki});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -130,6 +152,7 @@
             // 
             this.column_mieng.Caption = "Miệng";
             this.column_mieng.ColumnEdit = this.edit_mieng;
+            this.column_mieng.FieldName = "mieng";
             this.column_mieng.Name = "column_mieng";
             this.column_mieng.Visible = true;
             this.column_mieng.VisibleIndex = 0;
@@ -137,21 +160,23 @@
             // edit_mieng
             // 
             this.edit_mieng.AutoHeight = false;
+            this.edit_mieng.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.edit_mieng.Name = "edit_mieng";
             // 
             // column_giuaki
             // 
             this.column_giuaki.Caption = "Giữa Kì";
+            this.column_giuaki.ColumnEdit = this.edt_giuaki;
+            this.column_giuaki.FieldName = "giuaki";
             this.column_giuaki.Name = "column_giuaki";
             this.column_giuaki.Visible = true;
             this.column_giuaki.VisibleIndex = 1;
             // 
-            // column_hocki
+            // edt_giuaki
             // 
-            this.column_hocki.Caption = "Học Kì";
-            this.column_hocki.Name = "column_hocki";
-            this.column_hocki.Visible = true;
-            this.column_hocki.VisibleIndex = 2;
+            this.edt_giuaki.AutoHeight = false;
+            this.edt_giuaki.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.edt_giuaki.Name = "edt_giuaki";
             // 
             // tileView1
             // 
@@ -340,12 +365,14 @@
             this.Name = "FormNhapDiem";
             this.Text = "FormNhapDiem";
             this.Load += new System.EventHandler(this.FormNhapDiem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.edt_cuoiki)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edit_mieng)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.edt_giuaki)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -383,10 +410,11 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn column_mieng;
         private DevExpress.XtraGrid.Columns.GridColumn column_giuaki;
-        private DevExpress.XtraGrid.Columns.GridColumn column_hocki;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox4;
         private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edit_mieng;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_giuaki;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_cuoiki;
     }
 }
