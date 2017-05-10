@@ -21,7 +21,7 @@ namespace QuanLyDiem.Presentation
             this.groupAdvance.Hide();
             studentGrade.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-
+        Data_Layer.DataAccess da = new Data_Layer.DataAccess();
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             var radButton = ((RadioButton)sender);
@@ -42,25 +42,55 @@ namespace QuanLyDiem.Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+            string query = "";
             if(radioButton1.Checked)
             {
 
-                string query = "select * from HOC_SINH where MaHocSinh=@mahocsinh;";
+                query = "select * from HOC_SINH where MaHocSinh=@mahocsinh;";
                 SqlParameter [] pr =
                 {
-                    new SqlParameter("@mahocsinh", txtStudentCodeBasic.Text), 
+                    new SqlParameter("@mahocsinh", txtStudentCodeBasic.Value), 
                 };
                 dataGridView1.DataSource = da.select(query, pr);
             }
             else
             {
-                string theDate = date.Value.ToString("dd/MM/yyyy");
-                string query =
-                    "select * from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop and (NgaySinh=@ngaysinh or TenHocSinh=@tenhocsinh or LOP.TenLop=@tenlop or MaHocSinh=@mahocsinh or LOP.khoi=@khoi);";
+               
+                //querry ten
+                string tenHocSinh = "";
+                if( studentName.Text != "")
+                {
+                    tenHocSinh = "and TenHocSinh=@tenhocsinh";
+                }
+                //querry ma
+                string maHocSinh = "";
+                if (studentCodeAdvance.Value != 0)
+                {
+                    maHocSinh = "and MaHocSinh=@mahocsinh";
+                }
+                //querry khoi
+                string khoi = "";
+                if (studentGrade.Text != "Không")
+                {
+                    khoi = "and LOP.khoi=@khoi";
+                }
+                //querry Lop
+                string lop = "";
+                if (studentClass.Text != "Không")
+                {
+                    lop = "and LOP.TenLop=@tenlop";
+                }
+                //querry namsinh
+                string namSinh = "";
+                if (date.Value != 0)
+                {
+                    namSinh = "and year(NgaySinh)=@namsinh";
+                }
+                query =
+                    "select * from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop " + khoi + " " + lop + " " + tenHocSinh + " " + maHocSinh + " " + namSinh + "";
                 SqlParameter[] pr =
                 {
-                    new SqlParameter("@ngaysinh", theDate),
+                    new SqlParameter("@namsinh", date.Value),
                     new SqlParameter("@tenhocsinh", studentName.Text),
                     new SqlParameter("@tenlop", studentClass.Text),
                     new SqlParameter("@mahocsinh", studentCodeAdvance.Text),
@@ -70,7 +100,7 @@ namespace QuanLyDiem.Presentation
             }
             if(dataGridView1.RowCount == 1)
             {
-                MessageBox.Show("Không có học sinh !!");
+                MessageBox.Show("Không có hoc sinh !!!");
             }
         }
 
@@ -82,7 +112,28 @@ namespace QuanLyDiem.Presentation
             }
         }
 
-      
+        private void button2_Click(object sender, EventArgs e)
+        {
+            date.Value = 0;
+            studentName.Text = "";
+            studentGrade.Text = "Không";
+            studentCodeAdvance.Value = 0;
+            studentClass.Text = "Không";
+
+        }
+
+        private void TimKiemHocSinh_Load(object sender, EventArgs e)
+        {
+            string query = "select TenLop from LOP";
+            SqlParameter[] pr = { };
+            DataTable dataClass = da.select(query, pr);
+            dataClass.Rows.Add("Không");
+            studentClass.DataSource = dataClass;
+            studentClass.DisplayMember = "TenLop";
+            studentClass.Text = "Không";
+            
+        }
+
 
      
     }
