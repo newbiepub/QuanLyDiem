@@ -45,18 +45,18 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cb_hocki = new System.Windows.Forms.ComboBox();
             this.cb_monhoc = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_khoi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cb_tenhocsinh = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cb_lop = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             column_hocki = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.edt_cuoiki)).BeginInit();
@@ -212,7 +212,7 @@
             // 
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.cb_hocki);
             this.groupBox4.Controls.Add(this.cb_monhoc);
             this.groupBox4.Location = new System.Drawing.Point(395, 44);
             this.groupBox4.Name = "groupBox4";
@@ -239,13 +239,13 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Môn";
             // 
-            // comboBox4
+            // cb_hocki
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(70, 48);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(220, 21);
-            this.comboBox4.TabIndex = 1;
+            this.cb_hocki.FormattingEnabled = true;
+            this.cb_hocki.Location = new System.Drawing.Point(70, 48);
+            this.cb_hocki.Name = "cb_hocki";
+            this.cb_hocki.Size = new System.Drawing.Size(220, 21);
+            this.cb_hocki.TabIndex = 1;
             // 
             // cb_monhoc
             // 
@@ -284,12 +284,12 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cb_khoi);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.cb_tenhocsinh);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cb_lop);
             this.groupBox3.Location = new System.Drawing.Point(12, 44);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(341, 110);
@@ -297,13 +297,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Học Sinh";
             // 
-            // comboBox1
+            // cb_khoi
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(100, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(220, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cb_khoi.FormattingEnabled = true;
+            this.cb_khoi.Location = new System.Drawing.Point(100, 19);
+            this.cb_khoi.Name = "cb_khoi";
+            this.cb_khoi.Size = new System.Drawing.Size(220, 21);
+            this.cb_khoi.TabIndex = 1;
             // 
             // label1
             // 
@@ -314,13 +314,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Khối";
             // 
-            // comboBox3
+            // cb_tenhocsinh
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(100, 73);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(220, 21);
-            this.comboBox3.TabIndex = 1;
+            this.cb_tenhocsinh.FormattingEnabled = true;
+            this.cb_tenhocsinh.Location = new System.Drawing.Point(100, 73);
+            this.cb_tenhocsinh.Name = "cb_tenhocsinh";
+            this.cb_tenhocsinh.Size = new System.Drawing.Size(220, 21);
+            this.cb_tenhocsinh.TabIndex = 1;
             // 
             // label2
             // 
@@ -340,13 +340,13 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Tên Học Sinh";
             // 
-            // comboBox2
+            // cb_lop
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(100, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(220, 21);
-            this.comboBox2.TabIndex = 1;
+            this.cb_lop.FormattingEnabled = true;
+            this.cb_lop.Location = new System.Drawing.Point(100, 46);
+            this.cb_lop.Name = "cb_lop";
+            this.cb_lop.Size = new System.Drawing.Size(220, 21);
+            this.cb_lop.TabIndex = 1;
             // 
             // label4
             // 
@@ -393,11 +393,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cb_tenhocsinh;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cb_lop;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_khoi;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
@@ -411,7 +411,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn column_mieng;
         private DevExpress.XtraGrid.Columns.GridColumn column_giuaki;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cb_hocki;
         private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edit_mieng;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_giuaki;

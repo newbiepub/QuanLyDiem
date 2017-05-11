@@ -10,20 +10,21 @@ using DataTable = System.Data.DataTable;
 
 namespace QuanLyDiem.Business_Logic
 {
-    class MonHocBL
+    class KhoiBL
     {
         private DataAccess db;
 
-        public MonHocBL()
+        public KhoiBL()
         {
             db = new DataAccess();
         }
 
-        public DataTable getAllMonHoc()
+        public DataTable getKhoiLopHocSinh()
         {
-            String query = "select * from mon_hoc";
+            String query = "select lop.MaLop, TenLop,khoiId, KHOI.Khoi, hoc_sinh.TenHocSinh, hoc_sinh.MaHocSinh from KHOI" +
+                           " inner join LOP on KHOI.khoiId=LOP.Khoi inner join HOC_SINH on LOP.MaLop=HOC_SINH.MaLop";
             SqlParameter[] pr = new SqlParameter[0];
-            return db.selectProc(query, pr);
+            return db.select(query, pr);
         }
     }
 }

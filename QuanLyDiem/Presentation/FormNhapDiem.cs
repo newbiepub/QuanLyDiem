@@ -12,8 +12,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using Json;
 using QuanLyDiem.Business_Logic;
 
-namespace QuanLyDiem.Presentation
-{
+namespace QuanLyDiem.Presentation{
     public partial class FormNhapDiem : Form
     {
 
@@ -37,19 +36,67 @@ namespace QuanLyDiem.Presentation
         }
         private MonHocBL mongoHocBl;
         private static DataTable dtDiem;
+        private KhoiBL khoiBl;
+        private static BindingSource bsKhoi;
         public FormNhapDiem()
         {
             InitializeComponent();
             mongoHocBl = new MonHocBL();
+            khoiBl = new KhoiBL();
             dtDiem = new DataTable();
+            bsKhoi = new BindingSource();
         }
 
-        private void FormNhapDiem_Load(object sender, EventArgs e)
-        { 
+        private DataRow dtDiemAddRow(DataTable dtDiem, String hocki, String mahk)
+        {
+            DataRow dataRow = dtDiem.NewRow();
+            dataRow.BeginEdit();
+            dataRow["hocki"] = hocki;
+            dataRow["mahk"] = mahk;
+            dataRow.EndEdit();
+            return dataRow;
+        }
 
+        private void loadMonHoc()
+        {
             this.cb_monhoc.ValueMember = "mamon";
             this.cb_monhoc.DisplayMember = "tenmon";
             this.cb_monhoc.DataSource = mongoHocBl.getAllMonHoc();
+        }
+
+        private void loadHocKi()
+        {
+            DataTable dtHocKi = new DataTable();
+            dtHocKi.Columns.Add(new DataColumn("hocki"));
+            dtHocKi.Columns.Add(new DataColumn("mahk"));
+            dtHocKi.Rows.Add(this.dtDiemAddRow(dtHocKi, "Học Kì 1", "hk1"));
+            dtHocKi.Rows.Add(this.dtDiemAddRow(dtHocKi, "Học Kì 2", "hk2"));
+            this.cb_hocki.ValueMember = "mahk";
+            this.cb_hocki.DisplayMember = "hocki";
+            this.cb_hocki.DataSource = dtHocKi;
+        }
+
+        private void loadInfoHocSinh()
+        {
+            DataTable dtInfo = khoiBl.getKhoiLopHocSinh();
+            bsKhoi.DataSource = dtInfo;
+            this.cb_khoi.ValueMember = "khoiId";
+            this.cb_khoi.DisplayMember = "Khoi";
+            this.cb_lop.ValueMember = "MaLop";
+            this.cb_lop.DisplayMember = "TenLop";
+            this.cb_tenhocsinh.ValueMember = "MaHocSinh";
+            this.cb_tenhocsinh.DisplayMember = "TenHocSinh";
+            this.cb_khoi.DataBindings.Add("SelectedValue", bsKhoi, "khoiId");
+            this.cb_khoi.DataSource = dtInfo;
+            this.cb_lop.DataBindings.Add("SelectedValue", bsKhoi, "MaLop");
+            this.cb_lop.DataSource = dtInfo;
+            this.cb_tenhocsinh.DataBindings.Add("SelectedValue", bsKhoi, "MaHocSinh");
+            this.cb_tenhocsinh.DataSource = dtInfo;}
+
+        private void FormNhapDiem_Load(object sender, EventArgs e)
+        { 
+            this.loadHocKi();this.loadMonHoc();
+            this.loadInfoHocSinh();
             dtDiem.Columns.Add(new DataColumn("mieng"));
             dtDiem.Columns.Add(new DataColumn("giuaki"));
             dtDiem.Columns.Add(new DataColumn("cuoiki"));
@@ -68,11 +115,11 @@ namespace QuanLyDiem.Presentation
                     new Diem
                     {
                         diemMieng = mieng,
-                        diemGiuaKi = giuaki,diemCuoiKi = cuoiki
+                        diemGiuaKi = giuaki,
+                        diemCuoiKi = cuoiki
                     },
                 };
                 string json = new JavaScriptSerializer().Serialize(obj);
-                MessageBox.Show(json, "Serialized");
             }
         }
     }
