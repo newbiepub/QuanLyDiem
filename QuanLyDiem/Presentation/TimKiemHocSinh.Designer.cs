@@ -31,6 +31,7 @@
             this.groupAdvance = new System.Windows.Forms.GroupBox();
             this.date = new System.Windows.Forms.NumericUpDown();
             this.studentCodeAdvance = new System.Windows.Forms.NumericUpDown();
+            this.studentClass = new System.Windows.Forms.ComboBox();
             this.studentGrade = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.groupBasic = new System.Windows.Forms.GroupBox();
             this.txtStudentCodeBasic = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
-            this.studentClass = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -105,6 +105,17 @@
             this.studentCodeAdvance.Size = new System.Drawing.Size(202, 20);
             this.studentCodeAdvance.TabIndex = 4;
             this.studentCodeAdvance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
+            // studentClass
+            // 
+            this.studentClass.FormattingEnabled = true;
+            this.studentClass.Location = new System.Drawing.Point(116, 121);
+            this.studentClass.Name = "studentClass";
+            this.studentClass.Size = new System.Drawing.Size(203, 21);
+            this.studentClass.Sorted = true;
+            this.studentClass.TabIndex = 3;
+            this.studentClass.Text = "Không";
+            this.studentClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // studentGrade
             // 
@@ -181,9 +192,9 @@
             // 
             this.groupBasic.Controls.Add(this.txtStudentCodeBasic);
             this.groupBasic.Controls.Add(this.label10);
-            this.groupBasic.Location = new System.Drawing.Point(23, 194);
+            this.groupBasic.Location = new System.Drawing.Point(23, 24);
             this.groupBasic.Name = "groupBasic";
-            this.groupBasic.Size = new System.Drawing.Size(428, 61);
+            this.groupBasic.Size = new System.Drawing.Size(428, 231);
             this.groupBasic.TabIndex = 1;
             this.groupBasic.TabStop = false;
             this.groupBasic.Tag = "basic";
@@ -210,17 +221,6 @@
             this.label10.Size = new System.Drawing.Size(69, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Mã Học Sinh";
-            // 
-            // studentClass
-            // 
-            this.studentClass.FormattingEnabled = true;
-            this.studentClass.Location = new System.Drawing.Point(116, 121);
-            this.studentClass.Name = "studentClass";
-            this.studentClass.Size = new System.Drawing.Size(203, 21);
-            this.studentClass.Sorted = true;
-            this.studentClass.TabIndex = 3;
-            this.studentClass.Text = "Không";
-            this.studentClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // groupBox2
             // 
@@ -268,7 +268,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Tìm Kiếm";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Find);
             // 
             // groupBox1
             // 
@@ -283,9 +283,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(850, 175);
+            this.dataGridView1.Size = new System.Drawing.Size(856, 181);
             this.dataGridView1.TabIndex = 0;
             // 
             // button2
@@ -296,7 +297,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Nhập Lại";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Reset);
             // 
             // TimKiemHocSinh
             // 

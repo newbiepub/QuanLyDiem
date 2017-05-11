@@ -40,13 +40,13 @@ namespace QuanLyDiem.Presentation
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Find(object sender, EventArgs e)
         {
             string query = "";
             if(radioButton1.Checked)
             {
 
-                query = "select * from HOC_SINH where MaHocSinh=@mahocsinh;";
+                query = "select MaHocSinh,TenHocSinh, NgaySinh,LOP.TenLop, GioiTinh, HOC_SINH.MaLop, DiaChi, Khoi, GhiChu from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop and MaHocSinh=@mahocsinh;";
                 SqlParameter [] pr =
                 {
                     new SqlParameter("@mahocsinh", txtStudentCodeBasic.Value), 
@@ -87,7 +87,7 @@ namespace QuanLyDiem.Presentation
                     namSinh = "and year(NgaySinh)=@namsinh";
                 }
                 query =
-                    "select * from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop " + khoi + " " + lop + " " + tenHocSinh + " " + maHocSinh + " " + namSinh + "";
+                    "select  MaHocSinh,TenHocSinh, NgaySinh,LOP.TenLop, GioiTinh, HOC_SINH.MaLop, DiaChi, Khoi, GhiChu from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop " + khoi + " " + lop + " " + tenHocSinh + " " + maHocSinh + " " + namSinh + "";
                 SqlParameter[] pr =
                 {
                     new SqlParameter("@namsinh", date.Value),
@@ -98,6 +98,17 @@ namespace QuanLyDiem.Presentation
                 };
                 dataGridView1.DataSource = da.select(query, pr);
             }
+
+
+            dataGridView1.Columns["MaHocSinh"].HeaderText = "Mã Hoc Sinh";
+            dataGridView1.Columns["TenHocSinh"].HeaderText = "Tên Học Sinh";
+            dataGridView1.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
+            dataGridView1.Columns["TenLop"].HeaderText = "Tên Lớp";
+            dataGridView1.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            dataGridView1.Columns["MaLop"].HeaderText = "Mã Lớp";
+            dataGridView1.Columns["DiaChi"].HeaderText = "Địa Chỉ";
+            dataGridView1.Columns["Khoi"].HeaderText = "Khối";
+            dataGridView1.Columns["GhiChu"].HeaderText = "Ghi Chú";
             if(dataGridView1.RowCount == 1)
             {
                 MessageBox.Show("Không có hoc sinh !!!");
@@ -108,16 +119,17 @@ namespace QuanLyDiem.Presentation
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                button1_Click(null,null);
+                Find(null,null);
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Reset(object sender, EventArgs e)
         {
             date.Value = 0;
             studentName.Text = "";
             studentGrade.Text = "Không";
             studentCodeAdvance.Value = 0;
+            txtStudentCodeBasic.Value = 0;
             studentClass.Text = "Không";
 
         }
