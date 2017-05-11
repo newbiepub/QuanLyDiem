@@ -169,9 +169,9 @@
             // 
             this.groupBoxBasic.Controls.Add(this.label8);
             this.groupBoxBasic.Controls.Add(this.teacherCodeBasic);
-            this.groupBoxBasic.Location = new System.Drawing.Point(38, 223);
+            this.groupBoxBasic.Location = new System.Drawing.Point(38, 38);
             this.groupBoxBasic.Name = "groupBoxBasic";
-            this.groupBoxBasic.Size = new System.Drawing.Size(390, 10);
+            this.groupBoxBasic.Size = new System.Drawing.Size(390, 195);
             this.groupBoxBasic.TabIndex = 0;
             this.groupBoxBasic.TabStop = false;
             this.groupBoxBasic.Text = "Nhập Thông Tin";
