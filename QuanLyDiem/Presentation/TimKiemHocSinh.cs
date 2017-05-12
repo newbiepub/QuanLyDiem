@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,7 +20,7 @@ namespace QuanLyDiem.Presentation
             this.groupAdvance.Hide();
             studentGrade.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+        Business_Logic.TimKiemBL timKiemBL = new Business_Logic.TimKiemBL();
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             var radButton = ((RadioButton)sender);
@@ -45,58 +44,13 @@ namespace QuanLyDiem.Presentation
             string query = "";
             if(radioButton1.Checked)
             {
-
-                query = "select MaHocSinh,TenHocSinh, NgaySinh,LOP.TenLop, GioiTinh, HOC_SINH.MaLop, DiaChi, Khoi, GhiChu from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop and MaHocSinh=@mahocsinh;";
-                SqlParameter [] pr =
-                {
-                    new SqlParameter("@mahocsinh", txtStudentCodeBasic.Value), 
-                };
-                dataGridView1.DataSource = da.select(query, pr);
+                dataGridView1.DataSource =timKiemBL.FindStudentByID((Int32)txtStudentCodeBasic.Value);
             }
             else
             {
                
-                //querry ten
-                string tenHocSinh = "";
-                if( studentName.Text != "")
-                {
-                    tenHocSinh = "and TenHocSinh=@tenhocsinh";
-                }
-                //querry ma
-                string maHocSinh = "";
-                if (studentCodeAdvance.Value != 0)
-                {
-                    maHocSinh = "and MaHocSinh=@mahocsinh";
-                }
-                //querry khoi
-                string khoi = "";
-                if (studentGrade.Text != "Không")
-                {
-                    khoi = "and LOP.khoi=@khoi";
-                }
-                //querry Lop
-                string lop = "";
-                if (studentClass.Text != "Không")
-                {
-                    lop = "and LOP.TenLop=@tenlop";
-                }
-                //querry namsinh
-                string namSinh = "";
-                if (date.Value != 0)
-                {
-                    namSinh = "and year(NgaySinh)=@namsinh";
-                }
-                query =
-                    "select  MaHocSinh,TenHocSinh, NgaySinh,LOP.TenLop, GioiTinh, HOC_SINH.MaLop, DiaChi, Khoi, GhiChu from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop " + khoi + " " + lop + " " + tenHocSinh + " " + maHocSinh + " " + namSinh + "";
-                SqlParameter[] pr =
-                {
-                    new SqlParameter("@namsinh", date.Value),
-                    new SqlParameter("@tenhocsinh", studentName.Text),
-                    new SqlParameter("@tenlop", studentClass.Text),
-                    new SqlParameter("@mahocsinh", studentCodeAdvance.Text),
-                    new SqlParameter("@khoi", studentGrade.Text),
-                };
-                dataGridView1.DataSource = da.select(query, pr);
+               
+                dataGridView1.DataSource =timKiemBL.FindStudentAdvance((Int32)studentCodeAdvance.Value, (Int32)year.Value,studentName.Text,studentClass.Text, studentGrade.Text);
             }
 
 
@@ -125,7 +79,7 @@ namespace QuanLyDiem.Presentation
 
         private void Reset(object sender, EventArgs e)
         {
-            date.Value = 0;
+            year.Value = 0;
             studentName.Text = "";
             studentGrade.Text = "Không";
             studentCodeAdvance.Value = 0;
@@ -136,9 +90,8 @@ namespace QuanLyDiem.Presentation
 
         private void TimKiemHocSinh_Load(object sender, EventArgs e)
         {
-            string query = "select TenLop from LOP";
-            SqlParameter[] pr = { };
-            DataTable dataClass = da.select(query, pr);
+            Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
+            DataTable dataClass = lopBl.getLop();
             dataClass.Rows.Add("Không");
             studentClass.DataSource = dataClass;
             studentClass.DisplayMember = "TenLop";

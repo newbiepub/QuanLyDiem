@@ -21,9 +21,9 @@ namespace QuanLyDiem.Business_Logic
 
         public DataTable getAllMonHoc()
         {
-            String query = "select * from mon_hoc";
+            String query = "select TenMon from MON_HOC";
             SqlParameter[] pr = new SqlParameter[0];
-            return db.selectProc(query, pr);
+            return db.select(query, pr);
         }
     }
 }

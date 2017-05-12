@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBoxAdvance = new System.Windows.Forms.GroupBox();
+            this.teacherClass = new System.Windows.Forms.ComboBox();
+            this.subjectSpecialize = new System.Windows.Forms.ComboBox();
+            this.teacherCodeAdvance = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.teacherName = new System.Windows.Forms.TextBox();
@@ -40,20 +43,17 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBoxBasic = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.teacherCodeBasic = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.teacherCodeAdvance = new System.Windows.Forms.NumericUpDown();
-            this.subjectSpecialize = new System.Windows.Forms.ComboBox();
-            this.teacherClass = new System.Windows.Forms.ComboBox();
             this.Reset = new System.Windows.Forms.Button();
-            this.teacherCodeBasic = new System.Windows.Forms.NumericUpDown();
             this.groupBoxAdvance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAdvance)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBoxBasic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeBasic)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAdvance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeBasic)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxAdvance
@@ -72,6 +72,37 @@
             this.groupBoxAdvance.TabIndex = 0;
             this.groupBoxAdvance.TabStop = false;
             this.groupBoxAdvance.Text = "Nhập Thông Tin";
+            // 
+            // teacherClass
+            // 
+            this.teacherClass.FormattingEnabled = true;
+            this.teacherClass.Location = new System.Drawing.Point(127, 132);
+            this.teacherClass.Name = "teacherClass";
+            this.teacherClass.Size = new System.Drawing.Size(179, 21);
+            this.teacherClass.TabIndex = 3;
+            this.teacherClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
+            // subjectSpecialize
+            // 
+            this.subjectSpecialize.FormattingEnabled = true;
+            this.subjectSpecialize.Location = new System.Drawing.Point(127, 106);
+            this.subjectSpecialize.Name = "subjectSpecialize";
+            this.subjectSpecialize.Size = new System.Drawing.Size(179, 21);
+            this.subjectSpecialize.TabIndex = 3;
+            this.subjectSpecialize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
+            // teacherCodeAdvance
+            // 
+            this.teacherCodeAdvance.Location = new System.Drawing.Point(127, 55);
+            this.teacherCodeAdvance.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.teacherCodeAdvance.Name = "teacherCodeAdvance";
+            this.teacherCodeAdvance.Size = new System.Drawing.Size(179, 20);
+            this.teacherCodeAdvance.TabIndex = 2;
+            this.teacherCodeAdvance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // label4
             // 
@@ -185,6 +216,19 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Mã Giáo Viên";
             // 
+            // teacherCodeBasic
+            // 
+            this.teacherCodeBasic.Location = new System.Drawing.Point(121, 55);
+            this.teacherCodeBasic.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
+            this.teacherCodeBasic.Name = "teacherCodeBasic";
+            this.teacherCodeBasic.Size = new System.Drawing.Size(179, 20);
+            this.teacherCodeBasic.TabIndex = 2;
+            this.teacherCodeBasic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
@@ -203,37 +247,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(763, 171);
             this.dataGridView1.TabIndex = 0;
             // 
-            // teacherCodeAdvance
-            // 
-            this.teacherCodeAdvance.Location = new System.Drawing.Point(127, 55);
-            this.teacherCodeAdvance.Maximum = new decimal(new int[] {
-            100000,
-            0,
-            0,
-            0});
-            this.teacherCodeAdvance.Name = "teacherCodeAdvance";
-            this.teacherCodeAdvance.Size = new System.Drawing.Size(179, 20);
-            this.teacherCodeAdvance.TabIndex = 2;
-            this.teacherCodeAdvance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
-            // 
-            // subjectSpecialize
-            // 
-            this.subjectSpecialize.FormattingEnabled = true;
-            this.subjectSpecialize.Location = new System.Drawing.Point(127, 106);
-            this.subjectSpecialize.Name = "subjectSpecialize";
-            this.subjectSpecialize.Size = new System.Drawing.Size(179, 21);
-            this.subjectSpecialize.TabIndex = 3;
-            this.subjectSpecialize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
-            // 
-            // teacherClass
-            // 
-            this.teacherClass.FormattingEnabled = true;
-            this.teacherClass.Location = new System.Drawing.Point(127, 132);
-            this.teacherClass.Name = "teacherClass";
-            this.teacherClass.Size = new System.Drawing.Size(179, 21);
-            this.teacherClass.TabIndex = 3;
-            this.teacherClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
-            // 
             // Reset
             // 
             this.Reset.Location = new System.Drawing.Point(681, 167);
@@ -243,19 +256,6 @@
             this.Reset.Text = "Nhập Lại";
             this.Reset.UseVisualStyleBackColor = true;
             this.Reset.Click += new System.EventHandler(this.Reset_Click);
-            // 
-            // teacherCodeBasic
-            // 
-            this.teacherCodeBasic.Location = new System.Drawing.Point(121, 55);
-            this.teacherCodeBasic.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.teacherCodeBasic.Name = "teacherCodeBasic";
-            this.teacherCodeBasic.Size = new System.Drawing.Size(179, 20);
-            this.teacherCodeBasic.TabIndex = 2;
-            this.teacherCodeBasic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // TimKiemGiaoVien
             // 
@@ -273,14 +273,14 @@
             this.Load += new System.EventHandler(this.TimKiemGiaoVien_Load);
             this.groupBoxAdvance.ResumeLayout(false);
             this.groupBoxAdvance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAdvance)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBoxBasic.ResumeLayout(false);
             this.groupBoxBasic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeBasic)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAdvance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherCodeBasic)).EndInit();
             this.ResumeLayout(false);
 
         }

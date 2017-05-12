@@ -34,15 +34,16 @@ namespace QuanLyDiem.Data_Layer
             this.connection.Close();
         }
 
-        public DataTable selectProc(String procName, SqlParameter[] pr)
+        public DataTable selectProc(string procName, SqlParameter[] pr)
         {
             SqlCommand cmd = new SqlCommand();
             DataTable dt = new DataTable();
             try
             {
                 cmd.Connection = this.openConnection();
-                cmd.CommandText = "KhoiLopHocSinh";
+                cmd.CommandText = procName;
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(pr);
                 dataAdapter.SelectCommand = cmd;
                 cmd.ExecuteNonQuery();
                 dataAdapter.Fill(dt);

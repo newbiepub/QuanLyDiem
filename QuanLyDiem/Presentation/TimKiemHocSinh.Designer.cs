@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupAdvance = new System.Windows.Forms.GroupBox();
-            this.date = new System.Windows.Forms.NumericUpDown();
+            this.year = new System.Windows.Forms.NumericUpDown();
             this.studentCodeAdvance = new System.Windows.Forms.NumericUpDown();
             this.studentClass = new System.Windows.Forms.ComboBox();
             this.studentGrade = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.groupAdvance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.date)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.year)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentCodeAdvance)).BeginInit();
             this.groupBasic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtStudentCodeBasic)).BeginInit();
@@ -61,7 +61,7 @@
             // 
             // groupAdvance
             // 
-            this.groupAdvance.Controls.Add(this.date);
+            this.groupAdvance.Controls.Add(this.year);
             this.groupAdvance.Controls.Add(this.studentCodeAdvance);
             this.groupAdvance.Controls.Add(this.studentClass);
             this.groupAdvance.Controls.Add(this.studentGrade);
@@ -79,19 +79,19 @@
             this.groupAdvance.Tag = "advance";
             this.groupAdvance.Text = "Nhập Thông Tin";
             // 
-            // date
+            // year
             // 
-            this.date.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.date.Location = new System.Drawing.Point(117, 147);
-            this.date.Maximum = new decimal(new int[] {
+            this.year.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.year.Location = new System.Drawing.Point(117, 147);
+            this.year.Maximum = new decimal(new int[] {
             3000,
             0,
             0,
             0});
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(202, 20);
-            this.date.TabIndex = 4;
-            this.date.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(202, 20);
+            this.year.TabIndex = 4;
+            this.year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // studentCodeAdvance
             // 
@@ -315,7 +315,7 @@
             this.Load += new System.EventHandler(this.TimKiemHocSinh_Load);
             this.groupAdvance.ResumeLayout(false);
             this.groupAdvance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.date)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.year)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentCodeAdvance)).EndInit();
             this.groupBasic.ResumeLayout(false);
             this.groupBasic.PerformLayout();
@@ -348,7 +348,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.NumericUpDown txtStudentCodeBasic;
         private System.Windows.Forms.NumericUpDown studentCodeAdvance;
-        private System.Windows.Forms.NumericUpDown date;
+        private System.Windows.Forms.NumericUpDown year;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox studentClass;
     }

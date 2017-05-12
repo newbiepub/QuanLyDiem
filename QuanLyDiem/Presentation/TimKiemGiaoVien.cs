@@ -21,6 +21,7 @@ namespace QuanLyDiem.Presentation
             this.groupBoxBasic.Show();
         }
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+        Business_Logic.TimKiemBL timKiemBl = new Business_Logic.TimKiemBL();
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             var radioButton = ((RadioButton) sender);
@@ -41,53 +42,12 @@ namespace QuanLyDiem.Presentation
             string query = "";
             if (radioButton1.Checked)
             {
-
-                query = "select MaGiaoVien,TenGiaoVien,NgaySinh,GioiTinh,LOP.MaLop,TenMon,TenLop,Khoi,SoDienThoai,DiaChi from DAY,GIAO_VIEN,LOP,MON_HOC where LOP.MaLop = DAY.MaLop and MaGiaoVien = MaGV and MON_HOC.MaMon = DAY.MaMon and MaGiaoVien=@magiaovien;";
-                SqlParameter[] pr =
-                {
-                    new SqlParameter("@magiaovien", teacherCodeBasic.Value), 
-                };
-                dataGridView1.DataSource = da.select(query, pr);
+                dataGridView1.DataSource = timKiemBl.FindTeacherByID((Int32)teacherCodeBasic.Value);
             }
             else
             {
 
-                //querry ten
-                string TenGiaoVien = "";
-                if (teacherName.Text != "")
-                {
-                    TenGiaoVien = "and TenGiaoVien=@tengiaovien";
-                }
-                //querry ma
-                string MaGiaoVien = "";
-                if (teacherCodeAdvance.Value != 0)
-                {
-                    MaGiaoVien = "and MaGiaoVien=@MaGiaoVien";
-                }
-                //querry mon
-                string mon = "";
-                if (subjectSpecialize.Text != "Không")
-                {
-                    mon = "and TenMon=@tenmonhoc";
-                }
-                //querry Lop
-                string lop = "";
-                if (teacherClass.Text != "Không")
-                {
-                    lop = "and LOP.TenLop=@tenlop";
-                }
-               
-                query =
-                    "select MaGiaoVien,TenGiaoVien,NgaySinh,GioiTinh,LOP.MaLop,TenMon,TenLop,Khoi,SoDienThoai,DiaChi from DAY,GIAO_VIEN,LOP,MON_HOC where LOP.MaLop = DAY.MaLop and MaGiaoVien = MaGV and MON_HOC.MaMon = DAY.MaMon" + mon + " " + lop + " " + TenGiaoVien + " " + MaGiaoVien + "";
-                SqlParameter[] pr =
-                {
-        
-                    new SqlParameter("@tengiaovien", teacherName.Text),
-                    new SqlParameter("@tenlop", teacherClass.Text),
-                    new SqlParameter("@MaGiaoVien", teacherCodeAdvance.Text),
-                    new SqlParameter("@tenmonhoc",subjectSpecialize.Text),
-                };
-                dataGridView1.DataSource = da.select(query, pr);
+                dataGridView1.DataSource = timKiemBl.FindTeacherAdvance((Int32)teacherCodeAdvance.Value, subjectSpecialize.Text, teacherName.Text,teacherClass.Text );
             }
 
 
@@ -110,16 +70,16 @@ namespace QuanLyDiem.Presentation
         private void TimKiemGiaoVien_Load(object sender, EventArgs e)
         {
             // Startup load Supject
-            string query = "select TenMon from MON_HOC";
-            SqlParameter[] pr = { };
-            DataTable data = da.select(query, pr);
+            Business_Logic.MonHocBL monHoc = new Business_Logic.MonHocBL();
+            DataTable data = monHoc.getAllMonHoc();
             data.Rows.Add("Không");
+           
             subjectSpecialize.DataSource = data;
             subjectSpecialize.DisplayMember = "TenMon";
             subjectSpecialize.Text = "Không";
             // Startup load class
-            query = "select TenLop from LOP";
-            data = da.select(query, pr);
+            Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
+             data = lopBl.getLop();
             data.Rows.Add("Không");
             teacherClass.DataSource = data;
             teacherClass.DisplayMember = "TenLop";
