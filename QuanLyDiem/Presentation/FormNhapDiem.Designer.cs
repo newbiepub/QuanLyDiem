@@ -1,4 +1,7 @@
-﻿﻿namespace QuanLyDiem.Presentation
+﻿﻿using DevExpress.DashboardCommon.Native;
+﻿using Microsoft.Win32;
+
+namespace QuanLyDiem.Presentation
 {
     partial class FormNhapDiem
     {
@@ -43,13 +46,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dtp_namhoc = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cb_hocki = new System.Windows.Forms.ComboBox();
             this.cb_monhoc = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_them = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cb_khoi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,7 +83,7 @@
             // 
             column_hocki.Caption = "Học Kì";
             column_hocki.ColumnEdit = this.edt_cuoiki;
-            column_hocki.FieldName = "cuoiki";
+            column_hocki.FieldName = "DiemCuoiKy";
             column_hocki.Name = "column_hocki";
             column_hocki.Visible = true;
             column_hocki.VisibleIndex = 2;
@@ -87,6 +92,7 @@
             // 
             this.edt_cuoiki.AutoHeight = false;
             this.edt_cuoiki.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.edt_cuoiki.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.edt_cuoiki.Name = "edt_cuoiki";
             // 
             // panel1
@@ -146,13 +152,14 @@
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView1_InvalidRowException);
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
             // 
             // column_mieng
             // 
             this.column_mieng.Caption = "Miệng";
             this.column_mieng.ColumnEdit = this.edit_mieng;
-            this.column_mieng.FieldName = "mieng";
+            this.column_mieng.FieldName = "DiemMieng";
             this.column_mieng.Name = "column_mieng";
             this.column_mieng.Visible = true;
             this.column_mieng.VisibleIndex = 0;
@@ -161,13 +168,15 @@
             // 
             this.edit_mieng.AutoHeight = false;
             this.edit_mieng.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.edit_mieng.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.edit_mieng.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.edit_mieng.Name = "edit_mieng";
             // 
             // column_giuaki
             // 
             this.column_giuaki.Caption = "Giữa Kì";
             this.column_giuaki.ColumnEdit = this.edt_giuaki;
-            this.column_giuaki.FieldName = "giuaki";
+            this.column_giuaki.FieldName = "DiemGiuaKy";
             this.column_giuaki.Name = "column_giuaki";
             this.column_giuaki.Visible = true;
             this.column_giuaki.VisibleIndex = 1;
@@ -176,6 +185,7 @@
             // 
             this.edt_giuaki.AutoHeight = false;
             this.edt_giuaki.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.edt_giuaki.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.edt_giuaki.Name = "edt_giuaki";
             // 
             // tileView1
@@ -197,7 +207,7 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btn_them);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -210,6 +220,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.dtp_namhoc);
+            this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.cb_hocki);
@@ -220,6 +232,22 @@
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lựa Chọn Môn Học";
+            // 
+            // dtp_namhoc
+            // 
+            this.dtp_namhoc.Location = new System.Drawing.Point(70, 73);
+            this.dtp_namhoc.Name = "dtp_namhoc";
+            this.dtp_namhoc.Size = new System.Drawing.Size(220, 20);
+            this.dtp_namhoc.TabIndex = 3;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(18, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Năm Học";
             // 
             // label6
             // 
@@ -254,6 +282,7 @@
             this.cb_monhoc.Name = "cb_monhoc";
             this.cb_monhoc.Size = new System.Drawing.Size(220, 21);
             this.cb_monhoc.TabIndex = 1;
+            this.cb_monhoc.SelectedIndexChanged += new System.EventHandler(this.cb_monhoc_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -273,14 +302,15 @@
             this.button2.Text = "Nhập Lại";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_them
             // 
-            this.button1.Location = new System.Drawing.Point(57, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Thêm ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_them.Location = new System.Drawing.Point(57, 191);
+            this.btn_them.Name = "btn_them";
+            this.btn_them.Size = new System.Drawing.Size(75, 23);
+            this.btn_them.TabIndex = 5;
+            this.btn_them.Text = "Thêm ";
+            this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // groupBox3
             // 
@@ -304,6 +334,7 @@
             this.cb_khoi.Name = "cb_khoi";
             this.cb_khoi.Size = new System.Drawing.Size(220, 21);
             this.cb_khoi.TabIndex = 1;
+            this.cb_khoi.SelectedIndexChanged += new System.EventHandler(this.cb_khoi_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -321,6 +352,7 @@
             this.cb_tenhocsinh.Name = "cb_tenhocsinh";
             this.cb_tenhocsinh.Size = new System.Drawing.Size(220, 21);
             this.cb_tenhocsinh.TabIndex = 1;
+            this.cb_tenhocsinh.SelectedIndexChanged += new System.EventHandler(this.cb_tenhocsinh_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -347,6 +379,7 @@
             this.cb_lop.Name = "cb_lop";
             this.cb_lop.Size = new System.Drawing.Size(220, 21);
             this.cb_lop.TabIndex = 1;
+            this.cb_lop.SelectedIndexChanged += new System.EventHandler(this.cb_lop_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -402,7 +435,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cb_monhoc;
@@ -416,5 +449,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edit_mieng;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_giuaki;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_cuoiki;
+        private System.Windows.Forms.DateTimePicker dtp_namhoc;
+        private System.Windows.Forms.Label label7;
     }
 }
