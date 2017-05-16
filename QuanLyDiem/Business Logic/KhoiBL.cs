@@ -21,10 +21,26 @@ namespace QuanLyDiem.Business_Logic
 
         public DataTable getKhoiLopHocSinh()
         {
-            String query = "select lop.MaLop, TenLop,khoiId, KHOI.Khoi, hoc_sinh.TenHocSinh, hoc_sinh.MaHocSinh from KHOI" +
-                           " inner join LOP on KHOI.khoiId=LOP.Khoi inner join HOC_SINH on LOP.MaLop=HOC_SINH.MaLop";
             SqlParameter[] pr = new SqlParameter[0];
-            return db.select(query, pr);
+            return db.selectProc("getAllKhoi", pr);
+        }
+
+        public DataTable getAllLopFromKhoi(String makhoi)
+        {
+            SqlParameter[] pr =
+            {
+                new SqlParameter("@makhoi", makhoi),
+            };
+            return db.selectProc("getAllLopTheoKhoi", pr);
+        }
+
+        public DataTable getAllHocSinhFromLop(String malop)
+        {
+            SqlParameter[] pr =
+            {
+                new SqlParameter("@malop", malop),
+            };
+            return db.selectProc("getAllHocSinhTheoLop", pr);
         }
     }
 }
