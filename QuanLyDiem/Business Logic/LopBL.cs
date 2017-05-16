@@ -18,5 +18,11 @@ namespace QuanLyDiem.Business_Logic
             SqlParameter[] pr = new SqlParameter[0];
             return da.select(query, pr);
         }
+        public DataTable getLopByKhoi(int Khoi)
+        {
+            String query = "select TenLop from LOP where Khoi = '"+Khoi+"'";
+            SqlParameter[] pr = new SqlParameter[0];
+            return da.select(query, pr);
+        }
     }
 }

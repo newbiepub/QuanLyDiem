@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.studentDate = new System.Windows.Forms.DateTimePicker();
+            this.studentClass = new System.Windows.Forms.ComboBox();
+            this.studentGrade = new System.Windows.Forms.ComboBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.sexFemale = new System.Windows.Forms.RadioButton();
+            this.sexMale = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.studentAddress = new System.Windows.Forms.TextBox();
+            this.studentName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_mahs = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -56,78 +56,154 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.studentDate);
+            this.panel1.Controls.Add(this.studentClass);
+            this.panel1.Controls.Add(this.studentGrade);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.btnThem);
+            this.panel1.Controls.Add(this.sexFemale);
+            this.panel1.Controls.Add(this.sexMale);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox3);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.studentAddress);
+            this.panel1.Controls.Add(this.studentName);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txt_mahs);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 276);
             this.panel1.TabIndex = 0;
             // 
-            // radioButton2
+            // studentDate
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(182, 113);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.studentDate.Location = new System.Drawing.Point(272, 54);
+            this.studentDate.Name = "studentDate";
+            this.studentDate.Size = new System.Drawing.Size(307, 20);
+            this.studentDate.TabIndex = 2;
             // 
-            // radioButton1
+            // studentClass
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(129, 113);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.studentClass.FormattingEnabled = true;
+            this.studentClass.Location = new System.Drawing.Point(272, 132);
+            this.studentClass.Name = "studentClass";
+            this.studentClass.Size = new System.Drawing.Size(307, 21);
+            this.studentClass.TabIndex = 5;
             // 
-            // textBox4
+            // studentGrade
             // 
-            this.textBox4.Location = new System.Drawing.Point(129, 164);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(134, 20);
-            this.textBox4.TabIndex = 1;
+            this.studentGrade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.studentGrade.FormattingEnabled = true;
+            this.studentGrade.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.studentGrade.Location = new System.Drawing.Point(272, 106);
+            this.studentGrade.Name = "studentGrade";
+            this.studentGrade.Size = new System.Drawing.Size(307, 21);
+            this.studentGrade.TabIndex = 5;
+            this.studentGrade.SelectedIndexChanged += new System.EventHandler(this.studentGrade_SelectedIndexChanged);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(504, 229);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 20);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Thoát";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Thoat);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(423, 229);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 20);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Nhập Lại";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.NhapLai);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(342, 229);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 20);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Sửa";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Sua);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(261, 229);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 20);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Xóa";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Xoa);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(180, 229);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 20);
+            this.btnThem.TabIndex = 4;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // sexFemale
+            // 
+            this.sexFemale.AutoSize = true;
+            this.sexFemale.Location = new System.Drawing.Point(325, 81);
+            this.sexFemale.Name = "sexFemale";
+            this.sexFemale.Size = new System.Drawing.Size(39, 17);
+            this.sexFemale.TabIndex = 3;
+            this.sexFemale.TabStop = true;
+            this.sexFemale.Text = "Nữ";
+            this.sexFemale.UseVisualStyleBackColor = true;
+            // 
+            // sexMale
+            // 
+            this.sexMale.AutoSize = true;
+            this.sexMale.Location = new System.Drawing.Point(272, 81);
+            this.sexMale.Name = "sexMale";
+            this.sexMale.Size = new System.Drawing.Size(47, 17);
+            this.sexMale.TabIndex = 2;
+            this.sexMale.TabStop = true;
+            this.sexMale.Text = "Nam";
+            this.sexMale.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(187, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Địa Chỉ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 167);
+            this.label4.Location = new System.Drawing.Point(187, 135);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "Lớp";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(129, 138);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(134, 20);
-            this.textBox3.TabIndex = 1;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 141);
+            this.label3.Location = new System.Drawing.Point(187, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 0;
@@ -136,104 +212,43 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(44, 115);
+            this.label6.Location = new System.Drawing.Point(187, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Giới Tính";
             // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(129, 86);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(134, 20);
-            this.textBox5.TabIndex = 1;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(44, 89);
+            this.label5.Location = new System.Drawing.Point(187, 57);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Ngày Sinh";
             // 
-            // textBox2
+            // studentAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(134, 20);
-            this.textBox2.TabIndex = 1;
+            this.studentAddress.Location = new System.Drawing.Point(272, 163);
+            this.studentAddress.Name = "studentAddress";
+            this.studentAddress.Size = new System.Drawing.Size(307, 20);
+            this.studentAddress.TabIndex = 1;
+            // 
+            // studentName
+            // 
+            this.studentName.Location = new System.Drawing.Point(272, 28);
+            this.studentName.Name = "studentName";
+            this.studentName.Size = new System.Drawing.Size(307, 20);
+            this.studentName.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 63);
+            this.label2.Location = new System.Drawing.Point(187, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Học Sinh";
-            // 
-            // txt_mahs
-            // 
-            this.txt_mahs.Location = new System.Drawing.Point(129, 34);
-            this.txt_mahs.Name = "txt_mahs";
-            this.txt_mahs.Size = new System.Drawing.Size(134, 20);
-            this.txt_mahs.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Học Sinh";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(78, 240);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(159, 240);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(240, 240);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(321, 240);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Nhập Lại";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(402, 240);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Thoát";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -250,8 +265,10 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(772, 178);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
             // QuanLyHocSinh
             // 
@@ -262,6 +279,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "QuanLyHocSinh";
             this.Text = "QuanLyHocSinh";
+            this.Load += new System.EventHandler(this.QuanLyHocSinh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -273,25 +291,25 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox studentName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_mahs;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton sexFemale;
+        private System.Windows.Forms.RadioButton sexMale;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox studentClass;
+        private System.Windows.Forms.ComboBox studentGrade;
+        private System.Windows.Forms.DateTimePicker studentDate;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox studentAddress;
     }
 }

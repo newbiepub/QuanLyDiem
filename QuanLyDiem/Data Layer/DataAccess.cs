@@ -99,6 +99,27 @@ namespace QuanLyDiem.Data_Layer
             connection.Close();
             return true;
         }
+        public bool insertProc(String query, SqlParameter[] pr)
+        {
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                command.Connection = this.openConnection();
+                command.CommandText = query;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddRange(pr);
+                dataAdapter.InsertCommand = command;
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.Write("Error at Insert Query - {0}", query);
+                return false;
+                throw;
+            }
+            connection.Close();
+            return true;
+        }
 
         public bool update(String query, SqlParameter[] pr)
         {
@@ -120,6 +141,27 @@ namespace QuanLyDiem.Data_Layer
             connection.Close();
             return true;
         }
+        public bool updateProc(String query, SqlParameter[] pr)
+        {
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                command.Connection = this.openConnection();
+                command.CommandText = query;
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddRange(pr);
+                dataAdapter.UpdateCommand = command;
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.Write("Error at Select Query - {0}", query);
+                return false;
+                throw;
+            }
+            connection.Close();
+            return true;
+        }
 
         public bool delete(String query, SqlParameter[] pr)
         {
@@ -128,6 +170,27 @@ namespace QuanLyDiem.Data_Layer
             {
                 command.Connection = this.openConnection();
                 command.CommandText = query;
+                command.Parameters.AddRange(pr);
+                dataAdapter.DeleteCommand = command;
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.Write("Error at Select Query - {0}", query);
+                return false;
+                throw;
+            }
+            connection.Close();
+            return true;
+        }
+        public bool deleteProc(String query, SqlParameter[] pr)
+        {
+            SqlCommand command = new SqlCommand();
+            try
+            {
+                command.Connection = this.openConnection();
+                command.CommandText = query;
+                command.CommandType = CommandType.StoredProcedure;
                 command.Parameters.AddRange(pr);
                 dataAdapter.DeleteCommand = command;
                 command.ExecuteNonQuery();

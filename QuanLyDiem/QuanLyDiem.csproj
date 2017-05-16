@@ -108,9 +108,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic\HocSinhBL.cs" />
     <Compile Include="Business Logic\KhoiBL.cs" />
     <Compile Include="Business Logic\LopBL.cs" />
     <Compile Include="Business Logic\MonHocBL.cs" />
+    <Compile Include="Business Logic\QuanLyHocSinh.cs" />
     <Compile Include="Business Logic\TimKiemBL.cs" />
     <Compile Include="Data Layer\DataAccess.cs" />
     <Compile Include="MDIQuanLyParentForm.cs">
