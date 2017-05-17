@@ -49,6 +49,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.year = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,6 +60,7 @@
             // 
             this.panel1.Controls.Add(this.studentDate);
             this.panel1.Controls.Add(this.studentClass);
+            this.panel1.Controls.Add(this.year);
             this.panel1.Controls.Add(this.studentGrade);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
@@ -68,6 +71,7 @@
             this.panel1.Controls.Add(this.sexMale);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -88,8 +92,9 @@
             // 
             // studentClass
             // 
+            this.studentClass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.studentClass.FormattingEnabled = true;
-            this.studentClass.Location = new System.Drawing.Point(272, 132);
+            this.studentClass.Location = new System.Drawing.Point(272, 168);
             this.studentClass.Name = "studentClass";
             this.studentClass.Size = new System.Drawing.Size(307, 21);
             this.studentClass.TabIndex = 5;
@@ -112,7 +117,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(504, 229);
+            this.button5.Location = new System.Drawing.Point(509, 237);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 20);
             this.button5.TabIndex = 4;
@@ -122,7 +127,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(423, 229);
+            this.button4.Location = new System.Drawing.Point(428, 237);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 20);
             this.button4.TabIndex = 4;
@@ -132,7 +137,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(342, 229);
+            this.button3.Location = new System.Drawing.Point(347, 237);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 20);
             this.button3.TabIndex = 4;
@@ -142,7 +147,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(261, 229);
+            this.button2.Location = new System.Drawing.Point(266, 237);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 20);
             this.button2.TabIndex = 4;
@@ -152,7 +157,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(180, 229);
+            this.btnThem.Location = new System.Drawing.Point(185, 237);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 20);
             this.btnThem.TabIndex = 4;
@@ -185,7 +190,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(187, 166);
+            this.label1.Location = new System.Drawing.Point(187, 201);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 0;
@@ -194,7 +199,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(187, 135);
+            this.label4.Location = new System.Drawing.Point(187, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 0;
@@ -229,7 +234,7 @@
             // 
             // studentAddress
             // 
-            this.studentAddress.Location = new System.Drawing.Point(272, 163);
+            this.studentAddress.Location = new System.Drawing.Point(272, 198);
             this.studentAddress.Name = "studentAddress";
             this.studentAddress.Size = new System.Drawing.Size(307, 20);
             this.studentAddress.TabIndex = 1;
@@ -269,6 +274,31 @@
             this.dataGridView1.Size = new System.Drawing.Size(772, 178);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(187, 140);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Niên Khóa";
+            // 
+            // year
+            // 
+            this.year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.year.FormattingEnabled = true;
+            this.year.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.year.Location = new System.Drawing.Point(272, 137);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(307, 21);
+            this.year.TabIndex = 5;
+            this.year.SelectedIndexChanged += new System.EventHandler(this.year_change);
             // 
             // QuanLyHocSinh
             // 
@@ -311,5 +341,7 @@
         private System.Windows.Forms.DateTimePicker studentDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox studentAddress;
+        private System.Windows.Forms.ComboBox year;
+        private System.Windows.Forms.Label label7;
     }
 }

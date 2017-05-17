@@ -15,8 +15,9 @@ namespace QuanLyDiem.Presentation
 
         Business_Logic.HocSinhBL hocSinhBl = new Business_Logic.HocSinhBL();
         DataTable da = new DataTable();
+        DataTable lop = new DataTable();
         Int64 maHocSinh = 0;
-
+       
         public QuanLyHocSinh()
         {
             InitializeComponent();
@@ -27,10 +28,15 @@ namespace QuanLyDiem.Presentation
         {
             
             // Load Hoc sinh 
-          
             da = hocSinhBl.gethocsinh();
             dataGridView1.DataSource = da;
-            
+            // Load Lop
+            Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
+            lop = lopBl.getLop();
+            // load nien khoa
+            year.DataSource = lopBl.getNienKhoa();
+            year.DisplayMember = "NienKhoa";
+            year.Text = "";
             // edit column datagridview
             if (dataGridView1.Columns.Contains("newGioiTinh"))
             { }
@@ -59,44 +65,34 @@ namespace QuanLyDiem.Presentation
             dataGridView1.Columns["MaLop"].HeaderText = "Mã Lớp";
             dataGridView1.Columns["TenLop"].HeaderText = "Tên Lớp";
             dataGridView1.Columns["Khoi"].HeaderText = "Khối";
+            dataGridView1.Columns["NienKhoa"].HeaderText = "Niên Khóa";
             dataGridView1.Columns["GhiChu"].HeaderText = "Ghi Chú";
             dataGridView1.Columns["GioiTinh"].Visible = false;
             dataGridView1.Columns["MaLop1"].Visible = false;
             
         }
     
-            private void btnThem_Click(object sender, EventArgs e)
+        
+        public void Load_Class()
         {
-            
-            if (studentName.Text == "" || (sexMale.Checked == false && sexFemale.Checked == false) || studentClass.Text == "")
+            if (year.Text != "" && studentGrade.Text != "")
             {
-                MessageBox.Show("Bạn phải điền đầy đủ thông tin !!");
-            }else
-            {
-                int sex = 0;
-                if (sexMale.Checked)
-                    sex = 1;
-                if (hocSinhBl.inserthocsinh(studentName.Text, studentDate.Value.Date.ToString("yyyy-MM-dd"), sex, studentClass.Text, studentAddress.Text) == true)
-                {
-                    MessageBox.Show("Thêm hoc sinh thành công !!");
-                    QuanLyHocSinh_Load(null, null);
-                    NhapLai(null,null);
-                }else
-                MessageBox.Show("Thêm hoc sinh thất bại!!");
-               
+                studentClass.Text = "";
+                DataView dv = new DataView(lop);
+                dv.RowFilter = "Khoi = " + studentGrade.Text + " and NienKhoa = '" + year.Text + "'";
+                studentClass.DataSource = dv;
+                studentClass.DisplayMember = "TenLop";
+                studentClass.ValueMember = "MaLop";
             }
-            
         }
-
         private void studentGrade_SelectedIndexChanged(object sender, EventArgs e)
         {
-            studentClass.Text = "";
-            Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
-            studentClass.DataSource = lopBl.getLopByKhoi(Convert.ToInt32(studentGrade.Text));
-            studentClass.DisplayMember = "TenLop";
-
+            Load_Class();
         }
-
+        private void year_change(object sender, EventArgs e)
+        {
+            Load_Class();
+        }
         private void NhapLai(object sender, EventArgs e)
         {
             maHocSinh = 0;
@@ -113,8 +109,11 @@ namespace QuanLyDiem.Presentation
            
             int rowIndex = e.RowIndex;
             studentName.Text = dataGridView1.Rows[rowIndex].Cells["TenHocSinh"].Value.ToString();
-            studentClass.Text = dataGridView1.Rows[rowIndex].Cells["TenLop"].Value.ToString();
             studentGrade.Text = dataGridView1.Rows[rowIndex].Cells["Khoi"].Value.ToString();
+            year.Text = dataGridView1.Rows[rowIndex].Cells["NienKhoa"].Value.ToString();
+            Load_Class();
+            studentClass.Text = dataGridView1.Rows[rowIndex].Cells["TenLop"].Value.ToString();
+            
             studentAddress.Text = dataGridView1.Rows[rowIndex].Cells["DiaChi"].Value.ToString();
             studentDate.Text = dataGridView1.Rows[rowIndex].Cells["NgaySinh"].Value.ToString();
             if( dataGridView1.Rows[rowIndex].Cells["GioiTinh"].Value.ToString() == "1")
@@ -128,6 +127,30 @@ namespace QuanLyDiem.Presentation
             maHocSinh = (Int64)dataGridView1.Rows[rowIndex].Cells["MaHocSinh"].Value;
         }
 
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
+            if (studentName.Text == "" || (sexMale.Checked == false && sexFemale.Checked == false) || studentClass.Text == "")
+            {
+                MessageBox.Show("Bạn phải điền đầy đủ thông tin !!");
+            }
+            else
+            {
+                int sex = 0;
+                if (sexMale.Checked)
+                    sex = 1;
+                if (hocSinhBl.inserthocsinh(studentName.Text, studentDate.Value.Date.ToString("yyyy-MM-dd"), sex, studentClass.Text, studentAddress.Text) == true)
+                {
+                    MessageBox.Show("Thêm hoc sinh thành công !!");
+                    QuanLyHocSinh_Load(null, null);
+                    NhapLai(null, null);
+                }
+                else
+                    MessageBox.Show("Thêm hoc sinh thất bại!!");
+
+            }
+
+        }
         private void Xoa(object sender, EventArgs e)
         {
             if(maHocSinh != 0)
@@ -170,6 +193,8 @@ namespace QuanLyDiem.Presentation
         {
             this.Close();
         }
+
+        
 
       
              

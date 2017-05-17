@@ -14,13 +14,19 @@ namespace QuanLyDiem.Business_Logic
 
         public DataTable getLop()
         {
-            String query = "select TenLop from LOP";
+            String query = "select * from LOP";
             SqlParameter[] pr = new SqlParameter[0];
             return da.select(query, pr);
         }
-        public DataTable getLopByKhoi(int Khoi)
+        public DataTable getLopByKhoi(int Khoi, string nienKhoa)
         {
-            String query = "select TenLop from LOP where Khoi = '"+Khoi+"'";
+            String query = "select * from LOP where Khoi = '"+Khoi+"' and NienKhoa = '"+nienKhoa+"'";
+            SqlParameter[] pr = new SqlParameter[0];
+            return da.select(query, pr);
+        }
+        public DataTable getNienKhoa()
+        {
+            String query = "select NienKhoa from LOP group by NienKhoa";
             SqlParameter[] pr = new SqlParameter[0];
             return da.select(query, pr);
         }
