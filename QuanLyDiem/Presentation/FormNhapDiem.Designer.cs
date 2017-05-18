@@ -83,7 +83,7 @@ namespace QuanLyDiem.Presentation
             // 
             column_hocki.Caption = "Học Kì";
             column_hocki.ColumnEdit = this.edt_cuoiki;
-            column_hocki.FieldName = "DiemCuoiKy";
+            column_hocki.FieldName = "DiemHocKy";
             column_hocki.Name = "column_hocki";
             column_hocki.Visible = true;
             column_hocki.VisibleIndex = 2;
@@ -274,6 +274,7 @@ namespace QuanLyDiem.Presentation
             this.cb_hocki.Name = "cb_hocki";
             this.cb_hocki.Size = new System.Drawing.Size(220, 21);
             this.cb_hocki.TabIndex = 1;
+            this.cb_hocki.SelectedIndexChanged += new System.EventHandler(this.cb_hocki_SelectedIndexChanged);
             // 
             // cb_monhoc
             // 
@@ -308,7 +309,7 @@ namespace QuanLyDiem.Presentation
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(75, 23);
             this.btn_them.TabIndex = 5;
-            this.btn_them.Text = "Thêm ";
+            this.btn_them.Text = "Nhập Điểm";
             this.btn_them.UseVisualStyleBackColor = true;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 

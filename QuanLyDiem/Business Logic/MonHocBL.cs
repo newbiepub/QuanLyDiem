@@ -26,12 +26,13 @@ namespace QuanLyDiem.Business_Logic
             return db.select(query, pr);
         }
 
-        public DataTable getDiemFromMahsAndMaMon(String MaHocSinh, String MaMonHoc)
+        public DataTable getDiemFromMahsAndMaMon(String MaHocSinh, String MaMonHoc, String mahk)
         {
             SqlParameter[] pr =
             {
                 new SqlParameter("@MaHocSinh", MaHocSinh),
                 new SqlParameter("@MaMon", MaMonHoc), 
+                new SqlParameter("@HocKy", mahk), 
             };
             return db.selectProc("select_diem_from_mahocsinh_mamonhoc", pr);
         }

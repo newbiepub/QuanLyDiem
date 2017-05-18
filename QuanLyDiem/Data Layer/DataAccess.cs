@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.XtraRichEdit.Layout;
 
 namespace QuanLyDiem.Data_Layer
 {
@@ -50,10 +51,13 @@ namespace QuanLyDiem.Data_Layer
             }
             catch (Exception)
             {
-                
+
                 throw;
             }
-            connection.Close();
+            finally
+            {
+                connection.Close();
+            }
             return dt;
         }
 
@@ -72,6 +76,10 @@ namespace QuanLyDiem.Data_Layer
             {
                 throw;
                 return false;
+            }
+            finally
+            {
+                this.connection.Close();
             }
             return true;
         }

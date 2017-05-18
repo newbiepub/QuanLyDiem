@@ -131,8 +131,7 @@ namespace QuanLyDiem.Presentation
         {
             if (this.cb_tenhocsinh.SelectedValue != null)
             {
-                String mamon = this.cb_monhoc.SelectedValue.ToString();
-            }
+                this.loadCotDiem();}
 
         }
 
@@ -140,11 +139,17 @@ namespace QuanLyDiem.Presentation
         {
             try
             {
+                String mahk = this.cb_hocki.SelectedValue.ToString();
                 String mahocsinh = this.cb_tenhocsinh.SelectedValue.ToString();
                 String mamon = this.cb_monhoc.SelectedValue.ToString();
-                dtDiem = monHocBl.getDiemFromMahsAndMaMon(mahocsinh, mamon);
+                dtDiem = monHocBl.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk);
                 if (dtDiem.Rows.Count > 0)
                 {
+                    foreach (DataRow rowData in dtDiem.Rows)
+                    {
+                        this.dtp_namhoc.Value = Convert.ToDateTime(rowData["NamHoc"]);
+                    }
+                    this.gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
                     this.gridControl1.DataSource = dtDiem;
                 }
                 else
@@ -152,16 +157,16 @@ namespace QuanLyDiem.Presentation
                     dtDiem = new DataTable();
                     dtDiem.Columns.Add(new DataColumn("DiemMieng"));
                     dtDiem.Columns.Add(new DataColumn("DiemGiuaKy"));
-                    dtDiem.Columns.Add(new DataColumn("DiemCuoiKy"));
+                    dtDiem.Columns.Add(new DataColumn("DiemHocKy"));
+                    this.gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
                     this.gridControl1.DataSource = dtDiem;
                 }
-            }catch (Exception error)
+            }
+            catch (Exception error)
             {
                 Console.Write(error);
-                throw;
-            }
+                this.gridControl1.DataSource = null;}
         }
-
         private void cb_lop_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -174,7 +179,6 @@ namespace QuanLyDiem.Presentation
             catch (Exception)
             {
                 this.cb_tenhocsinh.DataSource = null;
-                throw;
             }
         }
         private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
@@ -198,7 +202,7 @@ namespace QuanLyDiem.Presentation
             GridView view = sender as GridView;
             GridColumn DiemMieng = view.Columns["DiemMieng"];
             GridColumn DiemGiuaKy = view.Columns["DiemGiuaKy"];
-            GridColumn DiemCuoiKy = view.Columns["DiemCuoiKy"];int mieng = Convert.ToInt32(this.gridView1.GetRowCellValue(e.RowHandle, DiemMieng));
+            GridColumn DiemCuoiKy = view.Columns["DiemHocKy"];int mieng = Convert.ToInt32(this.gridView1.GetRowCellValue(e.RowHandle, DiemMieng));
             int giuaki = Convert.ToInt32(this.gridView1.GetRowCellValue(e.RowHandle, DiemGiuaKy));
             int cuoiki = Convert.ToInt32(this.gridView1.GetRowCellValue(e.RowHandle, DiemCuoiKy));
             if (mieng > 10 || mieng < 0)
@@ -226,7 +230,7 @@ namespace QuanLyDiem.Presentation
         {
             int mieng = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemMieng"));
             int giuaki = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemGiuaKy"));
-            int cuoiki = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemCuoiKy"));
+            int cuoiki = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemHocKy"));
             string mahocsinh = this.cb_tenhocsinh.SelectedValue.ToString();
             string MaMon = this.cb_monhoc.SelectedValue.ToString();
             string hocki = this.cb_hocki.SelectedValue.ToString();
@@ -235,16 +239,29 @@ namespace QuanLyDiem.Presentation
                 cuoiki, hocki, namhoc, "");
             if (isInsert)
             {
-                MessageBox.Show("Inserted");
+                MessageBox.Show("Đã Nhập");
             }
             else
             {
-                MessageBox.Show("Failed");
+                MessageBox.Show("Nhập Thất Bại");
             }
         }
 
-        private void gridView1_InvalidRowException(object sender, DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
-        {e.ExceptionMode = ExceptionMode.NoAction;
+        private void gridView1_InvalidRowException(object sender,
+            DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventArgs e)
+        {
+            e.ExceptionMode = ExceptionMode.NoAction;
         }
+
+        private void cb_hocki_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.loadCotDiem();
+            }
+            catch (Exception)
+            {
+                this.gridControl1.DataSource = null;
+            }}
     }
 }
