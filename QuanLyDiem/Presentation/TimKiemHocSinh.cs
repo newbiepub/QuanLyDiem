@@ -92,7 +92,9 @@ namespace QuanLyDiem.Presentation
         {
             Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
             DataTable dataClass = lopBl.getLop();
-            dataClass.Rows.Add("Không");
+            DataRow row = dataClass.NewRow();
+            row["TenLop"] = "Không";
+            dataClass.Rows.Add(row);
             studentClass.DataSource = dataClass;
             studentClass.DisplayMember = "TenLop";
             studentClass.Text = "Không";

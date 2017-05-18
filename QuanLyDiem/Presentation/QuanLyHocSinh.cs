@@ -67,6 +67,8 @@ namespace QuanLyDiem.Presentation
             dataGridView1.Columns["Khoi"].HeaderText = "Khối";
             dataGridView1.Columns["NienKhoa"].HeaderText = "Niên Khóa";
             dataGridView1.Columns["GhiChu"].HeaderText = "Ghi Chú";
+            dataGridView1.Columns["DiemTrungBinh"].HeaderText = "Điểm Trung Bình";
+            dataGridView1.Columns["XepLoai"].HeaderText = "Xếp Loại";
             dataGridView1.Columns["GioiTinh"].Visible = false;
             dataGridView1.Columns["MaLop1"].Visible = false;
             
@@ -139,7 +141,7 @@ namespace QuanLyDiem.Presentation
                 int sex = 0;
                 if (sexMale.Checked)
                     sex = 1;
-                if (hocSinhBl.inserthocsinh(studentName.Text, studentDate.Value.Date.ToString("yyyy-MM-dd"), sex, studentClass.Text, studentAddress.Text) == true)
+                if (hocSinhBl.inserthocsinh(studentName.Text, studentDate.Value.Date.ToString("yyyy-MM-dd"), sex, Convert.ToInt32(studentClass.SelectedValue), studentAddress.Text) == true)
                 {
                     MessageBox.Show("Thêm hoc sinh thành công !!");
                     QuanLyHocSinh_Load(null, null);
@@ -175,7 +177,7 @@ namespace QuanLyDiem.Presentation
                 int sex = 0;
                 if (sexMale.Checked)
                     sex = 1;
-                if (hocSinhBl.updatehocsinh(maHocSinh, studentName.Text,studentDate.Value.Date.ToString("yyyy-MM-dd"), sex, studentClass.Text, studentAddress.Text) == true)
+                if (hocSinhBl.updatehocsinh(maHocSinh, studentName.Text, studentDate.Value.Date.ToString("yyyy-MM-dd"), sex, Convert.ToInt32(studentClass.SelectedValue), studentAddress.Text) == true)
                 {
                     MessageBox.Show("Sửa thành công !!");
                 }

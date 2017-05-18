@@ -17,7 +17,7 @@ namespace QuanLyDiem.Business_Logic
             SqlParameter[] pr = {};
             return da.selectProc(query, pr);
         }
-        public bool inserthocsinh(string tenHocSinh, string ngaySinh, int gioiTinh,string lop, string diaChi)
+        public bool inserthocsinh(string tenHocSinh, string ngaySinh, int gioiTinh,int lop, string diaChi)
         {
             string query = "ThemHocSinh";
             SqlParameter[] pr =
@@ -40,7 +40,7 @@ namespace QuanLyDiem.Business_Logic
             };
             return da.deleteProc(query, pr);
         }
-        public bool updatehocsinh(Int64 maHocSinh, string tenHocSinh, string ngaySinh, int gioiTinh, string lop, string diaChi)
+        public bool updatehocsinh(Int64 maHocSinh, string tenHocSinh, string ngaySinh, int gioiTinh, int lop, string diaChi)
         {
             string query = "SuaHocSinh";
             SqlParameter[] pr =
