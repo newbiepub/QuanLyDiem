@@ -20,7 +20,8 @@ namespace QuanLyDiem.Presentation
             this.groupAdvance.Hide();
             studentGrade.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        Business_Logic.TimKiemBL timKiemBL = new Business_Logic.TimKiemBL();
+        
+        DataTable lop;
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             var radButton = ((RadioButton)sender);
@@ -41,16 +42,16 @@ namespace QuanLyDiem.Presentation
 
         private void Find(object sender, EventArgs e)
         {
-            string query = "";
+            Business_Logic.HocSinhBL timKiemBL = new Business_Logic.HocSinhBL();
             if(radioButton1.Checked)
             {
                 dataGridView1.DataSource =timKiemBL.FindStudentByID((Int32)txtStudentCodeBasic.Value);
             }
             else
             {
-               
-               
-                dataGridView1.DataSource =timKiemBL.FindStudentAdvance((Int32)studentCodeAdvance.Value, (Int32)year.Value,studentName.Text,studentClass.Text, studentGrade.Text);
+
+
+                dataGridView1.DataSource = timKiemBL.FindStudentAdvance((Int32)studentCodeAdvance.Value, (Int32)year.Value, studentName.Text, Convert.ToInt32(studentClass.SelectedValue), studentClass.Text);
             }
 
 
@@ -58,6 +59,7 @@ namespace QuanLyDiem.Presentation
             dataGridView1.Columns["TenHocSinh"].HeaderText = "Tên Học Sinh";
             dataGridView1.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
             dataGridView1.Columns["TenLop"].HeaderText = "Tên Lớp";
+            dataGridView1.Columns["NienKhoa"].HeaderText = "Niên Khóa";
             dataGridView1.Columns["GioiTinh"].HeaderText = "Giới Tính";
             dataGridView1.Columns["MaLop"].HeaderText = "Mã Lớp";
             dataGridView1.Columns["DiaChi"].HeaderText = "Địa Chỉ";
@@ -81,6 +83,7 @@ namespace QuanLyDiem.Presentation
         {
             year.Value = 0;
             studentName.Text = "";
+            studentClass.DataSource = null;
             studentGrade.Text = "Không";
             studentCodeAdvance.Value = 0;
             txtStudentCodeBasic.Value = 0;
@@ -90,18 +93,45 @@ namespace QuanLyDiem.Presentation
 
         private void TimKiemHocSinh_Load(object sender, EventArgs e)
         {
+             // Load Lop
             Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
-            DataTable dataClass = lopBl.getLop();
-            DataRow row = dataClass.NewRow();
-            row["TenLop"] = "Không";
-            dataClass.Rows.Add(row);
-            studentClass.DataSource = dataClass;
-            studentClass.DisplayMember = "TenLop";
-            studentClass.Text = "Không";
+            lop = lopBl.getLop();
+            // load nien khoa
+            schoolYear.DataSource = lopBl.getNienKhoa();
+            schoolYear.DisplayMember = "NienKhoa";
+            year.Text = "";
+           
             
         }
 
+        private void studentGrade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_Class();
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_Class();
+        }
+
+        public void Load_Class()
+        {
+            if (schoolYear.Text != "" && studentGrade.Text != "Không")
+            {
+                studentClass.Text = "";
+                DataView dv = new DataView(lop);
+               
+                dv.RowFilter = "Khoi = " + studentGrade.Text + " and NienKhoa = '" + schoolYear.Text + "'";
+                studentClass.DataSource = dv;
+                studentClass.DisplayMember = "TenLop";
+                studentClass.ValueMember = "MaLop";
+            }
+            else
+            { 
+                studentClass.DataSource = null;
+                studentClass.Text = "Không";
+            } 
+        }
      
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupAdvance = new System.Windows.Forms.GroupBox();
+            this.schoolYear = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.year = new System.Windows.Forms.NumericUpDown();
             this.studentCodeAdvance = new System.Windows.Forms.NumericUpDown();
             this.studentClass = new System.Windows.Forms.ComboBox();
@@ -61,6 +63,8 @@
             // 
             // groupAdvance
             // 
+            this.groupAdvance.Controls.Add(this.schoolYear);
+            this.groupAdvance.Controls.Add(this.label7);
             this.groupAdvance.Controls.Add(this.year);
             this.groupAdvance.Controls.Add(this.studentCodeAdvance);
             this.groupAdvance.Controls.Add(this.studentClass);
@@ -79,10 +83,35 @@
             this.groupAdvance.Tag = "advance";
             this.groupAdvance.Text = "Nhập Thông Tin";
             // 
+            // schoolYear
+            // 
+            this.schoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.schoolYear.FormattingEnabled = true;
+            this.schoolYear.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.schoolYear.Location = new System.Drawing.Point(116, 123);
+            this.schoolYear.Name = "schoolYear";
+            this.schoolYear.Size = new System.Drawing.Size(204, 21);
+            this.schoolYear.TabIndex = 7;
+            this.schoolYear.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 126);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Niên Khóa";
+            // 
             // year
             // 
             this.year.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.year.Location = new System.Drawing.Point(117, 147);
+            this.year.Location = new System.Drawing.Point(117, 177);
             this.year.Maximum = new decimal(new int[] {
             3000,
             0,
@@ -109,7 +138,7 @@
             // studentClass
             // 
             this.studentClass.FormattingEnabled = true;
-            this.studentClass.Location = new System.Drawing.Point(116, 121);
+            this.studentClass.Location = new System.Drawing.Point(116, 151);
             this.studentClass.Name = "studentClass";
             this.studentClass.Size = new System.Drawing.Size(203, 21);
             this.studentClass.Sorted = true;
@@ -133,12 +162,13 @@
             this.studentGrade.Sorted = true;
             this.studentGrade.TabIndex = 3;
             this.studentGrade.Text = "Không";
+            this.studentGrade.SelectedIndexChanged += new System.EventHandler(this.studentGrade_SelectedIndexChanged);
             this.studentGrade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 154);
+            this.label5.Location = new System.Drawing.Point(42, 184);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 0;
@@ -147,7 +177,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 124);
+            this.label4.Location = new System.Drawing.Point(42, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 0;
@@ -351,5 +381,7 @@
         private System.Windows.Forms.NumericUpDown year;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox studentClass;
+        private System.Windows.Forms.ComboBox schoolYear;
+        private System.Windows.Forms.Label label7;
     }
 }

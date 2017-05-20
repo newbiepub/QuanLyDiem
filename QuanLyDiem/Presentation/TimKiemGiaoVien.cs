@@ -20,8 +20,9 @@ namespace QuanLyDiem.Presentation
             this.groupBoxAdvance.Hide();
             this.groupBoxBasic.Show();
         }
+        DataTable lop;
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
-        Business_Logic.TimKiemBL timKiemBl = new Business_Logic.TimKiemBL();
+        
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             var radioButton = ((RadioButton) sender);
@@ -34,12 +35,13 @@ namespace QuanLyDiem.Presentation
             {
                 this.groupBoxBasic.Hide();
                 this.groupBoxAdvance.Show();
+                Reset_Click(null, null);
             }
         }
 
         private void Find_Click(object sender, EventArgs e)
         {
-            string query = "";
+            Business_Logic.GiaoVienBL timKiemBl = new Business_Logic.GiaoVienBL();
             if (radioButton1.Checked)
             {
                 dataGridView1.DataSource = timKiemBl.FindTeacherByID((Int32)teacherCodeBasic.Value);
@@ -47,7 +49,7 @@ namespace QuanLyDiem.Presentation
             else
             {
 
-                dataGridView1.DataSource = timKiemBl.FindTeacherAdvance((Int32)teacherCodeAdvance.Value, subjectSpecialize.Text, teacherName.Text,teacherClass.Text );
+                dataGridView1.DataSource = timKiemBl.FindTeacherAdvance((Int32)teacherCodeAdvance.Value, subjectSpecialize.Text, teacherName.Text,Convert.ToInt32(teacherClass.SelectedValue),teacherClass.Text);
             }
 
 
@@ -61,6 +63,7 @@ namespace QuanLyDiem.Presentation
             dataGridView1.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
             dataGridView1.Columns["TenMon"].HeaderText = "Tên Môn";
             dataGridView1.Columns["Khoi"].HeaderText = "Khối";
+            dataGridView1.Columns["NienKhoa"].HeaderText = "Niên Khóa";
             if (dataGridView1.RowCount == 1)
             {
                 MessageBox.Show("Không có giáo viên !!!");
@@ -72,18 +75,17 @@ namespace QuanLyDiem.Presentation
             // Startup load Supject
             Business_Logic.MonHocBL monHoc = new Business_Logic.MonHocBL();
             DataTable data = monHoc.getAllMonHoc();
-            data.Rows.Add("Không");
-           
+            data.Rows.Add(0,"Không");
             subjectSpecialize.DataSource = data;
             subjectSpecialize.DisplayMember = "TenMon";
             subjectSpecialize.Text = "Không";
-            // Startup load class
+            // Load Lop
             Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
-             data = lopBl.getLop();
-            data.Rows.Add("Không");
-            teacherClass.DataSource = data;
-            teacherClass.DisplayMember = "TenLop";
-            teacherClass.Text = "Không";
+            lop = lopBl.getLop();
+            // load nien khoa
+            year.DataSource = lopBl.getNienKhoa();
+            year.DisplayMember = "NienKhoa";
+            year.Text = "";
         }
         private void EnterPress(object sender, KeyPressEventArgs e)
         {
@@ -98,9 +100,38 @@ namespace QuanLyDiem.Presentation
        
             teacherName.Text = "";
             teacherClass.Text = "Không";
+            grade.Text = "Không";
             teacherCodeAdvance.Value = 0;
             teacherCodeBasic.Value = 0;
             subjectSpecialize.Text = "Không";
+        }
+
+        private void grade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_Class();
+        }
+
+        private void year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Load_Class();
+        }
+        public void Load_Class()
+        {
+            if (year.Text != "" && (grade.Text != "Không" && grade.Text != ""))
+            {
+                teacherClass.Text = "";
+                DataView dv = new DataView(lop);
+                dv.RowFilter = "Khoi = "+grade.Text+" and NienKhoa = '" + year.Text + "'";
+                teacherClass.DataSource = dv;
+                teacherClass.DisplayMember = "TenLop";
+                teacherClass.ValueMember = "MaLop";
+
+            }
+            else
+            {
+                teacherClass.DataSource = null;
+                teacherClass.Text = "Không";
+            }
         }
     }
 }

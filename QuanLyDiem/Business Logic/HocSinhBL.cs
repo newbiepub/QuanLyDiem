@@ -11,6 +11,58 @@ namespace QuanLyDiem.Business_Logic
     class HocSinhBL
     {
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+
+        public DataTable FindStudentByID(int maHocSinh)
+        {
+            string query = "TimHocSinhCoBan";
+            SqlParameter[] pr =
+                {
+                    new SqlParameter("@mahocsinh", maHocSinh), 
+                };
+            DataTable dt = da.selectProc(query, pr);
+            return dt;
+        }
+        public DataTable FindStudentAdvance(int code, int year, string name, int Class, string checkClass)
+        {
+            //querry ten
+            string tenHocSinh = "";
+            if (name != "")
+            {
+                tenHocSinh = "and TenHocSinh=@tenhocsinh";
+            }
+            //querry ma
+            string maHocSinh = "";
+            if (code != 0)
+            {
+                maHocSinh = "and MaHocSinh=@mahocsinh";
+            }
+           
+            //querry Lop
+            string lop = "";
+            if (checkClass != "Không")
+            {
+                lop = "and LOP.MaLop=@malop";
+            }
+            //querry namsinh
+            string namSinh = "";
+            if (year != 0)
+            {
+                namSinh = "and year(NgaySinh)=@namsinh";
+            }
+
+            string query =
+                    "select  MaHocSinh,TenHocSinh, NgaySinh,LOP.TenLop, GioiTinh, HOC_SINH.MaLop,NienKhoa, DiaChi, Khoi, GhiChu from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop " + lop + " " + tenHocSinh + " " + maHocSinh + " " + namSinh + "";
+            SqlParameter[] pr =
+                {
+                    new SqlParameter("@namsinh", year),
+                    new SqlParameter("@tenhocsinh", name),
+                    new SqlParameter("@malop", Class),
+                    new SqlParameter("@mahocsinh", code),
+                    
+                };
+            return da.select(query, pr);
+        }
+
         public DataTable gethocsinh()
         {
             string query = "GetHocSinh";

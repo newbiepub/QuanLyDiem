@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBoxAdvance = new System.Windows.Forms.GroupBox();
+            this.grade = new System.Windows.Forms.ComboBox();
+            this.year = new System.Windows.Forms.ComboBox();
             this.teacherClass = new System.Windows.Forms.ComboBox();
             this.subjectSpecialize = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.teacherCodeAdvance = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.teacherName = new System.Windows.Forms.TextBox();
@@ -58,9 +62,13 @@
             // 
             // groupBoxAdvance
             // 
+            this.groupBoxAdvance.Controls.Add(this.grade);
+            this.groupBoxAdvance.Controls.Add(this.year);
             this.groupBoxAdvance.Controls.Add(this.teacherClass);
             this.groupBoxAdvance.Controls.Add(this.subjectSpecialize);
+            this.groupBoxAdvance.Controls.Add(this.label5);
             this.groupBoxAdvance.Controls.Add(this.teacherCodeAdvance);
+            this.groupBoxAdvance.Controls.Add(this.label6);
             this.groupBoxAdvance.Controls.Add(this.label4);
             this.groupBoxAdvance.Controls.Add(this.label3);
             this.groupBoxAdvance.Controls.Add(this.teacherName);
@@ -68,15 +76,45 @@
             this.groupBoxAdvance.Controls.Add(this.label1);
             this.groupBoxAdvance.Location = new System.Drawing.Point(38, 38);
             this.groupBoxAdvance.Name = "groupBoxAdvance";
-            this.groupBoxAdvance.Size = new System.Drawing.Size(390, 195);
+            this.groupBoxAdvance.Size = new System.Drawing.Size(390, 222);
             this.groupBoxAdvance.TabIndex = 0;
             this.groupBoxAdvance.TabStop = false;
             this.groupBoxAdvance.Text = "Nhập Thông Tin";
             // 
+            // grade
+            // 
+            this.grade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.grade.FormattingEnabled = true;
+            this.grade.Items.AddRange(new object[] {
+            "Không",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.grade.Location = new System.Drawing.Point(132, 101);
+            this.grade.Name = "grade";
+            this.grade.Size = new System.Drawing.Size(179, 21);
+            this.grade.TabIndex = 3;
+            this.grade.SelectedIndexChanged += new System.EventHandler(this.grade_SelectedIndexChanged);
+            this.grade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
+            // year
+            // 
+            this.year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.year.FormattingEnabled = true;
+            this.year.Location = new System.Drawing.Point(132, 126);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(179, 21);
+            this.year.TabIndex = 3;
+            this.year.SelectedIndexChanged += new System.EventHandler(this.year_SelectedIndexChanged);
+            this.year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
+            // 
             // teacherClass
             // 
+            this.teacherClass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.teacherClass.FormattingEnabled = true;
-            this.teacherClass.Location = new System.Drawing.Point(127, 132);
+            this.teacherClass.Location = new System.Drawing.Point(132, 150);
             this.teacherClass.Name = "teacherClass";
             this.teacherClass.Size = new System.Drawing.Size(179, 21);
             this.teacherClass.TabIndex = 3;
@@ -85,15 +123,24 @@
             // subjectSpecialize
             // 
             this.subjectSpecialize.FormattingEnabled = true;
-            this.subjectSpecialize.Location = new System.Drawing.Point(127, 106);
+            this.subjectSpecialize.Location = new System.Drawing.Point(132, 74);
             this.subjectSpecialize.Name = "subjectSpecialize";
             this.subjectSpecialize.Size = new System.Drawing.Size(179, 21);
             this.subjectSpecialize.TabIndex = 3;
             this.subjectSpecialize.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(49, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(28, 13);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Khối";
+            // 
             // teacherCodeAdvance
             // 
-            this.teacherCodeAdvance.Location = new System.Drawing.Point(127, 55);
+            this.teacherCodeAdvance.Location = new System.Drawing.Point(132, 23);
             this.teacherCodeAdvance.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -104,10 +151,19 @@
             this.teacherCodeAdvance.TabIndex = 2;
             this.teacherCodeAdvance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EnterPress);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(49, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Niên Khóa";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 135);
+            this.label4.Location = new System.Drawing.Point(49, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
             this.label4.TabIndex = 0;
@@ -116,7 +172,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 109);
+            this.label3.Location = new System.Drawing.Point(49, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 0;
@@ -124,7 +180,7 @@
             // 
             // teacherName
             // 
-            this.teacherName.Location = new System.Drawing.Point(127, 80);
+            this.teacherName.Location = new System.Drawing.Point(132, 48);
             this.teacherName.Name = "teacherName";
             this.teacherName.Size = new System.Drawing.Size(179, 20);
             this.teacherName.TabIndex = 1;
@@ -133,7 +189,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 83);
+            this.label2.Location = new System.Drawing.Point(49, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 0;
@@ -142,7 +198,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 57);
+            this.label1.Location = new System.Drawing.Point(49, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
@@ -165,7 +221,7 @@
             this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Location = new System.Drawing.Point(434, 38);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 195);
+            this.groupBox2.Size = new System.Drawing.Size(200, 222);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tùy Chọn";
@@ -202,7 +258,7 @@
             this.groupBoxBasic.Controls.Add(this.teacherCodeBasic);
             this.groupBoxBasic.Location = new System.Drawing.Point(38, 38);
             this.groupBoxBasic.Name = "groupBoxBasic";
-            this.groupBoxBasic.Size = new System.Drawing.Size(390, 195);
+            this.groupBoxBasic.Size = new System.Drawing.Size(390, 222);
             this.groupBoxBasic.TabIndex = 0;
             this.groupBoxBasic.TabStop = false;
             this.groupBoxBasic.Text = "Nhập Thông Tin";
@@ -306,5 +362,9 @@
         private System.Windows.Forms.NumericUpDown teacherCodeAdvance;
         private System.Windows.Forms.NumericUpDown teacherCodeBasic;
         private System.Windows.Forms.Button Reset;
+        private System.Windows.Forms.ComboBox grade;
+        private System.Windows.Forms.ComboBox year;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

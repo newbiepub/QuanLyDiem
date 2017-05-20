@@ -11,6 +11,60 @@ namespace QuanLyDiem.Business_Logic
     class GiaoVienBL
     {
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+
+        public DataTable FindTeacherByID(int maGiaovien)
+        {
+            string query = "TimGiaoVienCoBan";
+            SqlParameter[] pr =
+                {
+                    new SqlParameter("@magiaovien", maGiaovien), 
+                };
+            DataTable dt = da.selectProc(query, pr);
+            return dt;
+        }
+        public DataTable FindTeacherAdvance(int code, string supjectSpecialize, string name, int Class,string checkClass)
+        {
+
+            //querry ten
+            string TenGiaoVien = "";
+            if (name != "")
+            {
+                TenGiaoVien = "and TenGiaoVien=@tengiaovien";
+            }
+            //querry ma
+            string MaGiaoVien = "";
+            if (code != 0)
+            {
+                MaGiaoVien = "and MaGiaoVien=@MaGiaoVien";
+            }
+            //querry mon
+            string mon = "";
+            if (supjectSpecialize != "Không")
+            {
+                mon = "and TenMon= @tenmonhoc";
+            }
+            
+            //querry Lop
+            string lop = "";
+            if (checkClass != "Không")
+            {
+                lop = "and LOP.MaLop=@malop";
+            }
+
+            string query =
+                "select MaGiaoVien,TenGiaoVien,NgaySinh,GioiTinh,NienKhoa, LOP.MaLop,TenMon,TenLop,Khoi,SoDienThoai,DiaChi from DAY,GIAO_VIEN,LOP,MON_HOC where LOP.MaLop = DAY.MaLop and MaGiaoVien = MaGV and MON_HOC.MaMon = DAY.MaMon " + mon + " " + lop + " " + TenGiaoVien + " " + MaGiaoVien + "";
+            SqlParameter[] pr =
+                {
+        
+                    new SqlParameter("@tengiaovien", name),
+                    new SqlParameter("@malop", Class),
+                    new SqlParameter("@MaGiaoVien",code),
+                    new SqlParameter("@tenmonhoc",supjectSpecialize),
+                   
+                };
+
+            return da.select(query, pr);
+        }
         public DataTable getgiaovien()
         {
             string query = "GetGiaoVien";

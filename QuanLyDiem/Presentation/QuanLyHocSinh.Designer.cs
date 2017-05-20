@@ -31,6 +31,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.studentDate = new System.Windows.Forms.DateTimePicker();
             this.studentClass = new System.Windows.Forms.ComboBox();
+            this.year = new System.Windows.Forms.ComboBox();
             this.studentGrade = new System.Windows.Forms.ComboBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -41,6 +42,7 @@
             this.sexMale = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.year = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,6 +98,16 @@
             this.studentClass.Name = "studentClass";
             this.studentClass.Size = new System.Drawing.Size(307, 21);
             this.studentClass.TabIndex = 5;
+            // 
+            // year
+            // 
+            this.year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.year.FormattingEnabled = true;
+            this.year.Location = new System.Drawing.Point(272, 137);
+            this.year.Name = "year";
+            this.year.Size = new System.Drawing.Size(307, 21);
+            this.year.TabIndex = 5;
+            this.year.SelectedIndexChanged += new System.EventHandler(this.year_change);
             // 
             // studentGrade
             // 
@@ -205,6 +215,15 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Lớp";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(187, 140);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Niên Khóa";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -274,31 +293,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(772, 178);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(187, 140);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Niên Khóa";
-            // 
-            // year
-            // 
-            this.year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.year.FormattingEnabled = true;
-            this.year.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.year.Location = new System.Drawing.Point(272, 137);
-            this.year.Name = "year";
-            this.year.Size = new System.Drawing.Size(307, 21);
-            this.year.TabIndex = 5;
-            this.year.SelectedIndexChanged += new System.EventHandler(this.year_change);
             // 
             // QuanLyHocSinh
             // 
