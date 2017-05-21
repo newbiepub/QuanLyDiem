@@ -72,3 +72,154 @@ as
 		end
 	else 
 		return;
+
+/* 
+	Bang Diem Hoc Sinh
+*/
+
+CREATE PROCEDURE sDiemTheoMaHSvaHocKy
+	@MaHocSinh bigint,
+	@HocKy nchar(10),
+	@NamHoc datetime
+AS
+	select TenMon,DiemMieng,DiemGiuaKy,DiemHocKy,dbo.TrungBinhMon(DiemMieng,DiemGiuaKy, DiemHocKy) as TBMon from DIEM inner join MON_HOC on DIEM.MaMon=MON_HOC.MaMon where MaHocSinh=@MaHocSinh and HocKy=@HocKy and YEAR(NamHoc)=YEAR(@NamHoc);
+RETURN 0
+
+/*
+	GET GIAO VIEN
+*/
+
+CREATE PROCEDURE GetGiaoVien
+AS
+	select * from GIAO_VIEN inner join DAY on GIAO_VIEN.MaGiaoVien = DAY.MaGV inner join LOP on LOP.MaLop = DAY.MaLop inner join MON_HOC on DAY.MaMon = MON_HOC.MaMon;
+RETURN 0;
+
+/*
+	GET HOC SINH
+*/
+
+CREATE PROCEDURE GetHocSinh
+AS
+	select * from HOC_SINH inner join LOP on HOC_SINH.MaLop = LOP.MaLop;
+RETURN 0;
+
+/*
+	Cap Nhat Giao Vien
+*/
+
+CREATE PROCEDURE SuaGiaoVien
+	@ten nvarchar(150),
+	@gioitinh int,
+	@ngaysinh date,
+	@diachi nvarchar(120),
+	@sodienthoai nvarchar(11),
+	@lop bigint,
+	@mon bigint,
+	@ma bigint
+
+AS
+Begin
+	update GIAO_VIEN
+	set TenGiaoVien=@ten,GioiTinh=@gioitinh, NgaySinh = @ngaysinh, DiaChi = @diachi, SoDienThoai = @sodienthoai
+	where MaGiaoVien = @ma
+
+	update DAY
+	set MaLop = @lop, MaMon = @mon
+	where MaGV = @ma
+	
+end
+
+/*
+	Cap Nhat Hoc Sinh
+*/
+
+CREATE PROCEDURE SuaHocSinh
+	@tenhocsinh nvarchar(150),
+	@gioitinh int,
+	@malop bigint,
+	@ngaysinh date,
+	@diachi nvarchar(120),
+	@mahocsinh bigint
+
+AS
+	update HOC_SINH
+	set TenHocSinh=@tenhocsinh,GioiTinh=@gioitinh,MaLop=@malop,NgaySinh=@ngaysinh,DiaChi=@diachi
+	where MaHocSinh = @mahocsinh
+end
+
+/*
+	Tim Kiem Co Ban
+*/
+
+/*Hoc Sinh*/
+
+CREATE PROCEDURE TimHocSinhCoBan
+	@mahocsinh int
+AS
+	SELECT MaHocSinh,TenHocSinh, NgaySinh,LOP.TenLop, GioiTinh, HOC_SINH.MaLop, DiaChi, Khoi, GhiChu from HOC_SINH,LOP where HOC_SINH.MaLop=LOP.MaLop and MaHocSinh = @mahocsinh;
+
+/*Giao Vien*/
+CREATE PROCEDURE TimGiaoVienCoBan
+	@magiaovien int
+AS
+	SELECT  MaGiaoVien,TenGiaoVien,NgaySinh,GioiTinh,LOP.MaLop,TenMon,TenLop,Khoi,SoDienThoai,DiaChi from DAY,GIAO_VIEN,LOP,MON_HOC where LOP.MaLop = DAY.MaLop and MaGiaoVien = MaGV and MON_HOC.MaMon = DAY.MaMon and MaGiaoVien=@magiaovien;
+end
+
+/* Them Giao Vien */
+
+CREATE PROCEDURE ThemGiaoVien
+	@ten nvarchar(150),
+	@gioitinh int,
+	@ngaysinh date,
+	@diachi nvarchar(120),
+	@sodienthoai nvarchar(11),
+	@lop bigint,
+	@mon bigint
+
+AS
+Begin
+	Insert into GIAO_VIEN(TenGiaoVien,GioiTinh,SoDienThoai,NgaySinh,DiaChi) 
+	values(@ten,@gioitinh,@sodienthoai,@ngaysinh,@diachi);
+
+	Insert into DAY(MaGV,MaLop,MaMon,GhiChu) 
+	values((SELECT TOP 1 MaGiaoVien FROM GIAO_VIEN ORDER BY MaGiaoVien DESC),@lop,@mon,'')
+	
+end
+
+/* Them Hoc Sinh */
+
+CREATE PROCEDURE ThemHocSinh
+	@tenhocsinh nvarchar(150),
+	@gioitinh int,
+	@malop bigint,
+	@ngaysinh date,
+	@diachi nvarchar(120)
+
+AS
+	Insert into HOC_SINH(TenHocSinh,GioiTinh,MaLop,NgaySinh,DiaChi) values(@tenhocsinh,@gioitinh,@malop,@ngaysinh,@diachi)
+end
+
+/* 
+	Xoa Giao Vien
+*/
+
+CREATE PROCEDURE XoaGiaoVien
+	@ma bigint
+
+AS
+begin
+	Delete from DAY where MaGV = @ma
+	Delete from GIAO_VIEN where MaGiaoVien = @ma
+	
+end
+
+/*
+	Xoa Hoc Sinh
+*/
+
+CREATE PROCEDURE XoaHocSinh
+	@mahocsinh bigint
+
+AS
+	Delete from HOC_SINH where MaHocSinh = @mahocsinh
+end

@@ -52,8 +52,7 @@ namespace QuanLyDiem.Business_Logic
                 new SqlParameter("@MaHocSinh", maHocSinh),
                 new SqlParameter("@HocKy", hocKy), 
                 new SqlParameter("@NamHoc", namHoc), 
-            };
-            return db.selectProc("sDiemTheoMaHSvaHocKy", pr);
+            };return db.selectProc("sDiemTheoMaHSvaHocKy", pr);
         }
     }
 }
