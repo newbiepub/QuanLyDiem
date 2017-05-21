@@ -162,5 +162,11 @@ namespace QuanLyDiem
             //    Application.Exit();
             //}
         }
+
+        private void inBảngĐiểmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormInBangDiem frmInBangDiem = new FormInBangDiem();
+            frmInBangDiem.Show(this);
+        }
     }
 }

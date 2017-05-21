@@ -41,6 +41,7 @@ namespace QuanLyDiem.Presentation
         }
 
         private MonHocBL monHocBl;
+        private DiemBL diemBl;
         private static DataTable dtDiem;
         private KhoiBL khoiBl;
         private static BindingSource bsKhoi;
@@ -50,6 +51,7 @@ namespace QuanLyDiem.Presentation
             InitializeComponent();
             monHocBl = new MonHocBL();
             khoiBl = new KhoiBL();
+            diemBl = new DiemBL();
             dtDiem = new DataTable();
             bsKhoi = new BindingSource();
         }
@@ -83,7 +85,7 @@ namespace QuanLyDiem.Presentation
             this.cb_hocki.DataSource = dtHocKi;
         }
 
-        private void loadInfoHocSinh()
+        private void loadKhoi()
         {
             DataTable dtInfo = khoiBl.getKhoiLopHocSinh();
             this.cb_khoi.ValueMember = "khoiId";
@@ -95,7 +97,7 @@ namespace QuanLyDiem.Presentation
         {
             this.loadHocKi();
             this.loadMonHoc();
-            this.loadInfoHocSinh();
+            this.loadKhoi();
             this.dtp_namhoc.Format = DateTimePickerFormat.Custom;
             this.dtp_namhoc.CustomFormat = "yyyy";
             this.dtp_namhoc.ShowUpDown = true;
@@ -142,7 +144,7 @@ namespace QuanLyDiem.Presentation
                 String mahk = this.cb_hocki.SelectedValue.ToString();
                 String mahocsinh = this.cb_tenhocsinh.SelectedValue.ToString();
                 String mamon = this.cb_monhoc.SelectedValue.ToString();
-                dtDiem = monHocBl.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk);
+                dtDiem = diemBl.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk);
                 if (dtDiem.Rows.Count > 0)
                 {
                     foreach (DataRow rowData in dtDiem.Rows)
@@ -235,7 +237,7 @@ namespace QuanLyDiem.Presentation
             string MaMon = this.cb_monhoc.SelectedValue.ToString();
             string hocki = this.cb_hocki.SelectedValue.ToString();
             DateTime namhoc = this.dtp_namhoc.Value;
-            bool isInsert = monHocBl.insertDiem(Convert.ToInt32(mahocsinh), Convert.ToInt32(MaMon), mieng, giuaki,
+            bool isInsert = diemBl.insertDiem(Convert.ToInt32(mahocsinh), Convert.ToInt32(MaMon), mieng, giuaki,
                 cuoiki, hocki, namhoc, "");
             if (isInsert)
             {

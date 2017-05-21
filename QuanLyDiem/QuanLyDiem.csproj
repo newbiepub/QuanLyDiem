@@ -108,6 +108,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business Logic\DiemBL.cs" />
     <Compile Include="Business Logic\GiaoVienBL.cs" />
     <Compile Include="Business Logic\HocSinhBL.cs" />
     <Compile Include="Business Logic\KhoiBL.cs" />
@@ -137,6 +138,12 @@
     </Compile>
     <Compile Include="Presentation\FormDoiMatKhau.Designer.cs">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FormInBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FormInBangDiem.Designer.cs">
+      <DependentUpon>FormInBangDiem.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FormNhapDiem.cs">
       <SubType>Form</SubType>
@@ -199,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FormInBangDiem.resx">
+      <DependentUpon>FormInBangDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormNhapDiem.resx">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
