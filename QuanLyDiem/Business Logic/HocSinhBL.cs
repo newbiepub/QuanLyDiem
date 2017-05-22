@@ -11,7 +11,15 @@ namespace QuanLyDiem.Business_Logic
     class HocSinhBL
     {
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
-
+        public DataTable gethocsinhwithlop(int maLop)
+        {
+            string query = "GetHocSinhWithLop";
+            SqlParameter[] pr = 
+            { 
+                new SqlParameter("@malop", maLop),
+            };
+            return da.selectProc(query, pr);
+        }
         public DataTable FindStudentByID(int maHocSinh)
         {
             string query = "TimHocSinhCoBan";

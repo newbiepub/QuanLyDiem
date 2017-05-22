@@ -115,11 +115,22 @@
     <Compile Include="Business Logic\LopBL.cs" />
     <Compile Include="Business Logic\MonHocBL.cs" />
     <Compile Include="Data Layer\DataAccess.cs" />
+    <Compile Include="dbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="MDIQuanLyParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIQuanLyParentForm.Designer.cs">
       <DependentUpon>MDIQuanLyParentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Form QuanLyLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Form QuanLyLop.Designer.cs">
+      <DependentUpon>Form QuanLyLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\FormDangKi.cs">
       <SubType>Form</SubType>
@@ -198,6 +209,9 @@
     <EmbeddedResource Include="MDIQuanLyParentForm.resx">
       <DependentUpon>MDIQuanLyParentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Form QuanLyLop.resx">
+      <DependentUpon>Form QuanLyLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentation\FormDangKi.resx">
       <DependentUpon>FormDangKi.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +259,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="dbDataSet.xsc">
+      <DependentUpon>dbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbDataSet.xss">
+      <DependentUpon>dbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

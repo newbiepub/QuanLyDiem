@@ -156,17 +156,23 @@ namespace QuanLyDiem
 
         private void MDIQuanLyParentForm_Load(object sender, EventArgs e)
         {
-            //FormDangNhap dn = new FormDangNhap();
-            //if(dn.ShowDialog()!= DialogResult.OK)
-            //{
-            //    Application.Exit();
-            //}
+            FormDangNhap dn = new FormDangNhap();
+            if (dn.ShowDialog() != DialogResult.OK)
+            {
+                Application.Exit();
+            }
         }
 
         private void inBảngĐiểmToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormInBangDiem frmInBangDiem = new FormInBangDiem();
             frmInBangDiem.Show(this);
+        }
+
+        private void quảnLýLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_QuanLyLop formQuanLyLop = new Form_QuanLyLop();
+            formQuanLyLop.Show(this);
         }
     }
 }

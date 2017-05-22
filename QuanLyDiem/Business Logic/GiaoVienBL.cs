@@ -11,7 +11,15 @@ namespace QuanLyDiem.Business_Logic
     class GiaoVienBL
     {
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
-
+        public DataTable getgiaovienwithlop(int maLop)
+        {
+            string query = "GetGiaoVienWithLop";
+            SqlParameter[] pr = 
+            { 
+                 new SqlParameter("@malop", maLop),
+            };
+            return da.selectProc(query, pr);
+        }
         public DataTable FindTeacherByID(int maGiaovien)
         {
             string query = "TimGiaoVienCoBan";

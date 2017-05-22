@@ -231,5 +231,34 @@ namespace QuanLyDiem.Data_Layer
             connection.Close();
             return true;
         }
+        public bool dataTableExecute(String query, DataTable dt)
+        {
+
+            SqlCommand command = new SqlCommand();
+            SqlDataAdapter sda = new SqlDataAdapter();
+            try
+            {
+                command.Connection = this.openConnection();
+                command.CommandText = query;
+
+                sda = new SqlDataAdapter(command);
+                SqlCommandBuilder builder = new SqlCommandBuilder(sda);
+
+            }
+            catch (Exception)
+            {
+                Console.Write("Error at Select Query - {0}", query);
+                return false;
+                throw;
+            }
+            if (sda.Update(dt) > 0)
+            {
+                connection.Close();
+                return true;
+            }
+
+            return false;
+
+        }
     }
 }
