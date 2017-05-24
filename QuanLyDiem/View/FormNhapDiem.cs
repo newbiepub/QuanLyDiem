@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using Json;
 using QuanLyDiem.Business_Logic;
+using QuanLyDiem.Controller;
 using DataView = DevExpress.DataAccess.Native.Data.DataView;
 
 namespace QuanLyDiem.Presentation
@@ -21,27 +22,7 @@ namespace QuanLyDiem.Presentation
     public partial class FormNhapDiem : Form
     {
 
-        private class Diem
-        {
-            public int diemMieng { get; set; }
-            public int diemGiuaKi { get; set; }
-            public int diemCuoiKi { get; set; }
-
-            public Diem()
-            {
-
-            }
-
-            public Diem(int mieng, int giuaki, int cuoiki)
-            {
-                this.diemMieng = mieng;
-                this.diemGiuaKi = giuaki;
-                this.diemCuoiKi = cuoiki;
-            }
-        }
-
         private MonHocBL monHocBl;
-        private DiemBL diemBl;
         private static DataTable dtDiem;
         private KhoiBL khoiBl;
         private static BindingSource bsKhoi;
@@ -51,7 +32,6 @@ namespace QuanLyDiem.Presentation
             InitializeComponent();
             monHocBl = new MonHocBL();
             khoiBl = new KhoiBL();
-            diemBl = new DiemBL();
             dtDiem = new DataTable();
             bsKhoi = new BindingSource();
         }
@@ -142,9 +122,9 @@ namespace QuanLyDiem.Presentation
             try
             {
                 String mahk = this.cb_hocki.SelectedValue.ToString();
-                String mahocsinh = this.cb_tenhocsinh.SelectedValue.ToString();
-                String mamon = this.cb_monhoc.SelectedValue.ToString();
-                dtDiem = diemBl.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk);
+                int mahocsinh = Convert.ToInt32(this.cb_tenhocsinh.SelectedValue.ToString());
+                int mamon = Convert.ToInt32(this.cb_monhoc.SelectedValue.ToString());
+                dtDiem = Diem.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk);
                 if (dtDiem.Rows.Count > 0)
                 {
                     foreach (DataRow rowData in dtDiem.Rows)
@@ -237,7 +217,7 @@ namespace QuanLyDiem.Presentation
             string MaMon = this.cb_monhoc.SelectedValue.ToString();
             string hocki = this.cb_hocki.SelectedValue.ToString();
             DateTime namhoc = this.dtp_namhoc.Value;
-            bool isInsert = diemBl.insertDiem(Convert.ToInt32(mahocsinh), Convert.ToInt32(MaMon), mieng, giuaki,
+            bool isInsert = Diem.insertDiem(Convert.ToInt32(mahocsinh), Convert.ToInt32(MaMon), mieng, giuaki,
                 cuoiki, hocki, namhoc, "");
             if (isInsert)
             {

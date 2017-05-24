@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace QuanLyDiem.Presentation
 {
     public partial class FormDangNhap : Form
-    {
-        public FormDangNhap()
+    {public FormDangNhap()
         {
             InitializeComponent();
             this.txt_tendangnhap.Select();
@@ -20,7 +19,7 @@ namespace QuanLyDiem.Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txt_matkhau.Text == "admin" & txt_tendangnhap.Text == "admin")
+            if(txt_matkhau.Text == "admin" & txt_tendangnhap.Text.Trim() == "admin")
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();

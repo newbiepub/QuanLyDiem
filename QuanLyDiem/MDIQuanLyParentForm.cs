@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -150,25 +150,18 @@ namespace QuanLyDiem
 
         private void inBảngĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InBangDiem formInBangDiem = new InBangDiem();
-            formInBangDiem.Show(this);
+            FormInBangDiem frmInBangDiem = new FormInBangDiem();
+            frmInBangDiem.Show(this);
         }
 
         private void MDIQuanLyParentForm_Load(object sender, EventArgs e)
         {
             FormDangNhap dn = new FormDangNhap();
-            if (dn.ShowDialog() != DialogResult.OK)
+            if(dn.ShowDialog()!= DialogResult.OK)
             {
                 Application.Exit();
             }
         }
-
-        private void inBảngĐiểmToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            FormInBangDiem frmInBangDiem = new FormInBangDiem();
-            frmInBangDiem.Show(this);
-        }
-
         private void quảnLýLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form_QuanLyLop formQuanLyLop = new Form_QuanLyLop();

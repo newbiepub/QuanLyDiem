@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Windows.Media.TextFormatting;
 using DevExpress.XtraPrinting.Native;
 using QuanLyDiem.Business_Logic;
+using QuanLyDiem.Controller;
 
 namespace QuanLyDiem.Presentation
 {
@@ -75,23 +76,21 @@ namespace QuanLyDiem.Presentation
                 }
                 if (this._maHocSinh != null && this._hocKy != null)
                 {
-                    FrmInstance.gridControl1.DataSource = FrmInstance.diemBl.getDiemFromMaHocSinhAndHocKyNamHoc(this._maHocSinh, this._hocKy, this._namHoc);
+                    FrmInstance.gridControl1.DataSource = Diem.getDiemFromMaHocSinhAndHocKyNamHoc(Convert.ToInt32(this._maHocSinh), this._hocKy, this._namHoc);
                 }
             }
         }
 
         private KhoiBL khoiBl;
         private MonHocBL monHocBl;
-        private DiemBL diemBl;
+       
         private static SqlParams sqlParams;
 
         public FormInBangDiem()
         {
             InitializeComponent();
             monHocBl = new MonHocBL();
-            khoiBl = new KhoiBL();
-            diemBl = new DiemBL();
-        }
+            khoiBl = new KhoiBL();}
 
         private DataRow dtDiemAddRow(DataTable dtDiem, String hocki, String mahk)
         {

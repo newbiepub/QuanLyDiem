@@ -108,100 +108,102 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Business Logic\DiemBL.cs" />
-    <Compile Include="Business Logic\GiaoVienBL.cs" />
-    <Compile Include="Business Logic\HocSinhBL.cs" />
-    <Compile Include="Business Logic\KhoiBL.cs" />
-    <Compile Include="Business Logic\LopBL.cs" />
-    <Compile Include="Business Logic\MonHocBL.cs" />
-    <Compile Include="Data Layer\DataAccess.cs" />
+    <Compile Include="Controller\Diem.cs" />
+    <Compile Include="Controller\GiaoVien.cs" />
     <Compile Include="dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\DiemBL.cs" />
+    <Compile Include="Model\GiaoVienBL.cs" />
+    <Compile Include="Model\HocSinhBL.cs" />
+    <Compile Include="Model\KhoiBL.cs" />
+    <Compile Include="Model\LopBL.cs" />
+    <Compile Include="Model\MonHocBL.cs" />
+    <Compile Include="Model\DataAccess.cs" />
     <Compile Include="MDIQuanLyParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIQuanLyParentForm.Designer.cs">
       <DependentUpon>MDIQuanLyParentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\Form QuanLyLop.cs">
+    <Compile Include="View\Form QuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\Form QuanLyLop.Designer.cs">
+    <Compile Include="View\Form QuanLyLop.Designer.cs">
       <DependentUpon>Form QuanLyLop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormDangKi.cs">
+    <Compile Include="View\FormDangKi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormDangKi.Designer.cs">
+    <Compile Include="View\FormDangKi.Designer.cs">
       <DependentUpon>FormDangKi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormDangNhap.cs">
+    <Compile Include="View\FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormDangNhap.Designer.cs">
+    <Compile Include="View\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormDoiMatKhau.cs">
+    <Compile Include="View\FormDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormDoiMatKhau.Designer.cs">
+    <Compile Include="View\FormDoiMatKhau.Designer.cs">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormInBangDiem.cs">
+    <Compile Include="View\FormInBangDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormInBangDiem.Designer.cs">
+    <Compile Include="View\FormInBangDiem.Designer.cs">
       <DependentUpon>FormInBangDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormNhapDiem.cs">
+    <Compile Include="View\FormNhapDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormNhapDiem.Designer.cs">
+    <Compile Include="View\FormNhapDiem.Designer.cs">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormQuanLyDiem.cs">
+    <Compile Include="View\FormQuanLyDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormQuanLyDiem.Designer.cs">
+    <Compile Include="View\FormQuanLyDiem.Designer.cs">
       <DependentUpon>FormQuanLyDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FormThongKe.cs">
+    <Compile Include="View\FormThongKe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FormThongKe.Designer.cs">
+    <Compile Include="View\FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\InBangDiem.cs">
+    <Compile Include="View\InBangDiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\InBangDiem.Designer.cs">
+    <Compile Include="View\InBangDiem.Designer.cs">
       <DependentUpon>InBangDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyGiaoVien.cs">
+    <Compile Include="View\QuanLyGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyGiaoVien.Designer.cs">
+    <Compile Include="View\QuanLyGiaoVien.Designer.cs">
       <DependentUpon>QuanLyGiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\QuanLyHocSinh.cs">
+    <Compile Include="View\QuanLyHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\QuanLyHocSinh.Designer.cs">
+    <Compile Include="View\QuanLyHocSinh.Designer.cs">
       <DependentUpon>QuanLyHocSinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\TimKiemGiaoVien.cs">
+    <Compile Include="View\TimKiemGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\TimKiemGiaoVien.Designer.cs">
+    <Compile Include="View\TimKiemGiaoVien.Designer.cs">
       <DependentUpon>TimKiemGiaoVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\TimKiemHocSinh.cs">
+    <Compile Include="View\TimKiemHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\TimKiemHocSinh.Designer.cs">
+    <Compile Include="View\TimKiemHocSinh.Designer.cs">
       <DependentUpon>TimKiemHocSinh.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -209,43 +211,43 @@
     <EmbeddedResource Include="MDIQuanLyParentForm.resx">
       <DependentUpon>MDIQuanLyParentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\Form QuanLyLop.resx">
+    <EmbeddedResource Include="View\Form QuanLyLop.resx">
       <DependentUpon>Form QuanLyLop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormDangKi.resx">
+    <EmbeddedResource Include="View\FormDangKi.resx">
       <DependentUpon>FormDangKi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormDangNhap.resx">
+    <EmbeddedResource Include="View\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormDoiMatKhau.resx">
+    <EmbeddedResource Include="View\FormDoiMatKhau.resx">
       <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormInBangDiem.resx">
+    <EmbeddedResource Include="View\FormInBangDiem.resx">
       <DependentUpon>FormInBangDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormNhapDiem.resx">
+    <EmbeddedResource Include="View\FormNhapDiem.resx">
       <DependentUpon>FormNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormQuanLyDiem.resx">
+    <EmbeddedResource Include="View\FormQuanLyDiem.resx">
       <DependentUpon>FormQuanLyDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FormThongKe.resx">
+    <EmbeddedResource Include="View\FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\InBangDiem.resx">
+    <EmbeddedResource Include="View\InBangDiem.resx">
       <DependentUpon>InBangDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyGiaoVien.resx">
+    <EmbeddedResource Include="View\QuanLyGiaoVien.resx">
       <DependentUpon>QuanLyGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\QuanLyHocSinh.resx">
+    <EmbeddedResource Include="View\QuanLyHocSinh.resx">
       <DependentUpon>QuanLyHocSinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\TimKiemGiaoVien.resx">
+    <EmbeddedResource Include="View\TimKiemGiaoVien.resx">
       <DependentUpon>TimKiemGiaoVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\TimKiemHocSinh.resx">
+    <EmbeddedResource Include="View\TimKiemHocSinh.resx">
       <DependentUpon>TimKiemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

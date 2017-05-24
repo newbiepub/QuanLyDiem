@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyDiem.Controller;
 
 namespace QuanLyDiem.Presentation
 {
@@ -168,7 +169,7 @@ namespace QuanLyDiem.Presentation
                 int sex = 0;
                 if (sexMale.Checked)
                     sex = 1;
-                if (giaoVienBl.insertgiaovien(name.Text, date.Value.Date.ToString("yyyy-MM-dd"), sex, Convert.ToInt32(Class.SelectedValue), address.Text, phone.Text, Convert.ToInt32(subject.SelectedValue)) == true)
+                if (GiaoVien.insertgiaovien(name.Text, date.Value.Date.ToString("yyyy-MM-dd"), sex, Convert.ToInt32(Class.SelectedValue), address.Text, phone.Text, Convert.ToInt32(subject.SelectedValue)) == true)
                 {
                     MessageBox.Show("Thêm hoc sinh thành công !!");
                     QuanLyGiaoVien_Load(null, null);
@@ -186,7 +187,7 @@ namespace QuanLyDiem.Presentation
                 int sex = 0;
                 if (sexMale.Checked)
                     sex = 1;
-                if (giaoVienBl.updategiaovien(ma, name.Text, date.Value.Date.ToString("yyyy-MM-dd"), sex, Convert.ToInt32(Class.SelectedValue), address.Text, phone.Text, Convert.ToInt32(subject.SelectedValue)) == true)
+                if (GiaoVien.updategiaovien(Convert.ToInt32(ma), name.Text, date.Value.Date.ToString("yyyy-MM-dd"), sex, Convert.ToInt32(Class.SelectedValue), address.Text, phone.Text, Convert.ToInt32(subject.SelectedValue)) == true)
                 {
                     MessageBox.Show("Sửa thành công !!");
                 }

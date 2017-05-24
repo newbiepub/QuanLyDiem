@@ -11,11 +11,56 @@ namespace QuanLyDiem.Business_Logic
     class GiaoVienBL
     {
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
+
+        public int maLop { get; set; }
+
+        public int maGiaoVien { get; set; }
+
+        public String tenGiaoVien { get; set; }
+
+        public int  maMon { get; set; }
+
+        public string ngaySinh { get; set; }
+
+        public string diaChi { get; set; }
+
+        public string soDienThoai { get; set; }
+
+        public int gioiTinh { get; set; }
+
+        public GiaoVienBL()
+        {
+            
+        }
+
+        public GiaoVienBL(string tenGiaoVien, string ngaySinh, int gioiTinh, int lop, string diaChi, string soDienThoai, int mon)
+        {
+            this.tenGiaoVien = tenGiaoVien;
+            this.ngaySinh = ngaySinh;
+            this.gioiTinh = gioiTinh;
+            this.maLop = lop;
+            this.diaChi = diaChi;
+            this.soDienThoai = soDienThoai;
+            this.maMon = mon;
+        }
+
+        public GiaoVienBL(int maGiaoVien,string tenGiaoVien, string ngaySinh, int gioiTinh, int lop, string diaChi, string soDienThoai, int mon)
+        {
+            this.maGiaoVien = maGiaoVien;
+            this.tenGiaoVien = tenGiaoVien;
+            this.ngaySinh = ngaySinh;
+            this.gioiTinh = gioiTinh;
+            this.maLop = lop;
+            this.diaChi = diaChi;
+            this.soDienThoai = soDienThoai;
+            this.maMon = mon;
+        }
+
         public DataTable getgiaovienwithlop(int maLop)
         {
             string query = "GetGiaoVienWithLop";
-            SqlParameter[] pr = 
-            { 
+            SqlParameter[] pr =
+            {
                  new SqlParameter("@malop", maLop),
             };
             return da.selectProc(query, pr);
@@ -79,18 +124,18 @@ namespace QuanLyDiem.Business_Logic
             SqlParameter[] pr = { };
             return da.selectProc(query, pr);
         }
-        public bool insertgiaovien(string tenGiaoVien, string ngaySinh, int gioiTinh, int lop, string diaChi, string soDienThoai,int mon)
+        public bool insertgiaovien()
         {
             string query = "ThemGiaoVien";
             SqlParameter[] pr =
             { 
-                new SqlParameter( "@ten", tenGiaoVien),
-                new SqlParameter( "@ngaysinh", ngaySinh),
-                new SqlParameter( "@gioitinh", gioiTinh),
-                new SqlParameter( "@lop", lop),
+                new SqlParameter( "@ten", this.tenGiaoVien),
+                new SqlParameter( "@ngaysinh", this.ngaySinh),
+                new SqlParameter( "@gioitinh", this.gioiTinh),
+                new SqlParameter( "@lop", this.maLop),
                 new SqlParameter( "@diachi", diaChi),
                 new SqlParameter( "@sodienthoai", soDienThoai),
-                new SqlParameter( "@mon", mon)
+                new SqlParameter( "@mon", this.maMon)
             };
             return da.insertProc(query, pr);
 
@@ -104,19 +149,19 @@ namespace QuanLyDiem.Business_Logic
             };
             return da.deleteProc(query, pr);
         }
-        public bool updategiaovien(Int64 maGiaoVien, string tenGiaoVien, string ngaySinh, int gioiTinh, int lop, string diaChi, string soDienThoai, int mon)
+        public bool updategiaovien()
         {
             string query = "SuaGiaoVien";
             SqlParameter[] pr =
             { 
-                new SqlParameter( "@ma", maGiaoVien),
-                 new SqlParameter( "@ten", tenGiaoVien),
-                new SqlParameter( "@ngaysinh", ngaySinh),
-                new SqlParameter( "@gioitinh", gioiTinh),
-                new SqlParameter( "@lop", lop),
-                new SqlParameter( "@diachi", diaChi),
-                new SqlParameter( "@sodienthoai", soDienThoai),
-                new SqlParameter( "@mon", mon)
+                new SqlParameter( "@ma", this.maGiaoVien),
+                 new SqlParameter( "@ten", this.tenGiaoVien),
+                new SqlParameter( "@ngaysinh", this.ngaySinh),
+                new SqlParameter( "@gioitinh", this.gioiTinh),
+                new SqlParameter( "@lop", this.maLop),
+                new SqlParameter( "@diachi", this.diaChi),
+                new SqlParameter( "@sodienthoai", this.soDienThoai),
+                new SqlParameter( "@mon", this.maMon)
             };
             return da.updateProc(query, pr);
         }

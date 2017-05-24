@@ -14,8 +14,8 @@ namespace QuanLyDiem.Business_Logic
         public DataTable gethocsinhwithlop(int maLop)
         {
             string query = "GetHocSinhWithLop";
-            SqlParameter[] pr = 
-            { 
+            SqlParameter[] pr =
+            {
                 new SqlParameter("@malop", maLop),
             };
             return da.selectProc(query, pr);
