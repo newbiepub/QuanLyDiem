@@ -399,7 +399,7 @@ namespace QuanLyDiem.Presentation
             this.ClientSize = new System.Drawing.Size(703, 461);
             this.Controls.Add(this.panel1);
             this.Name = "FormNhapDiem";
-            this.Text = "FormNhapDiem";
+            this.Text = "Nhập Điểm";
             this.Load += new System.EventHandler(this.FormNhapDiem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edt_cuoiki)).EndInit();
             this.panel1.ResumeLayout(false);

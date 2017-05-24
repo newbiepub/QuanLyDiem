@@ -302,7 +302,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "QuanLyHocSinh";
-            this.Text = "QuanLyHocSinh";
+            this.Text = "Quản Lý Học Sinh";
             this.Load += new System.EventHandler(this.QuanLyHocSinh_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

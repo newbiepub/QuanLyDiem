@@ -61,8 +61,7 @@ namespace QuanLyDiem.Presentation
                 set
                 {
                     _namHoc = value;
-                    OnPropertyChanged("NamHoc");
-                }
+                    OnPropertyChanged("NamHoc");}
             }
 
             public event PropertyChangedEventHandler PropertyChanged;
@@ -71,8 +70,7 @@ namespace QuanLyDiem.Presentation
             {
                 var handler = PropertyChanged;
                 if (handler != null)
-                {
-                    handler(this, new PropertyChangedEventArgs(propertyName));
+                {handler(this, new PropertyChangedEventArgs(propertyName));
                 }
                 if (this._maHocSinh != null && this._hocKy != null)
                 {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyDiem.Presentation;
+﻿using QuanLyDiem.View;
 
 namespace QuanLyDiem
 {
@@ -161,5 +162,10 @@ namespace QuanLyDiem
             Form_QuanLyLop formQuanLyLop = new Form_QuanLyLop();
             formQuanLyLop.Show(this);
         }
+
+        private void quảnLýMônHọcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormQuanLyMonHoc frmMonHoc = new FormQuanLyMonHoc();
+            frmMonHoc.Show(this);}
     }
 }

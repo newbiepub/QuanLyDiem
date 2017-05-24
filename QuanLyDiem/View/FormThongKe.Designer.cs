@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -60,17 +60,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tùy Chọn";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(22, 29);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(99, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Theo Từng Lớp";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
@@ -81,6 +70,17 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Toàn Trường";
             this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(22, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(99, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Theo Từng Lớp";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -104,63 +104,42 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông Tin";
             // 
-            // label1
+            // label7
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Lớp";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(40, 157);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(122, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "SL Học Sinh Trung Bình";
             // 
-            // textBox1
+            // textBox6
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.textBox6.Location = new System.Drawing.Point(167, 190);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(170, 20);
+            this.textBox6.TabIndex = 11;
             // 
-            // label2
+            // textBox5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Năm Học";
+            this.textBox5.Location = new System.Drawing.Point(167, 157);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(170, 20);
+            this.textBox5.TabIndex = 10;
             // 
-            // textBox2
+            // textBox4
             // 
-            this.textBox2.Location = new System.Drawing.Point(270, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBox4.Location = new System.Drawing.Point(167, 125);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(170, 20);
+            this.textBox4.TabIndex = 9;
             // 
-            // label3
+            // textBox3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "SL Học Sinh Giỏi";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(57, 125);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "SL Học Sinh Khá";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(89, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 13);
-            this.label5.TabIndex = 6;
+            this.textBox3.Location = new System.Drawing.Point(167, 86);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(170, 20);
+            this.textBox3.TabIndex = 8;
             // 
             // label6
             // 
@@ -171,42 +150,63 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "SL Học Sinh Yếu";
             // 
-            // textBox3
+            // label5
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 8;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(89, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 13);
+            this.label5.TabIndex = 6;
             // 
-            // textBox4
+            // label4
             // 
-            this.textBox4.Location = new System.Drawing.Point(167, 125);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(170, 20);
-            this.textBox4.TabIndex = 9;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(57, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(89, 13);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "SL Học Sinh Khá";
             // 
-            // textBox5
+            // label3
             // 
-            this.textBox5.Location = new System.Drawing.Point(167, 157);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(170, 20);
-            this.textBox5.TabIndex = 10;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(57, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "SL Học Sinh Giỏi";
             // 
-            // textBox6
+            // textBox2
             // 
-            this.textBox6.Location = new System.Drawing.Point(167, 190);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(170, 20);
-            this.textBox6.TabIndex = 11;
+            this.textBox2.Location = new System.Drawing.Point(270, 37);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 3;
             // 
-            // label7
+            // label2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 157);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(122, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "SL Học Sinh Trung Bình";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(203, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Năm Học";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(70, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(19, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(25, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Lớp";
             // 
             // FormThongKe
             // 
@@ -216,7 +216,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormThongKe";
-            this.Text = "FormThongKe";
+            this.Text = "Thống Kê";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

@@ -384,7 +384,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "QuanLyGiaoVien";
-            this.Text = "QuanLyGiaoVien";
+            this.Text = "Quản Lý Giáo Viên";
             this.Load += new System.EventHandler(this.QuanLyGiaoVien_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

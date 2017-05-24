@@ -341,7 +341,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupAdvance);
             this.Name = "TimKiemHocSinh";
-            this.Text = "TimKiemHocSinh";
+            this.Text = "Tìm Kiếm Học Sinh";
             this.Load += new System.EventHandler(this.TimKiemHocSinh_Load);
             this.groupAdvance.ResumeLayout(false);
             this.groupAdvance.PerformLayout();
