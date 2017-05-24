@@ -57,13 +57,34 @@ namespace QuanLyDiem.Presentation
             dataGridView1.Columns["TenGiaoVien"].HeaderText = "Tên Giáo Viên";
             dataGridView1.Columns["NgaySinh"].HeaderText = "Ngày Sinh";
             dataGridView1.Columns["TenLop"].HeaderText = "Tên Lớp";
-            dataGridView1.Columns["GioiTinh"].HeaderText = "Giới Tính";
+            dataGridView1.Columns["GioiTinh"].Visible = false;
             dataGridView1.Columns["MaLop"].HeaderText = "Mã Lớp";
             dataGridView1.Columns["DiaChi"].HeaderText = "Địa Chỉ";
             dataGridView1.Columns["SoDienThoai"].HeaderText = "Số Điện Thoại";
             dataGridView1.Columns["TenMon"].HeaderText = "Tên Môn";
             dataGridView1.Columns["Khoi"].HeaderText = "Khối";
             dataGridView1.Columns["NienKhoa"].HeaderText = "Niên Khóa";
+            // edit column datagridview
+            if (dataGridView1.Columns.Contains("newGioiTinh"))
+            { }
+            else
+            {
+                var column = new DataGridViewTextBoxColumn();
+                column.ValueType = typeof(string);
+                column.HeaderText = "Giới Tính";
+                column.Name = "newGioiTinh";
+                dataGridView1.Columns.Insert(2, column);
+            }
+
+
+            for (int row = 0; row < dataGridView1.RowCount - 1; row++)
+            {
+                if (dataGridView1.Rows[row].Cells["GioiTinh"].Value.ToString() == "1")
+                    dataGridView1.Rows[row].Cells["newGioiTinh"].Value = "Nam";
+                if (dataGridView1.Rows[row].Cells["GioiTinh"].Value.ToString() == "0")
+                    dataGridView1.Rows[row].Cells["newGioiTinh"].Value = "Nữ";
+
+            }
             if (dataGridView1.RowCount == 1)
             {
                 MessageBox.Show("Không có giáo viên !!!");
