@@ -127,11 +127,11 @@ namespace QuanLyDiem.Presentation
             try
             {
                 String makhoi = this.cb_khoi.SelectedValue.ToString();
+                String namHoc = this.cb_namhoc.SelectedValue.ToString();
                 this.cb_lop.ValueMember = "MaLop";
                 this.cb_lop.DisplayMember = "TenLop";
-                this.cb_lop.DataSource = khoiBl.getAllLopFromKhoi(makhoi).Rows.Count > 0
-                    ? khoiBl.getAllLopFromKhoi(makhoi)
-                    : null;
+                this.cb_lop.DataSource = Lop.getLopByKhoi(Convert.ToInt32(makhoi), namHoc).Rows.Count > 0
+                    ? Lop.getLopByKhoi(Convert.ToInt32(makhoi), namHoc): null;
             }
             catch (Exception)
             {
