@@ -52,7 +52,7 @@ namespace QuanLyDiem.Data_Layer
             catch (Exception)
             {
 
-                throw;
+                //throw;
             }
             finally
             {
