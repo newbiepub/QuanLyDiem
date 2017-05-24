@@ -111,6 +111,9 @@
     <Compile Include="Controller\Diem.cs" />
     <Compile Include="Controller\GiaoVien.cs" />
     <Compile Include="Controller\HocSinh.cs" />
+    <Compile Include="Controller\Khoi.cs" />
+    <Compile Include="Controller\Lop.cs" />
+    <Compile Include="Controller\MonHoc.cs" />
     <Compile Include="dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -287,9 +290,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entity\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
@@ -308,6 +309,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\create_function.sql" />
+    <Content Include="Database\create_procedure.sql" />
+    <Content Include="Database\create_table.sql" />
+    <Content Include="Database\create_trigger.sql" />
     <Content Include="db.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

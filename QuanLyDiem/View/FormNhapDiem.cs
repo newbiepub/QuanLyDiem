@@ -24,14 +24,11 @@ namespace QuanLyDiem.Presentation
 
         private MonHocBL monHocBl;
         private static DataTable dtDiem;
-        private KhoiBL khoiBl;
         private static BindingSource bsKhoi;
 
         public FormNhapDiem()
         {
             InitializeComponent();
-            monHocBl = new MonHocBL();
-            khoiBl = new KhoiBL();
             dtDiem = new DataTable();
             bsKhoi = new BindingSource();
         }
@@ -50,7 +47,7 @@ namespace QuanLyDiem.Presentation
         {
             this.cb_monhoc.ValueMember = "MaMon";
             this.cb_monhoc.DisplayMember = "TenMon";
-            this.cb_monhoc.DataSource = monHocBl.getAllMonHoc();
+            this.cb_monhoc.DataSource = MonHoc.getAllMonHoc();
         }
 
         private void loadHocKi()
@@ -67,7 +64,7 @@ namespace QuanLyDiem.Presentation
 
         private void loadKhoi()
         {
-            DataTable dtInfo = khoiBl.getKhoiLopHocSinh();
+            DataTable dtInfo = Khoi.getAllKhoi();
             this.cb_khoi.ValueMember = "khoiId";
             this.cb_khoi.DisplayMember = "Khoi";
             this.cb_khoi.DataSource = dtInfo;
@@ -75,12 +72,11 @@ namespace QuanLyDiem.Presentation
 
         private void FormNhapDiem_Load(object sender, EventArgs e)
         {
+            this.cb_namhoc.DisplayMember = "NienKhoa";
+            this.cb_namhoc.ValueMember = "NienKhoa";
+            this.cb_namhoc.DataSource = Lop.getNienKhoa();
             this.loadHocKi();
-            this.loadMonHoc();
-            this.loadKhoi();
-            this.dtp_namhoc.Format = DateTimePickerFormat.Custom;
-            this.dtp_namhoc.CustomFormat = "yyyy";
-            this.dtp_namhoc.ShowUpDown = true;
+            this.loadMonHoc();this.loadKhoi();
         }
 
         private void cb_khoi_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,12 +84,12 @@ namespace QuanLyDiem.Presentation
             try
             {
                 String makhoi = this.cb_khoi.SelectedValue.ToString();
+                String nienKhoa = this.cb_namhoc.SelectedValue.ToString();
                 this.cb_lop.ValueMember = "MaLop";
                 this.cb_lop.DisplayMember = "TenLop";
-                this.cb_lop.DataSource = khoiBl.getAllLopFromKhoi(makhoi).Rows.Count > 0
-                    ? khoiBl.getAllLopFromKhoi(makhoi)
-                    : null;
-            }
+                this.cb_lop.DataSource = Lop.getLopByKhoi(Convert.ToInt32(makhoi), nienKhoa).Rows.Count > 0
+                    ? Lop.getLopByKhoi(Convert.ToInt32(makhoi), nienKhoa)
+                    : null;}
             catch (Exception)
             {
                 this.cb_lop.DataSource = null;
@@ -124,12 +120,13 @@ namespace QuanLyDiem.Presentation
                 String mahk = this.cb_hocki.SelectedValue.ToString();
                 int mahocsinh = Convert.ToInt32(this.cb_tenhocsinh.SelectedValue.ToString());
                 int mamon = Convert.ToInt32(this.cb_monhoc.SelectedValue.ToString());
-                dtDiem = Diem.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk);
+                DateTime namHoc = new DateTime(Convert.ToInt32(this.cb_namhoc.SelectedValue.ToString()), 1, 1);
+                dtDiem = Diem.getDiemFromMahsAndMaMon(mahocsinh, mamon, mahk, namHoc);
                 if (dtDiem.Rows.Count > 0)
                 {
                     foreach (DataRow rowData in dtDiem.Rows)
                     {
-                        this.dtp_namhoc.Value = Convert.ToDateTime(rowData["NamHoc"]);
+                        this.cb_namhoc.SelectedValue = Convert.ToDateTime(rowData["NamHoc"]).Year;
                     }
                     this.gridView1.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
                     this.gridControl1.DataSource = dtDiem;
@@ -156,7 +153,7 @@ namespace QuanLyDiem.Presentation
                 String malop = this.cb_lop.SelectedValue.ToString();
                 this.cb_tenhocsinh.DisplayMember = "TenHocSinh";
                 this.cb_tenhocsinh.ValueMember = "MaHocSinh";
-                this.cb_tenhocsinh.DataSource = khoiBl.getAllHocSinhFromLop(malop);
+                this.cb_tenhocsinh.DataSource = HocSinh.getAllHocSinhFromLop(malop);
             }
             catch (Exception)
             {
@@ -209,14 +206,13 @@ namespace QuanLyDiem.Presentation
         }
 
         private void btn_them_Click(object sender, EventArgs e)
-        {
-            int mieng = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemMieng"));
+        {int mieng = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemMieng"));
             int giuaki = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemGiuaKy"));
             int cuoiki = Convert.ToInt32(this.gridView1.GetRowCellValue(0, "DiemHocKy"));
             string mahocsinh = this.cb_tenhocsinh.SelectedValue.ToString();
             string MaMon = this.cb_monhoc.SelectedValue.ToString();
             string hocki = this.cb_hocki.SelectedValue.ToString();
-            DateTime namhoc = this.dtp_namhoc.Value;
+            DateTime namhoc = new DateTime(Convert.ToInt32(this.cb_namhoc.SelectedValue.ToString()), 1, 1);
             bool isInsert = Diem.insertDiem(Convert.ToInt32(mahocsinh), Convert.ToInt32(MaMon), mieng, giuaki,
                 cuoiki, hocki, namhoc, "");
             if (isInsert)
@@ -245,5 +241,9 @@ namespace QuanLyDiem.Presentation
             {
                 this.gridControl1.DataSource = null;
             }}
+
+        private void cb_namhoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.loadCotDiem();}
     }
 }

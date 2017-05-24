@@ -64,11 +64,12 @@ as
 CREATE proc select_diem_from_mahocsinh_mamonhoc
 	@MaHocSinh bigint,
 	@MaMon bigint,
-	@HocKy nchar(10)
+	@HocKy nchar(10),
+	@NamHoc datetime
 as
 	if @MaHocSinh is not null and @MaMon is not null
 		begin
-			select * from DIEM where MaHocSinh=@MaHocSinh and MaMon=@MaMon and HocKy=@HocKy;
+			select * from DIEM where MaHocSinh=@MaHocSinh and MaMon=@MaMon and HocKy=@HocKy and YEAR(NamHoc)=YEAR(@NamHoc);
 		end
 	else 
 		return;

@@ -51,5 +51,11 @@ namespace QuanLyDiem.Controller
             HocSinhBL hs = new HocSinhBL();
             return hs.updatehocsinh(maHocSinh, tenHocSinh,  ngaySinh,  gioiTinh,  lop,  diaChi);
         }
+
+        public static DataTable getAllHocSinhFromLop(string malop)
+        {
+            HocSinhBL hs = new HocSinhBL(malop);
+            return hs.getAllHocSinhFromLop();
+        }
     }
 }

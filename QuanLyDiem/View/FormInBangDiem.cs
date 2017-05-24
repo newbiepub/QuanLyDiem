@@ -84,7 +84,7 @@ namespace QuanLyDiem.Presentation
         private KhoiBL khoiBl;
         private MonHocBL monHocBl;
        
-        private static SqlParams sqlParams;
+        private static SqlParams sqlParams = new SqlParams();
 
         public FormInBangDiem()
         {
@@ -116,7 +116,7 @@ namespace QuanLyDiem.Presentation
 
         private void loadKhoi()
         {
-            DataTable dtInfo = khoiBl.getKhoiLopHocSinh();
+            DataTable dtInfo = Khoi.getAllKhoi();
             this.cb_khoi.ValueMember = "khoiId";
             this.cb_khoi.DisplayMember = "Khoi";
             this.cb_khoi.DataSource = dtInfo;
@@ -141,8 +141,12 @@ namespace QuanLyDiem.Presentation
         }
         private void FormInBangDiem_Load(object sender, EventArgs e)
         {
+            this.cb_namhoc.ValueMember = "NienKhoa";
+            this.cb_namhoc.DisplayMember = "NienKhoa";
+            this.cb_namhoc.DataSource = Lop.getNienKhoa();
             sqlParams = new SqlParams(this);
-            sqlParams.NamHoc = this.dtp_namhoc.Value;this.loadKhoi();
+            sqlParams.NamHoc = new DateTime(Convert.ToInt32(this.cb_namhoc.SelectedValue.ToString()), 1, 1);
+            this.loadKhoi();
         }
 
         private void cb_lop_SelectedIndexChanged(object sender, EventArgs e)
@@ -152,7 +156,7 @@ namespace QuanLyDiem.Presentation
                 String malop = this.cb_lop.SelectedValue.ToString();
                 this.cb_tenhocsinh.DisplayMember = "TenHocSinh";
                 this.cb_tenhocsinh.ValueMember = "MaHocSinh";
-                this.loadHocKi();this.cb_tenhocsinh.DataSource = khoiBl.getAllHocSinhFromLop(malop);
+                this.loadHocKi();this.cb_tenhocsinh.DataSource = HocSinh.getAllHocSinhFromLop(malop);
                 }
             catch (Exception)
             {
@@ -165,15 +169,16 @@ namespace QuanLyDiem.Presentation
             sqlParams.HocKy = hocKy;
         }
 
-        private void dtp_namhoc_ValueChanged(object sender, EventArgs e)
-        {
-            sqlParams.NamHoc = this.dtp_namhoc.Value;
-        }
-
         private void cb_tenhocsinh_SelectedIndexChanged(object sender, EventArgs e)
         {
             string mahs = this.cb_tenhocsinh.SelectedValue.ToString();
             sqlParams.MaHocSinh = mahs;
+        }
+
+        private void cb_namhoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DateTime namHoc = new DateTime(Convert.ToInt32(this.cb_namhoc.SelectedValue), 1, 1);
+            sqlParams.NamHoc = namHoc;
         }
     }
 }

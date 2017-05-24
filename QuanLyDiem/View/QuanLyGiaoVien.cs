@@ -13,7 +13,6 @@ namespace QuanLyDiem.Presentation
 {
     public partial class QuanLyGiaoVien : Form
     {
-        Business_Logic.GiaoVienBL giaoVienBl = new Business_Logic.GiaoVienBL();
         DataTable da = new DataTable();
         DataTable lop = new DataTable();
         Int64 ma = 0;
@@ -39,7 +38,7 @@ namespace QuanLyDiem.Presentation
 
             // Load Giao Vien
 
-            da = giaoVienBl.getgiaovien();
+            da = GiaoVien.getgiaovien();
             dataGridView1.DataSource = da;
             // edit column datagridview
             if (dataGridView1.Columns.Contains("newGioiTinh"))
@@ -205,7 +204,7 @@ namespace QuanLyDiem.Presentation
 
             if (ma != 0)
             {
-                if (giaoVienBl.deletegiaovien(ma) == true)
+                if (GiaoVien.deletegiaovien(Convert.ToInt32(ma)) == true)
                 {
                     MessageBox.Show("Xóa thành công !!");
                 }

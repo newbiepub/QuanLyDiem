@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyDiem.Controller;
 
 namespace QuanLyDiem.Presentation
 {
@@ -41,15 +42,14 @@ namespace QuanLyDiem.Presentation
 
         private void Find_Click(object sender, EventArgs e)
         {
-            Business_Logic.GiaoVienBL timKiemBl = new Business_Logic.GiaoVienBL();
             if (radioButton1.Checked)
             {
-                dataGridView1.DataSource = timKiemBl.FindTeacherByID((Int32)teacherCodeBasic.Value);
+                dataGridView1.DataSource = GiaoVien.FindTeacherByID((Int32)teacherCodeBasic.Value);
             }
             else
             {
 
-                dataGridView1.DataSource = timKiemBl.FindTeacherAdvance((Int32)teacherCodeAdvance.Value, subjectSpecialize.Text, teacherName.Text,Convert.ToInt32(teacherClass.SelectedValue),teacherClass.Text);
+                dataGridView1.DataSource = GiaoVien.FindTeacherAdvance((Int32)teacherCodeAdvance.Value, subjectSpecialize.Text, teacherName.Text,Convert.ToInt32(teacherClass.SelectedValue),teacherClass.Text);
             }
 
 

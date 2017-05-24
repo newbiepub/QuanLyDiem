@@ -12,35 +12,28 @@ namespace QuanLyDiem.Business_Logic
 {
     class KhoiBL
     {
-        private DataAccess db;
+
+        public int maKhoi { get; set; }
+
+        public int maLop { get; set; }
+
+        private DataAccess db = new DataAccess();
 
         public KhoiBL()
         {
-            db = new DataAccess();
+           
         }
 
-        public DataTable getKhoiLopHocSinh()
+        public KhoiBL(int makhoi)
+        {
+            this.maKhoi = makhoi;
+        }
+
+        public DataTable getAllKhoi()
         {
             SqlParameter[] pr = new SqlParameter[0];
             return db.selectProc("getAllKhoi", pr);
         }
 
-        public DataTable getAllLopFromKhoi(String makhoi)
-        {
-            SqlParameter[] pr =
-            {
-                new SqlParameter("@makhoi", makhoi),
-            };
-            return db.selectProc("getAllLopTheoKhoi", pr);
-        }
-
-        public DataTable getAllHocSinhFromLop(String malop)
-        {
-            SqlParameter[] pr =
-            {
-                new SqlParameter("@malop", malop),
-            };
-            return db.selectProc("getAllHocSinhTheoLop", pr);
-        }
     }
 }

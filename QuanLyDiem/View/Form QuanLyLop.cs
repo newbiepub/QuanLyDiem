@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyDiem.Controller;
 
 namespace QuanLyDiem.Presentation
 {
@@ -65,10 +66,8 @@ namespace QuanLyDiem.Presentation
         private void gridviewClass_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            Business_Logic.HocSinhBL hocSinhBl = new Business_Logic.HocSinhBL();
-            Business_Logic.GiaoVienBL giaoVienBl = new Business_Logic.GiaoVienBL();
-            gridviewTeacher.DataSource = giaoVienBl.getgiaovienwithlop(Convert.ToInt32(gridviewClass.Rows[rowIndex].Cells["MaLop"].Value));
-            gridviewStudent.DataSource = hocSinhBl.gethocsinhwithlop(Convert.ToInt32( gridviewClass.Rows[rowIndex].Cells["MaLop"].Value));
+            gridviewTeacher.DataSource = GiaoVien.getgiaovienwithlop(Convert.ToInt32(gridviewClass.Rows[rowIndex].Cells["MaLop"].Value));
+            gridviewStudent.DataSource = HocSinh.gethocsinhwithlop(Convert.ToInt32( gridviewClass.Rows[rowIndex].Cells["MaLop"].Value));
             //config grid Teacher
             gridviewTeacher.AutoResizeColumns();
             gridviewTeacher.Columns["MaGiaoVien"].HeaderText = "Mã Giáo Viên";

@@ -11,9 +11,9 @@ namespace QuanLyDiem.Controller
 {
     class Diem
     {
-        public static DataTable getDiemFromMahsAndMaMon(int mahocsinh, int mamon, string hocky)
+        public static DataTable getDiemFromMahsAndMaMon(int mahocsinh, int mamon, string hocky, DateTime namHoc)
         {
-            DiemBL diem = new DiemBL(mahocsinh,mamon,hocky);
+            DiemBL diem = new DiemBL(mahocsinh, mamon, hocky, namHoc);
             return diem.getDiemFromMahsAndMaMon();
         }
 

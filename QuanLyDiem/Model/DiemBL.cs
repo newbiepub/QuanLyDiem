@@ -41,6 +41,15 @@ namespace QuanLyDiem.Business_Logic
             this.HocKy = mahk;
         }
 
+        public DiemBL(int MaHocSinh, int MaMonHoc, String mahk, DateTime NamHoc)
+        {
+            db = new DataAccess();
+            this.MaHocSinh = MaHocSinh;
+            this.MaMon = MaMonHoc;
+            this.HocKy = mahk;
+            this.NamHoc = NamHoc;
+        }
+
         public DiemBL(int mahocsinh, int mamon, float mieng, float giuaky, float cuoiky, string hocky, DateTime namhoc, string ghichu) 
         {
             db = new DataAccess();
@@ -69,6 +78,7 @@ namespace QuanLyDiem.Business_Logic
                 new SqlParameter("@MaHocSinh", this.MaHocSinh),
                 new SqlParameter("@MaMon", this.MaMon), 
                 new SqlParameter("@HocKy", this.HocKy), 
+                new SqlParameter("@NamHoc", this.NamHoc), 
             };
             return db.selectProc("select_diem_from_mahocsinh_mamonhoc", pr);
         }

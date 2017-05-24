@@ -43,7 +43,6 @@ namespace QuanLyDiem.Presentation
             this.tbMonId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dtp_namhoc = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@ namespace QuanLyDiem.Presentation
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.cb_namhoc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -171,7 +171,7 @@ namespace QuanLyDiem.Presentation
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtp_namhoc);
+            this.groupBox1.Controls.Add(this.cb_namhoc);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -188,17 +188,6 @@ namespace QuanLyDiem.Presentation
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin";
-            // 
-            // dtp_namhoc
-            // 
-            this.dtp_namhoc.CustomFormat = "yyyy";
-            this.dtp_namhoc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_namhoc.Location = new System.Drawing.Point(437, 37);
-            this.dtp_namhoc.Name = "dtp_namhoc";
-            this.dtp_namhoc.ShowUpDown = true;
-            this.dtp_namhoc.Size = new System.Drawing.Size(200, 21);
-            this.dtp_namhoc.TabIndex = 4;
-            this.dtp_namhoc.ValueChanged += new System.EventHandler(this.dtp_namhoc_ValueChanged);
             // 
             // label6
             // 
@@ -307,6 +296,15 @@ namespace QuanLyDiem.Presentation
             this.label1.Text = "THÔNG TIN BẢNG ĐIỂM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // cb_namhoc
+            // 
+            this.cb_namhoc.FormattingEnabled = true;
+            this.cb_namhoc.Location = new System.Drawing.Point(437, 40);
+            this.cb_namhoc.Name = "cb_namhoc";
+            this.cb_namhoc.Size = new System.Drawing.Size(200, 21);
+            this.cb_namhoc.TabIndex = 4;
+            this.cb_namhoc.SelectedIndexChanged += new System.EventHandler(this.cb_namhoc_SelectedIndexChanged);
+            // 
             // FormInBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +340,6 @@ namespace QuanLyDiem.Presentation
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dtp_namhoc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -360,6 +357,7 @@ namespace QuanLyDiem.Presentation
         private DevExpress.XtraGrid.Columns.GridColumn diemGiuaKyId;
         private DevExpress.XtraGrid.Columns.GridColumn diemHocKyId;
         private DevExpress.XtraGrid.Columns.GridColumn tbMonId;
+        private ComboBox cb_namhoc;
 
 
     }

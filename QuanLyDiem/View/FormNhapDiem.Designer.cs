@@ -46,7 +46,7 @@ namespace QuanLyDiem.Presentation
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dtp_namhoc = new System.Windows.Forms.DateTimePicker();
+            this.cb_namhoc = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -220,7 +220,7 @@ namespace QuanLyDiem.Presentation
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dtp_namhoc);
+            this.groupBox4.Controls.Add(this.cb_namhoc);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
@@ -233,17 +233,19 @@ namespace QuanLyDiem.Presentation
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Lựa Chọn Môn Học";
             // 
-            // dtp_namhoc
+            // cb_namhoc
             // 
-            this.dtp_namhoc.Location = new System.Drawing.Point(70, 73);
-            this.dtp_namhoc.Name = "dtp_namhoc";
-            this.dtp_namhoc.Size = new System.Drawing.Size(220, 20);
-            this.dtp_namhoc.TabIndex = 3;
+            this.cb_namhoc.FormattingEnabled = true;
+            this.cb_namhoc.Location = new System.Drawing.Point(70, 76);
+            this.cb_namhoc.Name = "cb_namhoc";
+            this.cb_namhoc.Size = new System.Drawing.Size(220, 21);
+            this.cb_namhoc.TabIndex = 3;
+            this.cb_namhoc.SelectedIndexChanged += new System.EventHandler(this.cb_namhoc_SelectedIndexChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 76);
+            this.label7.Location = new System.Drawing.Point(12, 79);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 2;
@@ -252,7 +254,7 @@ namespace QuanLyDiem.Presentation
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 51);
+            this.label6.Location = new System.Drawing.Point(12, 51);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 13);
             this.label6.TabIndex = 0;
@@ -261,7 +263,7 @@ namespace QuanLyDiem.Presentation
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(18, 24);
+            this.label5.Location = new System.Drawing.Point(12, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(28, 13);
             this.label5.TabIndex = 0;
@@ -450,7 +452,7 @@ namespace QuanLyDiem.Presentation
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edit_mieng;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_giuaki;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_cuoiki;
-        private System.Windows.Forms.DateTimePicker dtp_namhoc;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cb_namhoc;
     }
 }

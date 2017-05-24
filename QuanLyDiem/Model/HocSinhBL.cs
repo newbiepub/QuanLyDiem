@@ -10,6 +10,18 @@ namespace QuanLyDiem.Business_Logic
 {
     class HocSinhBL
     {
+        public String maLop { get; set; }
+
+        public HocSinhBL()
+        {
+            
+        }
+
+        public HocSinhBL(string maLop)
+        {
+            this.maLop = maLop;
+        }
+
         Data_Layer.DataAccess da = new Data_Layer.DataAccess();
         public DataTable gethocsinhwithlop(int maLop)
         {
@@ -113,6 +125,15 @@ namespace QuanLyDiem.Business_Logic
                 new SqlParameter( "@diachi", diaChi)
             };
             return da.updateProc(query, pr);
+        }
+
+        public DataTable getAllHocSinhFromLop()
+        {
+            SqlParameter[] pr =
+            {
+                new SqlParameter("@malop", this.maLop),
+            };
+            return da.selectProc("getAllHocSinhTheoLop", pr);
         }
     }
 }
