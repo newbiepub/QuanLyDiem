@@ -144,12 +144,6 @@
     <Compile Include="View\FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormDoiMatKhau.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormDoiMatKhau.Designer.cs">
-      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormInBangDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,9 +196,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormDoiMatKhau.resx">
-      <DependentUpon>FormDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormInBangDiem.resx">
       <DependentUpon>FormInBangDiem.cs</DependentUpon>
