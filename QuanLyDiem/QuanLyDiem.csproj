@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Controller\Diem.cs" />
     <Compile Include="Controller\GiaoVien.cs" />
+    <Compile Include="Controller\HocSinh.cs" />
     <Compile Include="dbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
