@@ -12,6 +12,13 @@ namespace QuanLyDiem.Business_Logic
 {
     class MonHocBL
     {
+        public int Mamon { get; set; }
+        public string Tenmon { get; set; }
+        public MonHocBL(int mamon, string tenmon)
+        {
+            this.Mamon = mamon;
+            this.Tenmon = tenmon;
+        }
         private DataAccess db;
 
         public MonHocBL()
