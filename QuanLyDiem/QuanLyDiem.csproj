@@ -85,6 +85,7 @@
     <Reference Include="DevExpress.XtraRichEdit.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraRichEdit.v16.1.Extensions, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Json">
       <HintPath>..\packages\JSON.1.0.1\lib\net40\Json.dll</HintPath>
     </Reference>
@@ -174,12 +175,6 @@
     <Compile Include="View\FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormTimKiemHocSinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormTimKiemHocSinh.Designer.cs">
-      <DependentUpon>FormTimKiemHocSinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\QuanLyGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,9 +224,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormTimKiemHocSinh.resx">
-      <DependentUpon>FormTimKiemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyGiaoVien.resx">
       <DependentUpon>QuanLyGiaoVien.cs</DependentUpon>

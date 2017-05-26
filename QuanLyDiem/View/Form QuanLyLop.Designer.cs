@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.gridviewClass = new System.Windows.Forms.DataGridView();
             this.gridviewStudent = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,27 +37,12 @@
             this.year = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dbDataSet = new QuanLyDiem.dbDataSet();
-            this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lOPTableAdapter = new QuanLyDiem.dbDataSetTableAdapters.LOPTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewClass)).BeginInit();
+            this.gridClass = new System.Windows.Forms.DataGridView();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewTeacher)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridClass)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridviewClass
-            // 
-            this.gridviewClass.AllowUserToOrderColumns = true;
-            this.gridviewClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewClass.Location = new System.Drawing.Point(12, 76);
-            this.gridviewClass.Name = "gridviewClass";
-            this.gridviewClass.Size = new System.Drawing.Size(210, 441);
-            this.gridviewClass.TabIndex = 2;
-            this.gridviewClass.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridviewClass_RowHeaderMouseDoubleClick);
-            this.gridviewClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridviewClass_KeyPress);
             // 
             // gridviewStudent
             // 
@@ -68,7 +51,6 @@
             this.gridviewStudent.Name = "gridviewStudent";
             this.gridviewStudent.Size = new System.Drawing.Size(646, 243);
             this.gridviewStudent.TabIndex = 2;
-
             // 
             // label3
             // 
@@ -91,7 +73,7 @@
             // gridviewTeacher
             // 
             this.gridviewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewTeacher.Location = new System.Drawing.Point(228, 22);
+            this.gridviewTeacher.Location = new System.Drawing.Point(231, 22);
             this.gridviewTeacher.MultiSelect = false;
             this.gridviewTeacher.Name = "gridviewTeacher";
             this.gridviewTeacher.ReadOnly = true;
@@ -154,36 +136,31 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Niên Khóa";
             // 
-            // button1
+            // gridClass
             // 
-            this.button1.Location = new System.Drawing.Point(147, -1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 27);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Cập Nhật";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.CapNhat);
+            this.gridClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridClass.Location = new System.Drawing.Point(6, 79);
+            this.gridClass.Name = "gridClass";
+            this.gridClass.Size = new System.Drawing.Size(216, 438);
+            this.gridClass.TabIndex = 5;
+            this.gridClass.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridviewClass_RowHeaderMouseDoubleClick);
             // 
-            // dbDataSet
+            // simpleButton5
             // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lOPBindingSource
-            // 
-            this.lOPBindingSource.DataMember = "LOP";
-            this.lOPBindingSource.DataSource = this.dbDataSet;
-            // 
-            // lOPTableAdapter
-            // 
-            this.lOPTableAdapter.ClearBeforeFill = true;
+            this.simpleButton5.Location = new System.Drawing.Point(147, 1);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton5.TabIndex = 9;
+            this.simpleButton5.Text = "Cập Nhật";
+            this.simpleButton5.Click += new System.EventHandler(this.CapNhat);
             // 
             // Form_QuanLyLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(886, 521);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.simpleButton5);
+            this.Controls.Add(this.gridClass);
             this.Controls.Add(this.year);
             this.Controls.Add(this.grade);
             this.Controls.Add(this.gridviewTeacher);
@@ -192,16 +169,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gridviewClass);
             this.Controls.Add(this.label3);
             this.Name = "Form_QuanLyLop";
             this.Text = "Quản Lý Lớp";
             this.Load += new System.EventHandler(this.Form_QuanLyLop_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridviewClass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridviewTeacher)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridClass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +183,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gridviewClass;
         private System.Windows.Forms.DataGridView gridviewStudent;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -219,10 +192,8 @@
         private System.Windows.Forms.ComboBox year;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private dbDataSet dbDataSet;
-        private System.Windows.Forms.BindingSource lOPBindingSource;
-        private dbDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
+        private System.Windows.Forms.DataGridView gridClass;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
 
     }
 }

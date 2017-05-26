@@ -21,8 +21,7 @@ namespace QuanLyDiem.Presentation
        
         private void Form_QuanLyLop_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dbDataSet.LOP' table. You can move, or remove it, as needed.
-            this.lOPTableAdapter.Fill(this.dbDataSet.LOP);
+            
             // Load Lop
             Business_Logic.LopBL lopBl = new Business_Logic.LopBL();
             lop = lopBl.getLop();
@@ -32,18 +31,18 @@ namespace QuanLyDiem.Presentation
             
             
             //config grid Class
-            gridviewClass.Columns["MaLop"].HeaderText = "Mã Lớp";
-            gridviewClass.Columns["MaLop"].DefaultCellStyle.BackColor = Color.Silver;
-            gridviewClass.Columns["MaLop"].Width = 40;
-            gridviewClass.Columns["GhiChu"].HeaderText = "Ghi Chú";
-            gridviewClass.Columns["Khoi"].HeaderText = "Khối";
-            gridviewClass.Columns["Khoi"].Width = 40;
-            gridviewClass.Columns["TenLop"].HeaderText = "Tên Lớp";
-            gridviewClass.Columns["TenLop"].Width = 40;
-            gridviewClass.Columns["NienKhoa"].HeaderText = "Niên Khóa";
-            gridviewClass.Columns["NienKhoa"].Width = 40;
-            gridviewClass.Columns["MaLop"].ReadOnly = true;
-            //gridviewClass.Columns["MaLop"].CellType= ;
+            gridClass.Columns["MaLop"].HeaderText = "Mã Lớp";
+            gridClass.Columns["MaLop"].DefaultCellStyle.BackColor = Color.Silver;
+            gridClass.Columns["MaLop"].Width = 40;
+            gridClass.Columns["GhiChu"].HeaderText = "Ghi Chú";
+            gridClass.Columns["Khoi"].HeaderText = "Khối";
+            gridClass.Columns["Khoi"].Width = 40;
+            gridClass.Columns["TenLop"].HeaderText = "Tên Lớp";
+            gridClass.Columns["TenLop"].Width = 40;
+            gridClass.Columns["NienKhoa"].HeaderText = "Niên Khóa";
+            gridClass.Columns["NienKhoa"].Width = 40;
+            gridClass.Columns["MaLop"].ReadOnly = true;
+           
         }
         public void Load_Class()
         {
@@ -53,7 +52,7 @@ namespace QuanLyDiem.Presentation
                 {
                     DataView dv = new DataView(lop);
                     dv.RowFilter = "Khoi = " + grade.Text + " and NienKhoa = '" + year.Text + "'";
-                    gridviewClass.DataSource = dv;
+                    gridClass.DataSource = dv;
                 }
                 catch (ArgumentNullException e)
                 {
@@ -61,13 +60,13 @@ namespace QuanLyDiem.Presentation
                 }
                            
             }
-            else gridviewClass.DataSource = lop;
+            else gridClass.DataSource = lop;
         }
         private void gridviewClass_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rowIndex = e.RowIndex;
-            gridviewTeacher.DataSource = GiaoVien.getgiaovienwithlop(Convert.ToInt32(gridviewClass.Rows[rowIndex].Cells["MaLop"].Value));
-            gridviewStudent.DataSource = HocSinh.gethocsinhwithlop(Convert.ToInt32( gridviewClass.Rows[rowIndex].Cells["MaLop"].Value));
+            gridviewTeacher.DataSource = GiaoVien.getgiaovienwithlop(Convert.ToInt32(gridClass.Rows[rowIndex].Cells["MaLop"].Value));
+            gridviewStudent.DataSource = HocSinh.gethocsinhwithlop(Convert.ToInt32(gridClass.Rows[rowIndex].Cells["MaLop"].Value));
             //config grid Teacher
             gridviewTeacher.AutoResizeColumns();
             gridviewTeacher.Columns["MaGiaoVien"].HeaderText = "Mã Giáo Viên";

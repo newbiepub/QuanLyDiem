@@ -37,13 +37,13 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_them = new System.Windows.Forms.Button();
             this.txt_mamon = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_tenmon = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -137,9 +137,9 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.btn_xoa);
-            this.groupBox1.Controls.Add(this.btn_sua);
-            this.groupBox1.Controls.Add(this.btn_them);
+            this.groupBox1.Controls.Add(this.simpleButton3);
+            this.groupBox1.Controls.Add(this.simpleButton2);
+            this.groupBox1.Controls.Add(this.simpleButton1);
             this.groupBox1.Controls.Add(this.txt_mamon);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_tenmon);
@@ -150,40 +150,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Môn Học";
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_xoa.Location = new System.Drawing.Point(357, 112);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(75, 23);
-            this.btn_xoa.TabIndex = 2;
-            this.btn_xoa.Text = "Xóa";
-            this.btn_xoa.UseVisualStyleBackColor = true;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_sua.Location = new System.Drawing.Point(276, 112);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(75, 23);
-            this.btn_sua.TabIndex = 2;
-            this.btn_sua.Text = "Sửa";
-            this.btn_sua.UseVisualStyleBackColor = true;
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
-            // 
-            // btn_them
-            // 
-            this.btn_them.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_them.Location = new System.Drawing.Point(195, 112);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_them.Size = new System.Drawing.Size(75, 23);
-            this.btn_them.TabIndex = 2;
-            this.btn_them.Text = "Thêm";
-            this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // txt_mamon
             // 
@@ -222,6 +188,33 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên Môn Học";
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(188, 97);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.Text = "Thêm";
+            this.simpleButton1.Click += new System.EventHandler(this.btn_them_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(269, 97);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 3;
+            this.simpleButton2.Text = "Sửa";
+            this.simpleButton2.Click += new System.EventHandler(this.btn_sua_Click);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(350, 97);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 3;
+            this.simpleButton3.Text = "Xóa";
+            this.simpleButton3.Click += new System.EventHandler(this.btn_xoa_Click);
+            // 
             // FormQuanLyMonHoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,12 +252,12 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private System.Windows.Forms.Button btn_xoa;
-        private System.Windows.Forms.Button btn_sua;
-        private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.TextBox txt_mamon;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_tenmon;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

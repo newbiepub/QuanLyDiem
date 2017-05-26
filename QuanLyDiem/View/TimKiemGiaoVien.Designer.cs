@@ -41,7 +41,6 @@
             this.teacherName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Find = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -50,7 +49,8 @@
             this.teacherCodeBasic = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Reset = new System.Windows.Forms.Button();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxAdvance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teacherCodeAdvance)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -204,17 +204,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Giáo Viên";
             // 
-            // Find
-            // 
-            this.Find.Location = new System.Drawing.Point(681, 61);
-            this.Find.Name = "Find";
-            this.Find.Padding = new System.Windows.Forms.Padding(20);
-            this.Find.Size = new System.Drawing.Size(132, 85);
-            this.Find.TabIndex = 1;
-            this.Find.Text = "Tìm Kiếm";
-            this.Find.UseVisualStyleBackColor = true;
-            this.Find.Click += new System.EventHandler(this.Find_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.radioButton2);
@@ -303,25 +292,33 @@
             this.dataGridView1.Size = new System.Drawing.Size(763, 171);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Reset
+            // simpleButton5
             // 
-            this.Reset.Location = new System.Drawing.Point(681, 167);
-            this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(132, 37);
-            this.Reset.TabIndex = 4;
-            this.Reset.Text = "Nhập Lại";
-            this.Reset.UseVisualStyleBackColor = true;
-            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            this.simpleButton5.Location = new System.Drawing.Point(708, 138);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton5.TabIndex = 9;
+            this.simpleButton5.Text = "Nhập Lại";
+            this.simpleButton5.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Location = new System.Drawing.Point(708, 87);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton4.TabIndex = 10;
+            this.simpleButton4.Text = "Tìm Kiếm";
+            this.simpleButton4.Click += new System.EventHandler(this.Find_Click);
             // 
             // TimKiemGiaoVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 487);
-            this.Controls.Add(this.Reset);
+            this.Controls.Add(this.simpleButton5);
+            this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.Find);
             this.Controls.Add(this.groupBoxBasic);
             this.Controls.Add(this.groupBoxAdvance);
             this.Name = "TimKiemGiaoVien";
@@ -349,7 +346,6 @@
         private System.Windows.Forms.TextBox teacherName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Find;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -361,10 +357,11 @@
         private System.Windows.Forms.ComboBox subjectSpecialize;
         private System.Windows.Forms.NumericUpDown teacherCodeAdvance;
         private System.Windows.Forms.NumericUpDown teacherCodeBasic;
-        private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.ComboBox grade;
         private System.Windows.Forms.ComboBox year;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

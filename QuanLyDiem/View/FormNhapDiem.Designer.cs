@@ -52,9 +52,6 @@ namespace QuanLyDiem.Presentation
             this.label5 = new System.Windows.Forms.Label();
             this.cb_hocki = new System.Windows.Forms.ComboBox();
             this.cb_monhoc = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_them = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cb_khoi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +60,9 @@ namespace QuanLyDiem.Presentation
             this.label3 = new System.Windows.Forms.Label();
             this.cb_lop = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             column_hocki = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.edt_cuoiki)).BeginInit();
             this.panel1.SuspendLayout();
@@ -204,10 +204,10 @@ namespace QuanLyDiem.Presentation
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.simpleButton3);
+            this.groupBox2.Controls.Add(this.simpleButton2);
+            this.groupBox2.Controls.Add(this.simpleButton1);
             this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.btn_them);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -287,34 +287,6 @@ namespace QuanLyDiem.Presentation
             this.cb_monhoc.TabIndex = 1;
             this.cb_monhoc.SelectedIndexChanged += new System.EventHandler(this.cb_monhoc_SelectedIndexChanged);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(219, 191);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Thoát";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(138, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Nhập Lại";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // btn_them
-            // 
-            this.btn_them.Location = new System.Drawing.Point(57, 191);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(75, 23);
-            this.btn_them.TabIndex = 5;
-            this.btn_them.Text = "Nhập Điểm";
-            this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.cb_khoi);
@@ -392,6 +364,31 @@ namespace QuanLyDiem.Presentation
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 2;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(112, 185);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 7;
+            this.simpleButton1.Text = "Nhập Điểm";
+            this.simpleButton1.Click += new System.EventHandler(this.btn_them_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(193, 185);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 7;
+            this.simpleButton2.Text = "Nhập Lại";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(274, 185);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 7;
+            this.simpleButton3.Text = "Thoát";
+            // 
             // FormNhapDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -436,9 +433,6 @@ namespace QuanLyDiem.Presentation
         private System.Windows.Forms.ComboBox cb_khoi;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_them;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cb_monhoc;
@@ -454,5 +448,8 @@ namespace QuanLyDiem.Presentation
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit edt_cuoiki;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cb_namhoc;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

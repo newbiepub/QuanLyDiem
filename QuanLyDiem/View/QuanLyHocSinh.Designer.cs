@@ -33,11 +33,6 @@
             this.studentClass = new System.Windows.Forms.ComboBox();
             this.year = new System.Windows.Forms.ComboBox();
             this.studentGrade = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.sexFemale = new System.Windows.Forms.RadioButton();
             this.sexMale = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +46,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,15 +58,15 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.simpleButton5);
             this.panel1.Controls.Add(this.studentDate);
+            this.panel1.Controls.Add(this.simpleButton4);
             this.panel1.Controls.Add(this.studentClass);
+            this.panel1.Controls.Add(this.simpleButton3);
             this.panel1.Controls.Add(this.year);
+            this.panel1.Controls.Add(this.simpleButton2);
             this.panel1.Controls.Add(this.studentGrade);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.btnThem);
+            this.panel1.Controls.Add(this.simpleButton1);
             this.panel1.Controls.Add(this.sexFemale);
             this.panel1.Controls.Add(this.sexMale);
             this.panel1.Controls.Add(this.label1);
@@ -124,56 +124,6 @@
             this.studentGrade.Size = new System.Drawing.Size(307, 21);
             this.studentGrade.TabIndex = 5;
             this.studentGrade.SelectedIndexChanged += new System.EventHandler(this.studentGrade_SelectedIndexChanged);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(509, 237);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 20);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Thoát";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Thoat);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(428, 237);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 20);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Nhập Lại";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.NhapLai);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(347, 237);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 20);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Sua);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(266, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 20);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Xoa);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(185, 237);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 20);
-            this.btnThem.TabIndex = 4;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // sexFemale
             // 
@@ -294,6 +244,51 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_RowHeaderMouseDoubleClick);
             // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Location = new System.Drawing.Point(514, 236);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton5.TabIndex = 9;
+            this.simpleButton5.Text = "Thoát";
+            this.simpleButton5.Click += new System.EventHandler(this.Thoat);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Location = new System.Drawing.Point(433, 236);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton4.TabIndex = 10;
+            this.simpleButton4.Text = "Nhập Lại";
+            this.simpleButton4.Click += new System.EventHandler(this.NhapLai);
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(352, 236);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton3.TabIndex = 11;
+            this.simpleButton3.Text = "Sửa";
+            this.simpleButton3.Click += new System.EventHandler(this.Sua);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(271, 235);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 12;
+            this.simpleButton2.Text = "Xóa";
+            this.simpleButton2.Click += new System.EventHandler(this.Xoa);
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(190, 235);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.TabIndex = 13;
+            this.simpleButton1.Text = "Thêm";
+            this.simpleButton1.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // QuanLyHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +299,7 @@
             this.Name = "QuanLyHocSinh";
             this.Text = "Quản Lý Học Sinh";
             this.Load += new System.EventHandler(this.QuanLyHocSinh_Load);
+            this.Click += new System.EventHandler(this.btnThem_Click);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -323,11 +319,6 @@
         private System.Windows.Forms.RadioButton sexMale;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox studentClass;
@@ -337,5 +328,10 @@
         private System.Windows.Forms.TextBox studentAddress;
         private System.Windows.Forms.ComboBox year;
         private System.Windows.Forms.Label label7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
