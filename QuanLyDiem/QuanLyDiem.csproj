@@ -132,6 +132,12 @@
     <Compile Include="MDIQuanLyParentForm.Designer.cs">
       <DependentUpon>MDIQuanLyParentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="QuanLyDiemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyDiemForm.Designer.cs">
+      <DependentUpon>QuanLyDiemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Form QuanLyLop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     <Compile Include="View\FormThongKe.Designer.cs">
       <DependentUpon>FormThongKe.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormTimKiemHocSinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormTimKiemHocSinh.Designer.cs">
+      <DependentUpon>FormTimKiemHocSinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\QuanLyGiaoVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +209,9 @@
     <EmbeddedResource Include="MDIQuanLyParentForm.resx">
       <DependentUpon>MDIQuanLyParentForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuanLyDiemForm.resx">
+      <DependentUpon>QuanLyDiemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Form QuanLyLop.resx">
       <DependentUpon>Form QuanLyLop.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormThongKe.resx">
       <DependentUpon>FormThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormTimKiemHocSinh.resx">
+      <DependentUpon>FormTimKiemHocSinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\QuanLyGiaoVien.resx">
       <DependentUpon>QuanLyGiaoVien.cs</DependentUpon>
@@ -236,6 +254,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="ClassDiagram1.cd" />
     <None Include="dbDataSet.xsc">
@@ -295,6 +314,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\images %282%29.png" />
+    <None Include="Resources\images %281%29.png" />
+    <None Include="Resources\tải xuống %282%29.jpg" />
+    <None Include="Resources\canstock20308244.jpg" />
+    <None Include="Resources\tải xuống %281%29.jpg" />
+    <None Include="Resources\tải xuống.jpg" />
+    <None Include="Resources\C360_2016-08-31-16-10-43-711.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

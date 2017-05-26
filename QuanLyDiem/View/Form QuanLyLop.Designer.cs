@@ -59,6 +59,7 @@
             this.gridviewClass.Size = new System.Drawing.Size(210, 441);
             this.gridviewClass.TabIndex = 2;
             this.gridviewClass.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridviewClass_RowHeaderMouseDoubleClick);
+            this.gridviewClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridviewClass_KeyPress);
             // 
             // gridviewStudent
             // 
@@ -67,6 +68,7 @@
             this.gridviewStudent.Name = "gridviewStudent";
             this.gridviewStudent.Size = new System.Drawing.Size(646, 243);
             this.gridviewStudent.TabIndex = 2;
+
             // 
             // label3
             // 
@@ -90,7 +92,10 @@
             // 
             this.gridviewTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridviewTeacher.Location = new System.Drawing.Point(228, 22);
+            this.gridviewTeacher.MultiSelect = false;
             this.gridviewTeacher.Name = "gridviewTeacher";
+            this.gridviewTeacher.ReadOnly = true;
+            this.gridviewTeacher.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.gridviewTeacher.Size = new System.Drawing.Size(646, 233);
             this.gridviewTeacher.TabIndex = 2;
             // 
@@ -157,7 +162,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Cập Nhật";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.CapNhat);
             // 
             // dbDataSet
             // 

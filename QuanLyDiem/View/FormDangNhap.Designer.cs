@@ -132,6 +132,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormDangNhap";
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

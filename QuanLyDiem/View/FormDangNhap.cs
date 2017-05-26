@@ -55,5 +55,10 @@ namespace QuanLyDiem.Presentation
             ToolTip1.SetToolTip(this.button2, "Hiển thị mật khẩu");
           
         }
+
+        private void FormDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

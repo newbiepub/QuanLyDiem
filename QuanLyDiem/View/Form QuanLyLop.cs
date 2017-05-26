@@ -117,17 +117,29 @@ namespace QuanLyDiem.Presentation
         {
             Load_Class();
         }
-        private void button1_Click(object sender, EventArgs e)
+
+   
+
+        private void CapNhat(object sender, EventArgs e)
         {
             Data_Layer.DataAccess da = new Data_Layer.DataAccess();
-            
-            if(da.dataTableExecute("select * from LOP", lop.GetChanges()) == true)
+
+            if (da.dataTableExecute("select * from LOP", lop.GetChanges()) == true)
             {
-                Form_QuanLyLop_Load(null,null);
+                Form_QuanLyLop_Load(null, null);
                 MessageBox.Show("Cập Nhật Thành Công");
 
-            }else
-            MessageBox.Show("Cập Nhật Thất Bại");
+            }
+            else
+                MessageBox.Show("Cập Nhật Thất Bại");
+        }
+
+        private void gridviewClass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                CapNhat(null, null);
+            }
         }
 
     
